@@ -1,0 +1,120 @@
+{
+  "projects": [
+    {
+      "rank": 1,
+      "project": "OP-005: OP-005 Lead Generation Agentic Intelligence - Correction & Portfolio Re-Prioritization",
+      "score": "84.1",
+      "tier": "TIER 0: FOUNDATION",
+      "status": "proposed",
+      "value": "$17.93M",
+      "roi": "3678%",
+      "targetKPIs": "TBD",
+      "dependencies": "None",
+      "qStart": "Q2",
+      "qStartDetail": "Q2 (Implementation)",
+      "priorityReasoning": "High financial impact; No blockers; Exceptional ROI; Foundation for future work; Quick wins"
+    },
+    {
+      "rank": 2,
+      "project": "OP-008: OP-008 Law2Engine AI Project Analysis",
+      "score": "75.0",
+      "tier": "TIER 0: FOUNDATION",
+      "status": "committed",
+      "value": "$1.60M",
+      "roi": "3678%",
+      "targetKPIs": "TBD",
+      "dependencies": "None",
+      "qStart": "Q1",
+      "qStartDetail": "Q1 (Implementation)",
+      "priorityReasoning": "No blockers; Exceptional ROI; Foundation for future work; Quick wins"
+    },
+    {
+      "rank": 3,
+      "project": "OP-014: OP-014: Operational Data Foundation - Strategic Analysis (V5 Product-Driven Framework)",
+      "score": "55.6",
+      "tier": "TIER 0: FOUNDATION",
+      "status": "proposed",
+      "value": "$1.85M",
+      "roi": "156%",
+      "targetKPIs": "TBD",
+      "dependencies": "None",
+      "qStart": "Q2",
+      "qStartDetail": "Q2 (Implementation)",
+      "priorityReasoning": "No blockers; Foundation for future work; Quick wins"
+    },
+    {
+      "rank": 4,
+      "project": "OP-000: OP-000: Claude Enterprise & Code Expansion",
+      "score": "54.1",
+      "tier": "TIER 0: FOUNDATION",
+      "status": "committed",
+      "value": "$5.06M",
+      "roi": "TBD",
+      "targetKPIs": "TBD",
+      "dependencies": "None",
+      "qStart": "Q1",
+      "qStartDetail": "Q1 (Implementation)",
+      "priorityReasoning": "High financial impact; No blockers; Foundation for future work; Quick wins"
+    },
+    {
+      "rank": 5,
+      "project": "OP-011: Claude Code Marketplace - FY2026 Project Analysis & Engineering Integration Strategy",
+      "score": "50.8",
+      "tier": "TIER 0: FOUNDATION",
+      "status": "committed",
+      "value": "$0.00M",
+      "roi": "295%",
+      "targetKPIs": "TBD",
+      "dependencies": "None",
+      "qStart": "Q1",
+      "qStartDetail": "Q1 (Implementation)",
+      "priorityReasoning": "No blockers; Strong ROI; Foundation for future work; Quick wins"
+    },
+    {
+      "rank": 6,
+      "project": "OP-001: Executive Summary: OP-001, Sales Deal Agentic Intelligence Solution",
+      "score": "34.2",
+      "tier": "TIER 0: FOUNDATION",
+      "status": "proposed",
+      "value": "TBD",
+      "roi": "19%",
+      "targetKPIs": "TBD",
+      "dependencies": "None",
+      "qStart": "Q3",
+      "qStartDetail": "Q3 (Implementation)",
+      "priorityReasoning": "No blockers; Foundation for future work; Quick wins"
+    },
+    {
+      "rank": 7,
+      "project": "OP-002: OP-002 TechCo Inc Operations Knowledge Management: Problem Analysis & Solution Framework",
+      "score": "33.1",
+      "tier": "TIER 0: FOUNDATION",
+      "status": "proposed",
+      "value": "TBD",
+      "roi": "TBD",
+      "targetKPIs": "TBD",
+      "dependencies": "None",
+      "qStart": "Q2",
+      "qStartDetail": "Q2 (Implementation)",
+      "priorityReasoning": "No blockers; Foundation for future work; Quick wins"
+    }
+  ],
+  "metadata": {
+    "totalProjects": 7,
+    "tiers": {
+      "foundation": 7,
+      "revenue": 0,
+      "retention": 0
+    },
+    "status": {
+      "committed": 3,
+      "inProgress": 0,
+      "proposed": 4
+    },
+    "generatedAt": "2026-01-28T19:10:24.001Z",
+    "quarter": "Q1",
+    "projectCount": 7,
+    "version": "2026-Q1",
+    "narrativeType": "NEW_PLAN"
+  }
+}

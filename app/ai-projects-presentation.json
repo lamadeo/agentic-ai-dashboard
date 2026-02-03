@@ -1,0 +1,419 @@
+{
+  "slides": {
+    "slide1": {
+      "type": "title",
+      "title": "2026 Annual Plan",
+      "subtitle": "Data-Driven, Agile AI Strategy",
+      "presenter": "Chris Murphy, CEO",
+      "date": "January 16, 2026"
+    },
+    "slide2": {
+      "type": "executive_summary",
+      "title": "Executive Summary",
+      "bluf": {
+        "headline": "7 AI projects prioritized for 2026 delivery",
+        "impact": "$26.4M total annual value",
+        "approach": "Hybrid scoring (Multi-Factor + ROI) with capacity constraints"
+      },
+      "keyPoints": [
+        "Q1: 3 committed projects (72 eng-days, fully allocated)",
+        "Q2-Q4: 4 potential projects (capacity-dependent)",
+        "Average priority score: 55.3/100 (strong strategic alignment)",
+        "7 foundation projects enable future revenue streams"
+      ],
+      "recommendations": [
+        "Approve Q1 committed roadmap",
+        "Monitor Q2 capacity for Data Engineer hire impact",
+        "Re-evaluate deferred projects in Q4 2026 planning cycle"
+      ]
+    },
+    "slide3": {
+      "type": "strategic_context",
+      "title": "Strategic Context: Why These Projects",
+      "strategicFramework": {
+        "pillars": [
+          {
+            "name": "Intelligent",
+            "projectCount": 2,
+            "description": "AI-powered automation and insights"
+          }
+        ],
+        "drivers": [
+          {
+            "name": "Win",
+            "projectCount": 7,
+            "description": "Drives new customer acquisition"
+          },
+          {
+            "name": "Retain",
+            "projectCount": 7,
+            "description": "Reduces churn, increases NRR"
+          },
+          {
+            "name": "Innovate",
+            "projectCount": 7,
+            "description": "Future platform capabilities"
+          }
+        ]
+      },
+      "narrative": [
+        "All projects align to TechCo Inc Strategic Framework",
+        "Foundation (TIER 0) projects establish platform capabilities",
+        "Revenue (TIER 1) projects drive direct sales impact",
+        "Retention (TIER 2) projects reduce churn and increase NRR",
+        "Hybrid scoring balances strategic value with financial ROI"
+      ]
+    },
+    "slide4": {
+      "type": "portfolio_overview",
+      "title": "Portfolio Overview: All Projects",
+      "summary": {
+        "total": 7,
+        "byTier": {
+          "foundation": 7,
+          "revenue": 0,
+          "retention": 0
+        },
+        "byStatus": {
+          "committed": 3,
+          "inProgress": 0,
+          "proposed": 4
+        }
+      },
+      "topProjects": [
+        {
+          "rank": 1,
+          "id": "OP-005",
+          "name": "OP-005 Lead Generation Agentic Intelligence - Correction & Portfolio Re-Prioritization",
+          "score": "84.1",
+          "value": "$17.93M",
+          "qStart": "Q2"
+        },
+        {
+          "rank": 2,
+          "id": "OP-008",
+          "name": "OP-008 Law2Engine AI Project Analysis",
+          "score": "75.0",
+          "value": "$1.60M",
+          "qStart": "Q1"
+        },
+        {
+          "rank": 3,
+          "id": "OP-014",
+          "name": "OP-014",
+          "score": "55.6",
+          "value": "$1.85M",
+          "qStart": "Q2"
+        },
+        {
+          "rank": 4,
+          "id": "OP-000",
+          "name": "OP-000",
+          "score": "54.1",
+          "value": "$5.06M",
+          "qStart": "Q1"
+        },
+        {
+          "rank": 5,
+          "id": "OP-011",
+          "name": "Claude Code Marketplace - FY2026 Project Analysis & Engineering Integration Strategy",
+          "score": "50.8",
+          "value": "$0.00M",
+          "qStart": "Q1"
+        }
+      ],
+      "callout": "See Appendix for full portfolio table with 11 columns"
+    },
+    "slide5": {
+      "type": "q1_roadmap",
+      "title": "Q1 2026 Committed Roadmap",
+      "status": "COMMITTED",
+      "capacity": {
+        "allocated": 72,
+        "total": 72,
+        "utilization": "100%"
+      },
+      "projects": [
+        {
+          "id": "OP-000",
+          "name": "OP-000",
+          "score": "54.1",
+          "phases": [],
+          "value": "$5.06M"
+        },
+        {
+          "id": "OP-011",
+          "name": "Claude Code Marketplace - FY2026 Project Analysis & Engineering Integration Strategy",
+          "score": "50.8",
+          "phases": [],
+          "value": "$0.00M"
+        },
+        {
+          "id": "OP-008",
+          "name": "OP-008 Law2Engine AI Project Analysis",
+          "score": "75.0",
+          "phases": [],
+          "value": "$1.60M"
+        }
+      ],
+      "keyMilestones": [
+        "Claude Enterprise Phase 1 expansion complete",
+        "Leave Planning Tool V1 delivery (Forever Code)",
+        "Case Management enhancements (Forever Code)",
+        "Marketplace Phase 2 launch",
+        "Law2Engine GA preparation"
+      ],
+      "constraints": [
+        "80% of engineering capacity committed to Hypergrowth (OP-012, OP-013)",
+        "Only 20% available for AI strategy projects",
+        "No buffer capacity - fully allocated quarter"
+      ]
+    },
+    "slide6": {
+      "type": "q2q4_roadmap",
+      "title": "Q2-Q4 2026 Potential Roadmap",
+      "status": "CAPACITY-DEPENDENT",
+      "roadmap": [
+        {
+          "quarter": "Q2",
+          "status": "POTENTIAL",
+          "capacity": {
+            "allocated": 130,
+            "total": 144,
+            "buffer": 14,
+            "utilization": "90%"
+          },
+          "projectCount": 3,
+          "projects": [
+            {
+              "id": "OP-005",
+              "name": "OP-005 Lead Generation Agentic Intelligence - Correction & Portfolio Re-Prioritization",
+              "score": "84.1"
+            },
+            {
+              "id": "OP-014",
+              "name": "OP-014: Operational Data Foundation - Strategic Analysis (V5 Product-Driven Framework)",
+              "score": "55.6"
+            },
+            {
+              "id": "OP-002",
+              "name": "OP-002 TechCo Inc Operations Knowledge Management: Problem Analysis & Solution Framework",
+              "score": "33.1"
+            }
+          ]
+        },
+        {
+          "quarter": "Q3",
+          "status": "POTENTIAL",
+          "capacity": {
+            "allocated": 180,
+            "total": 288,
+            "buffer": 108,
+            "utilization": "63%"
+          },
+          "projectCount": 1,
+          "projects": [
+            {
+              "id": "OP-001",
+              "name": "Executive Summary: OP-001, Sales Deal Agentic Intelligence Solution",
+              "score": "34.2"
+            }
+          ]
+        },
+        {
+          "quarter": "Q4",
+          "status": "POTENTIAL",
+          "capacity": {
+            "allocated": 0,
+            "total": 432,
+            "buffer": 432,
+            "utilization": "0%"
+          },
+          "projectCount": 0,
+          "projects": []
+        }
+      ],
+      "assumptions": [
+        "Q2: Data Engineer hire complete (+1 FTE)",
+        "Q3: Hypergrowth major milestone complete (40% capacity available)",
+        "Q4: Hypergrowth stabilized (60% capacity available)",
+        "Champion community maturity increases available capacity"
+      ],
+      "risks": [
+        "Hypergrowth delays reduce available capacity",
+        "Dependency blockers may shift schedule",
+        "Champion recruitment slower than projected"
+      ]
+    },
+    "slide7": {
+      "type": "resource_model",
+      "title": "Resource Capacity Model",
+      "capacityChart": [
+        {
+          "quarter": "Q1",
+          "core": 72,
+          "champion": 0,
+          "total": 72,
+          "allocated": 72,
+          "buffer": 0,
+          "notes": "80% committed to Hypergrowth (OP-012 Leave Planning, OP-013 Case Management)"
+        },
+        {
+          "quarter": "Q2",
+          "core": 84,
+          "champion": 60,
+          "total": 144,
+          "allocated": 130,
+          "buffer": 14,
+          "notes": "Champion model starting to mature"
+        },
+        {
+          "quarter": "Q3",
+          "core": 168,
+          "champion": 120,
+          "total": 288,
+          "allocated": 180,
+          "buffer": 108,
+          "notes": "Hypergrowth major milestone complete, more capacity available"
+        },
+        {
+          "quarter": "Q4",
+          "core": 252,
+          "champion": 180,
+          "total": 432,
+          "allocated": 0,
+          "buffer": 432,
+          "notes": "Hypergrowth stabilized, maximum capacity"
+        }
+      ],
+      "assumptions": {
+        "teamSize": "6 engineers (Q1) → 7 engineers (Q2+)",
+        "corePctAvailable": {
+          "Q1": "20% (Hypergrowth consumes 80%)",
+          "Q2": "20% (Hypergrowth still dominant)",
+          "Q3": "40% (Major milestone complete)",
+          "Q4": "60% (Hypergrowth stabilized)"
+        },
+        "championModel": {
+          "Q1": "Not yet available",
+          "Q2": "Starting to mature (60 days)",
+          "Q3": "Established community (120 days)",
+          "Q4": "Mature community (180 days)"
+        }
+      },
+      "insights": [
+        "Q1 fully allocated - no buffer capacity",
+        "Q2-Q4 maintain 10-25% buffer for unknowns",
+        "Champion model significantly expands capacity by Q4",
+        "Data Engineer hire (Q2) adds ~14 days/quarter core capacity"
+      ]
+    },
+    "slide8": {
+      "type": "dependencies_risks",
+      "title": "Key Dependencies & Risks",
+      "dependencies": {
+        "hardCount": 0,
+        "blockingProjects": [],
+        "callout": "No hard dependencies detected - projects can proceed independently"
+      },
+      "risks": [
+        {
+          "risk": "Hypergrowth delays",
+          "impact": "Reduces Q2-Q4 available capacity",
+          "mitigation": "Monthly capacity re-evaluation, flexible scheduling"
+        },
+        {
+          "risk": "Data Engineer hire delays",
+          "impact": "Q2 capacity reduced from 144 to 130 days",
+          "mitigation": "Accelerate recruiting, consider contractor backfill"
+        },
+        {
+          "risk": "Champion recruitment slower than projected",
+          "impact": "Q3-Q4 capacity 20-30% lower than plan",
+          "mitigation": "Core team fallback, adjust project scope"
+        },
+        {
+          "risk": "Scope creep on committed projects",
+          "impact": "Zero buffer in Q1 means no capacity for unplanned work",
+          "mitigation": "Strict scope control, executive escalation for changes"
+        }
+      ],
+      "deferredProjects": {
+        "count": 0,
+        "reason": "All projects fit within 2026 capacity constraints",
+        "examples": []
+      }
+    },
+    "slide9": {
+      "type": "recommendations",
+      "title": "Recommendations & Next Steps",
+      "immediate": [
+        {
+          "action": "Approve Q1 committed roadmap",
+          "owner": "CEO",
+          "timeline": "This meeting",
+          "rationale": "3 projects, fully allocated capacity, no flexibility"
+        },
+        {
+          "action": "Lock Q1 scope - no additions",
+          "owner": "Engineering Leadership",
+          "timeline": "Immediate",
+          "rationale": "Zero buffer capacity means any additions cause delays"
+        },
+        {
+          "action": "Accelerate Data Engineer hiring",
+          "owner": "Talent/Engineering",
+          "timeline": "Complete by end of Q1",
+          "rationale": "Q2 capacity depends on +1 FTE by April 1"
+        }
+      ],
+      "nearTerm": [
+        {
+          "action": "Establish monthly capacity reviews",
+          "owner": "COO/CTO",
+          "timeline": "Starting February",
+          "rationale": "Q2-Q4 roadmap capacity-dependent, needs continuous monitoring"
+        },
+        {
+          "action": "Launch champion recruitment program",
+          "owner": "Product/Engineering",
+          "timeline": "Q1 2026",
+          "rationale": "Q3-Q4 capacity assumes mature champion community"
+        },
+        {
+          "action": "Validate project ROI assumptions",
+          "owner": "Finance/Product",
+          "timeline": "End of Q1",
+          "rationale": "Update hybrid scoring weights as actual data becomes available"
+        }
+      ],
+      "longTerm": [
+        {
+          "action": "Re-evaluate 0 deferred projects",
+          "owner": "Product/Strategy",
+          "timeline": "Q4 2026",
+          "rationale": "Confirm all projects remain strategically relevant"
+        },
+        {
+          "action": "Assess champion model effectiveness",
+          "owner": "Product/Engineering",
+          "timeline": "End of Q2, Q3",
+          "rationale": "Validate capacity assumptions, adjust model if needed"
+        }
+      ],
+      "financialImpact": {
+        "total": "$26.4M total annual value",
+        "avgROI": "1565%",
+        "note": "Financial estimates subject to validation as projects progress"
+      }
+    }
+  },
+  "metadata": {
+    "totalSlides": 9,
+    "generatedAt": "2026-01-16T16:31:42.381Z",
+    "version": "2026-Q1",
+    "quarter": "Q1",
+    "projectCount": 7,
+    "narrativeType": "NEW_PLAN"
+  }
+}

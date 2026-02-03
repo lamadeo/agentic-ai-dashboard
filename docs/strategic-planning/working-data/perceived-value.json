@@ -1,0 +1,262 @@
+{
+  "Claude Enterprise": {
+    "score": 85,
+    "totalFeedback": 20,
+    "sentimentBreakdown": {
+      "positive": 15,
+      "neutral": 4,
+      "negative": 1
+    },
+    "themes": [
+      "launch_announcement",
+      "immediate_success",
+      "risk_assessment",
+      "sales_research",
+      "team_disparity",
+      "jira_analytics",
+      "spreadsheet_analysis",
+      "enterprise_search",
+      "rate_limits",
+      "test_migration",
+      "feature_development",
+      "comparison",
+      "low_adoption_metrics",
+      "metrics_undercounting",
+      "multi_source_task",
+      "dashboard_launch",
+      "content_creation",
+      "api_workflow",
+      "capacity_limits",
+      "rollout_status"
+    ],
+    "topImpacts": [
+      {
+        "task": "risk_assessment",
+        "reduction": "92%",
+        "source": "Roger Hampton"
+      },
+      {
+        "task": "sales_research",
+        "reduction": "N/A",
+        "source": "Lucas Melgaard"
+      },
+      {
+        "task": "jira_analytics",
+        "reduction": "98%",
+        "source": "Roger Hampton"
+      },
+      {
+        "task": "spreadsheet_analysis",
+        "reduction": "87.5%",
+        "source": "Deedra Wetherholt"
+      },
+      {
+        "task": "test_migration",
+        "reduction": "N/A",
+        "source": "Devin Wagner"
+      }
+    ],
+    "challenges": [
+      "Power user blocked by Standard seat limits"
+    ],
+    "quotes": [
+      {
+        "text": "Risk assessment in <5 minutes. Previous with GitHub Copilot + Atlassian MCP took ~1 hour in VS Code",
+        "author": "Roger Hampton",
+        "context": "risk_assessment",
+        "impact": {
+          "before": "60 min",
+          "after": "5 min",
+          "reduction": "92%"
+        }
+      },
+      {
+        "text": "Claude Enterprise upgrade with expanded limits, SSO, connected intelligence across Slack, M365, Asana, Jira, Confluence, Figma, HubSpot",
+        "author": "Luis Amadeo",
+        "context": "launch_announcement"
+      },
+      {
+        "text": "Got rate limited before 10am. Shows Standard seat, need upgrade for Claude Code",
+        "author": "Roger Hampton",
+        "context": "rate_limits",
+        "type": "challenge"
+      }
+    ],
+    "trend": "declining"
+  },
+  "Claude Code": {
+    "score": 94,
+    "totalFeedback": 9,
+    "sentimentBreakdown": {
+      "positive": 8,
+      "neutral": 1,
+      "negative": 0
+    },
+    "themes": [
+      "tool_preference",
+      "tool_comparison",
+      "rate_limits",
+      "ide_integration_preference",
+      "capacity_limits",
+      "rollout_status",
+      "premium_announcement",
+      "autonomous_solving",
+      "productivity_validation"
+    ],
+    "topImpacts": [],
+    "challenges": [],
+    "quotes": [
+      {
+        "text": "once I started using claude code I found that I was using the IDE less and less .. now VS Code seems sufficient",
+        "author": "Yassel Piloto",
+        "context": "tool_preference"
+      }
+    ],
+    "trend": "improving"
+  },
+  "GitHub Copilot": {
+    "score": 33,
+    "totalFeedback": 6,
+    "sentimentBreakdown": {
+      "positive": 2,
+      "neutral": 0,
+      "negative": 4
+    },
+    "themes": [
+      "immediate_success",
+      "risk_assessment",
+      "comparison",
+      "ide_integration_preference",
+      "roi_financial",
+      "premium_announcement"
+    ],
+    "topImpacts": [
+      {
+        "task": "risk_assessment",
+        "reduction": "92%",
+        "source": "Roger Hampton"
+      }
+    ],
+    "challenges": [
+      "Claude connected to Atlassian made SDDs really easy. Grab info from Confluence PRDs and Jira Spikes.",
+      "Risk assessment in <5 minutes. Previous with GitHub Copilot + Atlassian MCP took ~1 hour in VS Code",
+      "Previously used Copilot in Visual Studio/VS Code. Much more hand holding required. Claude at least 1"
+    ],
+    "quotes": [
+      {
+        "text": "Want Claude Code for editor integration. Still using Copilot regularly because it's easier when integrated",
+        "author": "Taran Pierce",
+        "context": "ide_integration_preference"
+      },
+      {
+        "text": "Claude connected to Atlassian made SDDs really easy. Grab info from Confluence PRDs and Jira Spikes. I prefer Claude over GitHub-Copilot",
+        "author": "Roger Hampton",
+        "context": "immediate_success",
+        "type": "challenge"
+      }
+    ],
+    "trend": "improving"
+  },
+  "M365 Copilot": {
+    "score": 38,
+    "totalFeedback": 8,
+    "sentimentBreakdown": {
+      "positive": 2,
+      "neutral": 2,
+      "negative": 4
+    },
+    "themes": [
+      "launch_announcement",
+      "sales_research",
+      "team_disparity",
+      "spreadsheet_analysis",
+      "multi_source_task",
+      "content_creation",
+      "roi_financial",
+      "rollout_status"
+    ],
+    "topImpacts": [
+      {
+        "task": "sales_research",
+        "reduction": "N/A",
+        "source": "Lucas Melgaard"
+      },
+      {
+        "task": "spreadsheet_analysis",
+        "reduction": "87.5%",
+        "source": "Deedra Wetherholt"
+      },
+      {
+        "task": "content_creation",
+        "reduction": "N/A",
+        "source": "Nicole Perkins"
+      }
+    ],
+    "challenges": [
+      "Claude research-heavy pre-call prep: 15+ min manual or 5+ min Copilot → seconds with better quality.",
+      "Tool fragmentation blocking collaboration",
+      "Asked Claude to go through slack, outlook, outreach, sharepoint and create Eisenhower Matrix for 30 "
+    ],
+    "quotes": [
+      {
+        "text": "Project completion: full day → 1 hour. Created Excel with analysis, suggestions, refinements, scenario testing",
+        "author": "Deedra Wetherholt",
+        "context": "spreadsheet_analysis",
+        "impact": {
+          "before": "8 hours",
+          "after": "1 hour",
+          "reduction": "87.5%"
+        }
+      },
+      {
+        "text": "M365 + GitHub Copilot sunset covers partial costs. NET value positive - high ROI multiple. Need 2 FTE avoidance in 2026 OR find more tool replacements. Real value: time savings + better outcomes",
+        "author": "Luis Amadeo",
+        "context": "roi_financial"
+      },
+      {
+        "text": "Claude research-heavy pre-call prep: 15+ min manual or 5+ min Copilot → seconds with better quality. More human and conversational",
+        "author": "Lucas Melgaard",
+        "context": "sales_research",
+        "type": "challenge"
+      }
+    ],
+    "trend": "stable"
+  },
+  "ChatGPT": {
+    "score": 50,
+    "totalFeedback": 2,
+    "sentimentBreakdown": {
+      "positive": 1,
+      "neutral": 0,
+      "negative": 1
+    },
+    "themes": [
+      "model_improvement",
+      "content_creation"
+    ],
+    "topImpacts": [
+      {
+        "task": "content_creation",
+        "reduction": "N/A",
+        "source": "Nicole Perkins"
+      }
+    ],
+    "challenges": [
+      "Complete on-brand job aide in ~10 minutes. Couldn't get to with ChatGPT or Copilot without heavy rew"
+    ],
+    "quotes": [
+      {
+        "text": "switched to gpt-5.1-chat-latest and it works soooooo much better now!!",
+        "author": "Yassel Piloto",
+        "context": "model_improvement"
+      },
+      {
+        "text": "Complete on-brand job aide in ~10 minutes. Couldn't get to with ChatGPT or Copilot without heavy rework",
+        "author": "Nicole Perkins",
+        "context": "content_creation",
+        "type": "challenge"
+      }
+    ],
+    "trend": "insufficient_data"
+  }
+}

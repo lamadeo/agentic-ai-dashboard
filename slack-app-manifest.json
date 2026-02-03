@@ -1,0 +1,33 @@
+{
+  "_metadata": {
+    "major_version": 1,
+    "minor_version": 1
+  },
+  "display_information": {
+    "name": "AI Tools Sentiment Analyzer",
+    "description": "Analyzes team feedback about AI tools from Slack channels",
+    "background_color": "#4A154B",
+    "long_description": "This bot reads messages from designated Slack channels to analyze sentiment about AI tools (Claude Enterprise, Claude Code, M365 Copilot, GitHub Copilot). It helps leadership make data-driven decisions by extracting themes, identifying pain points, and calculating perceived value scores. The bot is read-only and never posts messages."
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "AI Sentiment Bot",
+      "always_online": false
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "channels:history",
+        "channels:read",
+        "users:read",
+        "users:read.email"
+      ]
+    }
+  },
+  "settings": {
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": false,
+    "token_rotation_enabled": false
+  }
+}

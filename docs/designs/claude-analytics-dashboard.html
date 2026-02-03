@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Usage Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+    <div id="app" class="p-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">Claude Usage Analytics Dashboard</h1>
+                <p id="dateRangeSubtitle" class="text-sm text-gray-600 mt-1 hidden"></p>
+            </div>
+            <button id="generatePdfBtn" onclick="downloadHTMLReport()" class="hidden bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Download Report
+            </button>
+        </div>
+        
+        <div id="file-upload" class="bg-white p-8 rounded-lg shadow mb-6">
+            <label class="block mb-4 text-lg font-medium">Upload audit_logs CSV file</label>
+            <input type="file" id="csvInput" accept=".csv" class="block w-full text-sm text-gray-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-blue-50 file:text-blue-700
+                hover:file:bg-blue-100
+            "/>
+        </div>
+
+        <div id="loading" class="hidden text-center py-8">
+            <div class="text-lg">Processing audit logs...</div>
+        </div>
+
+        <div id="error" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+            <h2 class="text-lg font-semibold text-red-800 mb-2">Error</h2>
+            <p id="error-message" class="text-red-600"></p>
+        </div>
+
+        <div id="dashboard" class="hidden">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Total Users</h3>
+                    <div id="totalUsers" class="text-2xl font-bold">0</div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Total Conversations</h3>
+                    <div id="totalConversations" class="text-2xl font-bold">0</div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Total Projects</h3>
+                    <div id="totalProjects" class="text-2xl font-bold">0</div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Total Artifacts</h3>
+                    <div id="totalArtifacts" class="text-2xl font-bold">0</div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-6">
+                <div class="border-b border-gray-200 bg-white rounded-t-lg">
+                    <nav class="flex space-x-4 px-4 overflow-x-auto">
+                        <button onclick="showTab('overview')" id="tab-overview" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600">Overview</button>
+                        <button onclick="showTab('conversations')" id="tab-conversations" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500">Conversations</button>
+                        <button onclick="showTab('projects')" id="tab-projects" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500">Projects</button>
+                        <button onclick="showTab('artifacts')" id="tab-artifacts" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500">Artifacts</button>
+                        <button onclick="showTab('engagement')" id="tab-engagement" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500">Engagement</button>
+                        <button onclick="showTab('all-users')" id="tab-all-users" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500">All Users</button>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="content-overview" class="tab-content">
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <h3 class="text-lg font-semibold mb-4">Daily Active Users</h3>
+                    <canvas id="dailyUsersChart"></canvas>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">% of Users with 1+ Conversations Over Time</h3>
+                    <canvas id="userEngagementPercentChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Conversations Tab -->
+            <div id="content-conversations" class="tab-content hidden">
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Last 7 Days</h3>
+                            <div id="conversations7d" class="text-3xl font-bold text-blue-600">0</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Last 30 Days</h3>
+                            <div id="conversations30d" class="text-3xl font-bold text-blue-600">0</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">All Time</h3>
+                            <div id="conversationsAll" class="text-3xl font-bold text-blue-600">0</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Average per User</h3>
+                            <div id="avgConversations" class="text-2xl font-bold">0</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Median per User</h3>
+                            <div id="medianConversations" class="text-2xl font-bold">0</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-4">Daily Conversations</h3>
+                        <canvas id="dailyConversationsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Tab -->
+            <div id="content-projects" class="tab-content hidden">
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Total Projects Created</h3>
+                            <div id="totalProjectsCreated" class="text-2xl font-bold">0</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Avg Projects per User</h3>
+                            <div id="avgProjects" class="text-2xl font-bold">0</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h3 class="text-lg font-semibold mb-4">Daily Projects Created (All Users)</h3>
+                        <canvas id="dailyProjectsChart"></canvas>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h3 class="text-lg font-semibold mb-4">Daily Projects per Active User</h3>
+                        <canvas id="dailyProjectsPerUserChart"></canvas>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-4">% of Users with 1+ Projects Over Time</h3>
+                        <canvas id="projectUserPercentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artifacts Tab -->
+            <div id="content-artifacts" class="tab-content hidden">
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Total Artifacts Created</h3>
+                            <div id="totalArtifactsCreated" class="text-2xl font-bold">0</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-sm font-medium text-gray-600 mb-2">Avg Artifacts per User</h3>
+                            <div id="avgArtifacts" class="text-2xl font-bold">0</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h3 class="text-lg font-semibold mb-4">Daily Artifacts Created (All Users)</h3>
+                        <canvas id="dailyArtifactsChart"></canvas>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h3 class="text-lg font-semibold mb-4">Daily Artifacts per Active User</h3>
+                        <canvas id="dailyArtifactsPerUserChart"></canvas>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-4">% of Users with 1+ Artifacts Over Time</h3>
+                        <canvas id="artifactUserPercentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engagement Tab -->
+            <div id="content-engagement" class="tab-content hidden">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-4">🏆 Top Performers</h3>
+                        <div class="overflow-x-auto">
+                            <table id="topPerformersTable" class="w-full text-sm text-left text-gray-700">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3">Rank</th>
+                                        <th class="px-6 py-3">User</th>
+                                        <th class="px-6 py-3">Conversations</th>
+                                        <th class="px-6 py-3">Projects</th>
+                                        <th class="px-6 py-3">Artifacts</th>
+                                        <th class="px-6 py-3">Last Seen</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-4">User Engagement Distribution</h3>
+                        <div style="height: 400px;">
+                            <canvas id="engagementChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div id="needsEncouragementSection" class="bg-white p-6 rounded-lg shadow hidden">
+                        <h3 class="text-lg font-semibold mb-4">📉 Needs Encouragement (<span id="needsEncouragementCount">0</span> users)</h3>
+                        <p class="text-sm text-gray-600 mb-4">Users with 2 or fewer conversations</p>
+                        <div class="overflow-x-auto">
+                            <table id="needsEncouragementTable" class="w-full text-sm text-left text-gray-700">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3">User</th>
+                                        <th class="px-6 py-3">Email</th>
+                                        <th class="px-6 py-3">Conversations</th>
+                                        <th class="px-6 py-3">Last Seen</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Users Tab -->
+            <div id="content-all-users" class="tab-content hidden">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">All Users - Complete List (<span id="allUsersCount">0</span> users)</h3>
+                    <div class="overflow-x-auto">
+                        <table id="allUsersTable" class="w-full text-sm text-left text-gray-700">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortAllUsersTable(0)">User ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortAllUsersTable(1)">Email ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortAllUsersTable(2)">Conversations ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortAllUsersTable(3)">Projects ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortAllUsersTable(4)">Artifacts ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortAllUsersTable(5)">Last Seen ↕</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentData = null;
+        let currentUserMetrics = null;
+        let currentDailyMetrics = null;
+        let currentCumulativeData = null;
+        let charts = {};
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('border-blue-500', 'text-blue-600');
+                btn.classList.add('border-transparent', 'text-gray-500');
+            });
+            document.getElementById('tab-' + tabName).classList.remove('border-transparent', 'text-gray-500');
+            document.getElementById('tab-' + tabName).classList.add('border-blue-500', 'text-blue-600');
+
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+        }
+
+        function sortAllUsersTable(columnIndex) {
+            const table = document.getElementById('allUsersTable');
+            const tbody = table.getElementsByTagName('tbody')[0];
+            const rows = Array.from(tbody.getElementsByTagName('tr'));
+            
+            rows.sort((a, b) => {
+                let aVal = a.getElementsByTagName('td')[columnIndex].textContent;
+                let bVal = b.getElementsByTagName('td')[columnIndex].textContent;
+                
+                if (!isNaN(aVal) && !isNaN(bVal)) {
+                    return parseInt(bVal) - parseInt(aVal);
+                }
+                return aVal.localeCompare(bVal);
+            });
+            
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        function downloadHTMLReport() {
+            try {
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                const filename = `Claude_Usage_Report_${now.toISOString().split('T')[0]}.html`;
+                
+                // Get the date range from the data
+                const dateRangeText = window.reportDateRange || 'Date Range Not Available';
+
+                // Get chart images
+                const dailyUsersImg = document.getElementById('dailyUsersChart').toDataURL('image/png', 1.0);
+                const userEngagementImg = document.getElementById('userEngagementPercentChart').toDataURL('image/png', 1.0);
+                const dailyConvImg = document.getElementById('dailyConversationsChart').toDataURL('image/png', 1.0);
+                const dailyProjectsImg = document.getElementById('dailyProjectsChart').toDataURL('image/png', 1.0);
+                const projectsPerUserImg = document.getElementById('dailyProjectsPerUserChart').toDataURL('image/png', 1.0);
+                const projectPercentImg = document.getElementById('projectUserPercentChart').toDataURL('image/png', 1.0);
+                const dailyArtifactsImg = document.getElementById('dailyArtifactsChart').toDataURL('image/png', 1.0);
+                const artifactsPerUserImg = document.getElementById('dailyArtifactsPerUserChart').toDataURL('image/png', 1.0);
+                const artifactPercentImg = document.getElementById('artifactUserPercentChart').toDataURL('image/png', 1.0);
+                const engagementImg = document.getElementById('engagementChart').toDataURL('image/png', 1.0);
+
+                // Get metrics
+                const metrics = {
+                    totalUsers: document.getElementById('totalUsers').textContent,
+                    totalConversations: document.getElementById('totalConversations').textContent,
+                    totalProjects: document.getElementById('totalProjects').textContent,
+                    totalArtifacts: document.getElementById('totalArtifacts').textContent,
+                    conv7d: document.getElementById('conversations7d').textContent,
+                    conv30d: document.getElementById('conversations30d').textContent,
+                    avgConv: document.getElementById('avgConversations').textContent,
+                    avgProj: document.getElementById('avgProjects').textContent,
+                    avgArt: document.getElementById('avgArtifacts').textContent
+                };
+
+                // Get top performers
+                const topTable = document.getElementById('topPerformersTable');
+                const topRows = Array.from(topTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr'));
+                let topPerformersHTML = topRows.map(row => {
+                    const cells = Array.from(row.getElementsByTagName('td'));
+                    return `<tr style="border: 1px solid #e5e7eb;">
+                        ${cells.map(cell => `<td style="padding: 10px; border: 1px solid #e5e7eb;">${cell.textContent}</td>`).join('')}
+                    </tr>`;
+                }).join('');
+
+                // Get all users
+                const allUsersTable = document.getElementById('allUsersTable');
+                const allUsersRows = Array.from(allUsersTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr'));
+                let allUsersHTML = allUsersRows.map(row => {
+                    const cells = Array.from(row.getElementsByTagName('td'));
+                    return `<tr style="border: 1px solid #e5e7eb;">
+                        ${cells.map(cell => `<td style="padding: 8px; border: 1px solid #e5e7eb; font-size: 10pt;">${cell.textContent}</td>`).join('')}
+                    </tr>`;
+                }).join('');
+
+                const reportHTML = `<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Claude Usage Analytics Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 30px; background: white; max-width: 1000px; margin-left: auto; margin-right: auto; }
+h1 { text-align: center; color: #1f2937; font-size: 28px; margin-bottom: 8px; }
+.subtitle { text-align: center; color: #6b7280; margin-bottom: 40px; }
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+.metric-card { border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; }
+.metric-label { font-size: 12px; color: #6b7280; margin-bottom: 8px; }
+.metric-value { font-size: 28px; font-weight: bold; color: #1f2937; }
+.section { margin-bottom: 40px; }
+h2 { font-size: 20px; font-weight: bold; margin-bottom: 16px; color: #1f2937; }
+img { max-width: 100%; margin-bottom: 30px; border: 1px solid #e5e7eb; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 10pt; }
+@media print { .no-print { display: none !important; } @page { margin: 0.5in; } }
+.print-btn { background: #3b82f6; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+</style></head><body>
+<div class="no-print" style="text-align: center; margin-bottom: 30px;">
+<button onclick="window.print()" class="print-btn">🖨️ Print / Save as PDF</button>
+</div>
+<h1>Claude Usage Analytics Report</h1>
+<p class="subtitle">${dateRangeText}<br>Report Generated: ${dateStr}</p>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-label">Total Users</div><div class="metric-value">${metrics.totalUsers}</div></div>
+<div class="metric-card"><div class="metric-label">Total Conversations</div><div class="metric-value">${metrics.totalConversations}</div></div>
+<div class="metric-card"><div class="metric-label">Total Projects</div><div class="metric-value">${metrics.totalProjects}</div></div>
+<div class="metric-card"><div class="metric-label">Total Artifacts</div><div class="metric-value">${metrics.totalArtifacts}</div></div>
+</div>
+<div class="section" style="page-break-after: always;">
+<h2>Daily Active Users</h2><img src="${dailyUsersImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>% Users with 1+ Conversations Over Time</h2><img src="${userEngagementImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>Daily Conversations</h2><img src="${dailyConvImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>Daily Projects Created</h2><img src="${dailyProjectsImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>Daily Projects per User</h2><img src="${projectsPerUserImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>% Users with 1+ Projects Over Time</h2><img src="${projectPercentImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>Daily Artifacts Created</h2><img src="${dailyArtifactsImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>Daily Artifacts per User</h2><img src="${artifactsPerUserImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>% Users with 1+ Artifacts Over Time</h2><img src="${artifactPercentImg}" /></div>
+<div class="section" style="page-break-after: always;">
+<h2>Top 10 Performers</h2>
+<table style="border: 2px solid #e5e7eb;">
+<thead><tr style="background-color: #f3f4f6;">
+<th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">Rank</th>
+<th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">User</th>
+<th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">Conversations</th>
+<th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">Projects</th>
+<th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">Artifacts</th>
+<th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">Last Seen</th>
+</tr></thead><tbody>${topPerformersHTML}</tbody></table></div>
+<div class="section" style="page-break-after: always;">
+<h2>Engagement Distribution</h2><img src="${engagementImg}" /></div>
+<div class="section">
+<h2>All Users (${metrics.totalUsers} total)</h2>
+<table style="border: 2px solid #e5e7eb;">
+<thead><tr style="background-color: #f3f4f6;">
+<th style="padding: 8px; border: 1px solid #e5e7eb; text-align: left;">User</th>
+<th style="padding: 8px; border: 1px solid #e5e7eb; text-align: left;">Email</th>
+<th style="padding: 8px; border: 1px solid #e5e7eb; text-align: center;">Conversations</th>
+<th style="padding: 8px; border: 1px solid #e5e7eb; text-align: center;">Projects</th>
+<th style="padding: 8px; border: 1px solid #e5e7eb; text-align: center;">Artifacts</th>
+<th style="padding: 8px; border: 1px solid #e5e7eb; text-align: left;">Last Seen</th>
+</tr></thead><tbody>${allUsersHTML}</tbody></table></div>
+<div class="no-print" style="text-align: center; margin-top: 60px; padding: 30px; background: #f9fafb; border-radius: 12px;">
+<button onclick="window.print()" class="print-btn">🖨️ Print / Save as PDF</button>
+</div></body></html>`;
+
+                const blob = new Blob([reportHTML], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                alert('Report downloaded! Open the HTML file and use Ctrl+P (Cmd+P) to save as PDF.');
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+
+        document.getElementById('csvInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('error').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+
+            Papa.parse(file, {
+                header: true,
+                dynamicTyping: false,
+                skipEmptyLines: 'greedy',
+                complete: function(results) {
+                    try {
+                        processData(results.data);
+                    } catch (error) {
+                        showError(error.message);
+                    }
+                },
+                error: function(error) {
+                    showError('CSV parsing failed: ' + error.message);
+                }
+            });
+        });
+
+        function showError(message) {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('error').classList.remove('hidden');
+            document.getElementById('error-message').textContent = message;
+        }
+
+        function processData(rawData) {
+            try {
+                const processedData = rawData.map(row => {
+                    try {
+                        const actorInfo = JSON.parse(row.actor_info.replace(/'/g, '"').replace(/True/g, 'true').replace(/False/g, 'false').replace(/None/g, 'null'));
+                        return {
+                            email: actorInfo?.metadata?.email_address || 'Unknown',
+                            userName: actorInfo?.name || 'Unknown',
+                            event: row.event,
+                            date: new Date(row.created_at),
+                            dateStr: new Date(row.created_at).toISOString().split('T')[0]
+                        };
+                    } catch(e) {
+                        return null;
+                    }
+                }).filter(row => row !== null && row.email !== 'Unknown');
+
+                console.log(`Processed ${processedData.length} events`);
+
+                // Calculate date range
+                const allDates = processedData.map(row => row.date);
+                const minDate = new Date(Math.min(...allDates));
+                const maxDate = new Date(Math.max(...allDates));
+                
+                const formatDate = (date) => date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric' 
+                });
+                
+                const dateRangeText = `${formatDate(minDate)} - ${formatDate(maxDate)}`;
+                document.getElementById('dateRangeSubtitle').textContent = dateRangeText;
+                document.getElementById('dateRangeSubtitle').classList.remove('hidden');
+                
+                // Store for PDF generation
+                window.reportDateRange = dateRangeText;
+
+                const userMetrics = {};
+                const dailyMetrics = {};
+                
+                processedData.forEach(row => {
+                    const email = row.email;
+                    const dateStr = row.dateStr;
+                    
+                    if (!userMetrics[email]) {
+                        userMetrics[email] = {
+                            name: row.userName,
+                            email: email,
+                            conversations: 0,
+                            projects: 0,
+                            artifacts: 0,
+                            lastSeen: row.date
+                        };
+                    }
+                    
+                    if (!dailyMetrics[dateStr]) {
+                        dailyMetrics[dateStr] = {
+                            activeUsers: new Set(),
+                            conversations: 0,
+                            projects: 0,
+                            artifacts: 0
+                        };
+                    }
+                    
+                    dailyMetrics[dateStr].activeUsers.add(email);
+                    
+                    if (row.event === 'conversation_created') {
+                        userMetrics[email].conversations++;
+                        dailyMetrics[dateStr].conversations++;
+                    }
+                    
+                    if (row.event === 'project_created') {
+                        userMetrics[email].projects++;
+                        dailyMetrics[dateStr].projects++;
+                    }
+                    
+                    if (row.event === 'project_document_created') {
+                        userMetrics[email].artifacts++;
+                        dailyMetrics[dateStr].artifacts++;
+                    }
+                    
+                    if (row.date > userMetrics[email].lastSeen) {
+                        userMetrics[email].lastSeen = row.date;
+                    }
+                });
+
+                // Calculate cumulative percentages
+                const dates = Object.keys(dailyMetrics).sort();
+                const cumulativeUsersWithConversations = new Set();
+                const cumulativeUsersWithProjects = new Set();
+                const cumulativeUsersWithArtifacts = new Set();
+                const allUsersSet = new Set();
+                
+                const cumulativeData = dates.map(date => {
+                    processedData.filter(row => row.dateStr <= date).forEach(row => {
+                        allUsersSet.add(row.email);
+                        if (row.event === 'conversation_created') cumulativeUsersWithConversations.add(row.email);
+                        if (row.event === 'project_created') cumulativeUsersWithProjects.add(row.email);
+                        if (row.event === 'project_document_created') cumulativeUsersWithArtifacts.add(row.email);
+                    });
+                    
+                    const totalUsers = allUsersSet.size;
+                    
+                    return {
+                        date: date,
+                        conversationPercent: totalUsers > 0 ? (cumulativeUsersWithConversations.size / totalUsers * 100) : 0,
+                        projectPercent: totalUsers > 0 ? (cumulativeUsersWithProjects.size / totalUsers * 100) : 0,
+                        artifactPercent: totalUsers > 0 ? (cumulativeUsersWithArtifacts.size / totalUsers * 100) : 0
+                    };
+                });
+
+                currentData = processedData;
+                currentUserMetrics = userMetrics;
+                currentDailyMetrics = dailyMetrics;
+                currentCumulativeData = cumulativeData;
+
+                renderDashboard(processedData, userMetrics, dailyMetrics, cumulativeData);
+
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                document.getElementById('generatePdfBtn').classList.remove('hidden');
+                
+            } catch (error) {
+                console.error('Processing error:', error);
+                showError('Data processing failed: ' + error.message);
+            }
+        }
+
+        function renderDashboard(data, userMetrics, dailyMetrics, cumulativeData) {
+            const users = Object.values(userMetrics);
+            const dates = Object.keys(dailyMetrics).sort();
+            
+            const totalConversations = data.filter(d => d.event === 'conversation_created').length;
+            const totalProjects = data.filter(d => d.event === 'project_created').length;
+            const totalArtifacts = data.filter(d => d.event === 'project_document_created').length;
+            
+            document.getElementById('totalUsers').textContent = users.length;
+            document.getElementById('totalConversations').textContent = totalConversations;
+            document.getElementById('totalProjects').textContent = totalProjects;
+            document.getElementById('totalArtifacts').textContent = totalArtifacts;
+            document.getElementById('totalProjectsCreated').textContent = totalProjects;
+            document.getElementById('totalArtifactsCreated').textContent = totalArtifacts;
+            document.getElementById('allUsersCount').textContent = users.length;
+
+            const now = new Date();
+            const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+            const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+            
+            document.getElementById('conversations7d').textContent = data.filter(d => d.event === 'conversation_created' && d.date >= sevenDaysAgo).length;
+            document.getElementById('conversations30d').textContent = data.filter(d => d.event === 'conversation_created' && d.date >= thirtyDaysAgo).length;
+            document.getElementById('conversationsAll').textContent = totalConversations;
+
+            const conversationCounts = users.map(u => u.conversations);
+            const projectCounts = users.map(u => u.projects);
+            const artifactCounts = users.map(u => u.artifacts);
+            
+            const avgConv = conversationCounts.length > 0 ? (conversationCounts.reduce((a, b) => a + b, 0) / conversationCounts.length).toFixed(1) : 0;
+            const avgProj = projectCounts.length > 0 ? (projectCounts.reduce((a, b) => a + b, 0) / projectCounts.length).toFixed(1) : 0;
+            const avgArt = artifactCounts.length > 0 ? (artifactCounts.reduce((a, b) => a + b, 0) / artifactCounts.length).toFixed(1) : 0;
+            
+            const sortedConv = [...conversationCounts].sort((a, b) => a - b);
+            const median = sortedConv.length > 0 ? sortedConv.length % 2 === 0 ? ((sortedConv[sortedConv.length / 2 - 1] + sortedConv[sortedConv.length / 2]) / 2).toFixed(1) : sortedConv[Math.floor(sortedConv.length / 2)] : 0;
+            
+            document.getElementById('avgConversations').textContent = avgConv;
+            document.getElementById('medianConversations').textContent = median;
+            document.getElementById('avgProjects').textContent = avgProj;
+            document.getElementById('avgArtifacts').textContent = avgArt;
+
+            // All Users table
+            const allUsersTbody = document.getElementById('allUsersTable').getElementsByTagName('tbody')[0];
+            allUsersTbody.innerHTML = '';
+            users.sort((a, b) => b.conversations - a.conversations).forEach(user => {
+                const row = allUsersTbody.insertRow();
+                row.innerHTML = `
+                    <td class="px-6 py-4">${user.name}</td>
+                    <td class="px-6 py-4">${user.email}</td>
+                    <td class="px-6 py-4">${user.conversations}</td>
+                    <td class="px-6 py-4">${user.projects}</td>
+                    <td class="px-6 py-4">${user.artifacts}</td>
+                    <td class="px-6 py-4">${user.lastSeen.toLocaleDateString()}</td>
+                `;
+                row.className = 'bg-white border-b hover:bg-gray-50';
+            });
+
+            // Render all charts
+            if (charts.dailyUsers) charts.dailyUsers.destroy();
+            charts.dailyUsers = new Chart(document.getElementById('dailyUsersChart'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Active Users',
+                        data: dates.map(d => dailyMetrics[d].activeUsers.size),
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: true } } }
+            });
+
+            if (charts.userEngagementPercent) charts.userEngagementPercent.destroy();
+            charts.userEngagementPercent = new Chart(document.getElementById('userEngagementPercentChart'), {
+                type: 'line',
+                data: {
+                    labels: cumulativeData.map(d => d.date),
+                    datasets: [{
+                        label: '% Users with 1+ Conversations',
+                        data: cumulativeData.map(d => d.conversationPercent.toFixed(1)),
+                        borderColor: 'rgb(34, 197, 94)',
+                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: true,
+                    plugins: { legend: { display: true } },
+                    scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }
+                }
+            });
+
+            if (charts.dailyConversations) charts.dailyConversations.destroy();
+            charts.dailyConversations = new Chart(document.getElementById('dailyConversationsChart'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Conversations',
+                        data: dates.map(d => dailyMetrics[d].conversations),
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: true } } }
+            });
+
+            if (charts.dailyProjects) charts.dailyProjects.destroy();
+            charts.dailyProjects = new Chart(document.getElementById('dailyProjectsChart'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Projects Created',
+                        data: dates.map(d => dailyMetrics[d].projects),
+                        borderColor: 'rgb(168, 85, 247)',
+                        backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: true } } }
+            });
+
+            if (charts.dailyProjectsPerUser) charts.dailyProjectsPerUser.destroy();
+            charts.dailyProjectsPerUser = new Chart(document.getElementById('dailyProjectsPerUserChart'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Projects per Active User',
+                        data: dates.map(d => {
+                            const activeUsers = dailyMetrics[d].activeUsers.size;
+                            return activeUsers > 0 ? (dailyMetrics[d].projects / activeUsers).toFixed(2) : 0;
+                        }),
+                        borderColor: 'rgb(168, 85, 247)',
+                        backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: true } }, scales: { y: { beginAtZero: true } } }
+            });
+
+            if (charts.projectUserPercent) charts.projectUserPercent.destroy();
+            charts.projectUserPercent = new Chart(document.getElementById('projectUserPercentChart'), {
+                type: 'line',
+                data: {
+                    labels: cumulativeData.map(d => d.date),
+                    datasets: [{
+                        label: '% Users with 1+ Projects',
+                        data: cumulativeData.map(d => d.projectPercent.toFixed(1)),
+                        borderColor: 'rgb(168, 85, 247)',
+                        backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: true,
+                    plugins: { legend: { display: true } },
+                    scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }
+                }
+            });
+
+            if (charts.dailyArtifacts) charts.dailyArtifacts.destroy();
+            charts.dailyArtifacts = new Chart(document.getElementById('dailyArtifactsChart'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Artifacts Created',
+                        data: dates.map(d => dailyMetrics[d].artifacts),
+                        borderColor: 'rgb(236, 72, 153)',
+                        backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: true } } }
+            });
+
+            if (charts.dailyArtifactsPerUser) charts.dailyArtifactsPerUser.destroy();
+            charts.dailyArtifactsPerUser = new Chart(document.getElementById('dailyArtifactsPerUserChart'), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Artifacts per Active User',
+                        data: dates.map(d => {
+                            const activeUsers = dailyMetrics[d].activeUsers.size;
+                            return activeUsers > 0 ? (dailyMetrics[d].artifacts / activeUsers).toFixed(2) : 0;
+                        }),
+                        borderColor: 'rgb(236, 72, 153)',
+                        backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: true } }, scales: { y: { beginAtZero: true } } }
+            });
+
+            if (charts.artifactUserPercent) charts.artifactUserPercent.destroy();
+            charts.artifactUserPercent = new Chart(document.getElementById('artifactUserPercentChart'), {
+                type: 'line',
+                data: {
+                    labels: cumulativeData.map(d => d.date),
+                    datasets: [{
+                        label: '% Users with 1+ Artifacts',
+                        data: cumulativeData.map(d => d.artifactPercent.toFixed(1)),
+                        borderColor: 'rgb(236, 72, 153)',
+                        backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: true,
+                    plugins: { legend: { display: true } },
+                    scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }
+                }
+            });
+
+            const topPerformers = users.sort((a, b) => b.conversations - a.conversations).slice(0, 10);
+            const topTbody = document.getElementById('topPerformersTable').getElementsByTagName('tbody')[0];
+            topTbody.innerHTML = '';
+            topPerformers.forEach((user, idx) => {
+                const row = topTbody.insertRow();
+                const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : (idx + 1);
+                row.innerHTML = `
+                    <td class="px-6 py-4">${medal}</td>
+                    <td class="px-6 py-4">${user.name}</td>
+                    <td class="px-6 py-4">${user.conversations}</td>
+                    <td class="px-6 py-4">${user.projects}</td>
+                    <td class="px-6 py-4">${user.artifacts}</td>
+                    <td class="px-6 py-4">${user.lastSeen.toLocaleDateString()}</td>
+                `;
+                row.className = 'bg-white border-b hover:bg-gray-50';
+            });
+
+            const ranges = {'0': 0, '1-5': 0, '6-10': 0, '11-20': 0, '21-50': 0, '50+': 0};
+            users.forEach(user => {
+                const count = user.conversations;
+                if (count === 0) ranges['0']++;
+                else if (count <= 5) ranges['1-5']++;
+                else if (count <= 10) ranges['6-10']++;
+                else if (count <= 20) ranges['11-20']++;
+                else if (count <= 50) ranges['21-50']++;
+                else ranges['50+']++;
+            });
+
+            if (charts.engagement) charts.engagement.destroy();
+            charts.engagement = new Chart(document.getElementById('engagementChart'), {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(ranges),
+                    datasets: [{ label: 'Number of Users', data: Object.values(ranges), backgroundColor: 'rgb(59, 130, 246)' }]
+                },
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true } },
+                    scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+                }
+            });
+
+            const needsEncouragement = users.filter(u => u.conversations <= 2).sort((a, b) => a.conversations - b.conversations || b.lastSeen - a.lastSeen);
+            if (needsEncouragement.length > 0) {
+                document.getElementById('needsEncouragementSection').classList.remove('hidden');
+                document.getElementById('needsEncouragementCount').textContent = needsEncouragement.length;
+                const needsTbody = document.getElementById('needsEncouragementTable').getElementsByTagName('tbody')[0];
+                needsTbody.innerHTML = '';
+                needsEncouragement.forEach(user => {
+                    const row = needsTbody.insertRow();
+                    row.innerHTML = `
+                        <td class="px-6 py-4">${user.name}</td>
+                        <td class="px-6 py-4">${user.email}</td>
+                        <td class="px-6 py-4">${user.conversations}</td>
+                        <td class="px-6 py-4">${user.lastSeen.toLocaleDateString()}</td>
+                    `;
+                    row.className = 'bg-white border-b hover:bg-gray-50';
+                });
+            }
+            
+            console.log('All charts rendered successfully');
+        }
+    </script>
+</body>
+</html>

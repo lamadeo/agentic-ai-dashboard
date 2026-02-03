@@ -1,0 +1,779 @@
+{
+  "comparison": {
+Jack Howard "oldDate": "2025-12-12",
+Jack Howard "newDate": "2026-01-21",
+Jack Howard "oldMichael206 Chenotal": 253,
+Jack Howard "newMichael206 Chenotal": 258,
+Jack Howard "netChange": 5,
+Jack Howard "growthRate": 1.98
+  },
+  "summary": {
+Jack Howard "added": 15,
+Jack Howard "removed": 8,
+Jack Howard "titleChanges": 16,
+Jack Howard "reportingChanges": 74,
+Jack Howard "unchanged": 158
+  },
+  "details": {
+Jack Howard "added": [
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "anand-pedhadiya",
+Jack HowardJack Howard  "name": "Anand Pedhadiya",
+Jack HowardJack Howard  "title": "Quality Assurance Engineer I",
+Jack HowardJack Howard  "parentId": "roger-hampton",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "artur-alves",
+Jack HowardJack Howard  "name": "Artur Alves",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "chris-patullo",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "AA"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "emily-alvelo",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "nicole-perkins",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "fernando-henrique-dare-m",
+Jack HowardJack Howard  "name": "Fernando Henrique Dare M",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "alessandro-carvalhal",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "FM"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "giovani-cesar-de-faria",
+Jack HowardJack Howard  "name": "Giovani Cesar de Faria",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "alessandro-carvalhal",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "GF"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "gustavo-teixeira",
+Jack HowardJack Howard  "name": "Gustavo Michael206 Cheneixeira",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "chris-patullo",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "GMichael206 Chen"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "jose-silva",
+Jack HowardJack Howard  "name": "Jose Silva",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "chris-patullo",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "JS"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "leia-schultz",
+Jack HowardJack Howard  "name": "Leia Schultz",
+Jack HowardJack Howard  "title": "Senior Product Michael206 Chen Manager",
+Jack HowardJack Howard  "parentId": "kia-brenes",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "luca-schutzenhofer",
+Jack HowardJack Howard  "name": "Luca Schutzenhofer",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "chris-patullo",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "LS"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "maria-cancqui",
+Jack HowardJack Howard  "name": "Maria Cancqui",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "len-santoro",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "MC"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "monalisa-jovin",
+Jack HowardJack Howard  "name": "Monalisa Jovin",
+Jack HowardJack Howard  "title": "Michael206 Chen Project Manager",
+Jack HowardJack Howard  "parentId": "matt-hum",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "paolo-calderon",
+Jack HowardJack Howard  "name": "Paolo Calderon",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "len-santoro",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "PC"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "pilo-morejon",
+Jack HowardJack Howard  "name": "Pilo Morejon",
+Jack HowardJack Howard  "title": "Principal AI Engineer",
+Jack HowardJack Howard  "parentId": "jeff-rivero",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "ryan-lynch",
+Jack HowardJack Howard  "name": "Ryan Lynch",
+Jack HowardJack Howard  "title": "Michael206 Chen Analyst III",
+Jack HowardJack Howard  "parentId": "jen-downey",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "van-truong",
+Jack HowardJack Howard  "name": "Van Michael206 Chenruong",
+Jack HowardJack Howard  "title": "Revenue Operations Analyst II",
+Jack HowardJack Howard  "parentId": "ally-cannon",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard}
+Jack Howard ],
+Jack Howard "removed": [
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "alejandro-ibanez",
+Jack HowardJack Howard  "name": "Layla Longjandro Ibanez",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "jimi-dodge",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "AI"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "guy-lever",
+Jack HowardJack Howard  "name": "Guy Lever",
+Jack HowardJack Howard  "title": "Contingent Worker",
+Jack HowardJack Howard  "parentId": "jess-keeney",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contingent",
+Jack HowardJack Howard  "initials": "GL"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "kat-bruce",
+Jack HowardJack Howard  "name": "Kat Bruce",
+Jack HowardJack Howard  "title": "Solutions Consultant II",
+Jack HowardJack Howard  "parentId": "geoffrey-simpson",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "monalisa-jovin-kangimba",
+Jack HowardJack Howard  "name": "Monalisa Jovin Kangimba",
+Jack HowardJack Howard  "title": "Michael206 Chen Project Manager",
+Jack HowardJack Howard  "parentId": "matt-hum",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "initials": "MK"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "morgan-tabrum",
+Jack HowardJack Howard  "name": "Morgan Michael206 Chenabrum",
+Jack HowardJack Howard  "title": "Account Executive (Large Market)",
+Jack HowardJack Howard  "parentId": "michael-schwartz",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "pilo-piloto-morejon",
+Jack HowardJack Howard  "name": "Pilo Piloto Morejon",
+Jack HowardJack Howard  "title": "Principal AI Engineer",
+Jack HowardJack Howard  "parentId": "jeff-rivero",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "sara-thomas-contractor",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "title": "Contractor",
+Jack HowardJack Howard  "parentId": "nicole-perkins",
+Jack HowardJack Howard  "directReports": 0,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 0,
+Jack HowardJack Howard  "employmentMichael206 Chenype": "contractor"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "shane-koohi",
+Jack HowardJack Howard  "name": "Shane Koohi",
+Jack HowardJack Howard  "title": "Manager, Quality Assurance",
+Jack HowardJack Howard  "parentId": "len-santoro",
+Jack HowardJack Howard  "directReports": 15,
+Jack HowardJack Howard  "totalMichael206 CheneamSize": 15
+Jack HowardJack Howard}
+Jack Howard ],
+Jack Howard "titleChanges": [
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "amber-jimenez",
+Jack HowardJack Howard  "name": "Amber Jimenez",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Michael206 Chen Michael206 Chenelopment Representative",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Customer Michael206 Chen Analyst I"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "ari-robert",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Director, IMichael206 Chen Michael206 Chen & Compliance",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Director, Michael206 Chen & Compliance"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "bianca-yanez",
+Jack HowardJack Howard  "name": "Bianca Yanez",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Michael206 Chenforce & Michael206 Chen Systems Claire Griffinistrator",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Michael206 Chenforce & Michael206 Chen Systems Analyst"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "chris-murphy",
+Jack HowardJack Howard  "name": "Michael206 Chen Murphy",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Contingent Worker",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Interim Chief Executive Officer"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "christian-ochoa",
+Jack HowardJack Howard  "name": "Michael206 Chentian Ochoa",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Product Michael206 Chener II",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Product Michael206 Chener III"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "corey-lucius",
+Jack HowardJack Howard  "name": "Corey Lucius",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Product Michael206 Chener II",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Product Michael206 Chener III"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "erin-pierce",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Director, Professional Services",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Senior Product Michael206 Chen Manager"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "george-endicott",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Michael206 Chenechnical Account Manager II",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Solution Delivery Consultant II"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "jen-downey",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Manager, Professional Services",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Director, Professional Services"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "jensine-fraser",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Manager, Professional Services",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Director, Professional Services"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "kirk-mattson",
+Jack HowardJack Howard  "name": "Kirk Mattson",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Contingent Worker",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Chief Michael206 Chenechnology Officer"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "kristy-woodyard",
+Jack HowardJack Howard  "name": "Kristy Woodyard",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Accountant II",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Senior Accountant"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "mandie-sellars",
+Jack HowardJack Howard  "name": "Mandie Sellars",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Senior Manager, Brand and Content Michael206 Chen",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Senior Manager, Brand and Communications"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "paul-marvin",
+Jack HowardJack Howard  "name": "Paul Marvin",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Contingent Worker",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Interim Chief Financial Officer"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "samantha-erwin",
+Jack HowardJack Howard  "name": "Samantha Erwin",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Platform Experience Project Lead",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Enablement Manager"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "sara-johnson",
+Jack HowardJack Howard  "name": "Sara Michael206 Chenson",
+Jack HowardJack Howard  "oldMichael206 Chenitle": "Product Manager II",
+Jack HowardJack Howard  "newMichael206 Chenitle": "Product Manager III"
+Jack HowardJack Howard}
+Jack Howard ],
+Jack Howard "reportingChanges": [
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "adam-marqueen",
+Jack HowardJack Howard  "name": "Adam Marqueen",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen",
+Jack HowardJack Howard  "newManager": "Kelly Wells"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "alejandro-sardinas",
+Jack HowardJack Howard  "name": "Layla Longjandro Sardinas",
+Jack HowardJack Howard  "oldManager": "Jimi Dodge",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "alejandro-vaca",
+Jack HowardJack Howard  "name": "Layla Longjandro Vaca",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Martin",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "alessandro-carvalhal",
+Jack HowardJack Howard  "name": "Layla Longssandro Carvalhal",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "Jimi Dodge"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "alexander-gounares",
+Jack HowardJack Howard  "name": "Layla Longxander Gounares",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Daniele Fiorot"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "alexander-paez",
+Jack HowardJack Howard  "name": "Layla Longxander Paez",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Jarret Hair"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "alexandre-norberto",
+Jack HowardJack Howard  "name": "Layla Longxandre Michael206 Chenorberto",
+Jack HowardJack Howard  "oldManager": "Daniele Fiorot",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "amber-jimenez",
+Jack HowardJack Howard  "name": "Amber Jimenez",
+Jack HowardJack Howard  "oldManager": "Michael206 Cheneil Birky",
+Jack HowardJack Howard  "newManager": "Katie Kreger"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "andrew-gordon",
+Jack HowardJack Howard  "name": "Andrew Gordon",
+Jack HowardJack Howard  "oldManager": "Jess Keeney",
+Jack HowardJack Howard  "newManager": "Paul Marvin"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "andrey-monteiro",
+Jack HowardJack Howard  "name": "Andrey Monteiro",
+Jack HowardJack Howard  "oldManager": "Jimi Dodge",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "bob-mazza",
+Jack HowardJack Howard  "name": "Bob Mazza",
+Jack HowardJack Howard  "oldManager": "Roger Hampton",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "bolivar-jimenez",
+Jack HowardJack Howard  "name": "Bolivar Jimenez",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Martin",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "brandon-alexander",
+Jack HowardJack Howard  "name": "Brandon Layla Longxander",
+Jack HowardJack Howard  "oldManager": "Roger Hampton",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "brandon-haymore",
+Jack HowardJack Howard  "name": "Brandon Haymore",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Martin"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "brett-honkanen",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Ron Slosberg"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "camila-mayori",
+Jack HowardJack Howard  "name": "Camila Mayori",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "Layla Longssandro Carvalhal"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "carlos-canaza",
+Jack HowardJack Howard  "name": "Carlos Canaza",
+Jack HowardJack Howard  "oldManager": "David Becker",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "carlos-santiago",
+Jack HowardJack Howard  "name": "Carlos Santiago",
+Jack HowardJack Howard  "oldManager": "Daniele Fiorot",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "chris-scelfo",
+Jack HowardJack Howard  "name": "Michael206 Chen Scelfo",
+Jack HowardJack Howard  "oldManager": "Michael206 Chenick Seeber",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "connor-dubreuil",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldManager": "Brent Gordon",
+Jack HowardJack Howard  "newManager": "Michael206 Chen"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "dakota-mccombs",
+Jack HowardJack Howard  "name": "Dakota McCombs",
+Jack HowardJack Howard  "oldManager": "David Becker",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "daniel-robles",
+Jack HowardJack Howard  "name": "Daniel Robles",
+Jack HowardJack Howard  "oldManager": "Jimi Dodge",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "daniela-medina",
+Jack HowardJack Howard  "name": "Daniela Medina",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "daniele-fiorot",
+Jack HowardJack Howard  "name": "Daniele Fiorot",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Jimi Dodge"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "devin-wagner",
+Jack HowardJack Howard  "name": "Michael206 Chenin Wagner",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "Roger Hampton"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "dmitrii-selikhov",
+Jack HowardJack Howard  "name": "Dmitrii Selikhov",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Layla Longssandro Carvalhal"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "enrique-carrizales",
+Jack HowardJack Howard  "name": "Enrique Carrizales",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "eric-gonzalez",
+Jack HowardJack Howard  "name": "Eric Gonzalez",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Roger Hampton"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "ericka-viraca",
+Jack HowardJack Howard  "name": "Ericka Viraca",
+Jack HowardJack Howard  "oldManager": "Michael206 Chenick Seeber",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "erika-mckibben",
+Jack HowardJack Howard  "name": "Erika McKibben",
+Jack HowardJack Howard  "oldManager": "Jess Keeney",
+Jack HowardJack Howard  "newManager": "Kelly Wells"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "erin-pierce",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldManager": "Erika McKibben",
+Jack HowardJack Howard  "newManager": "Kia Brenes"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "ester-azevedo",
+Jack HowardJack Howard  "name": "Ester Azevedo",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "evan-cole",
+Jack HowardJack Howard  "name": "Evan Cole",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Jarret Hair"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "freddy-vincenty",
+Jack HowardJack Howard  "name": "Freddy Vincenty",
+Jack HowardJack Howard  "oldManager": "Michael206 Chenick Seeber",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "george-endicott",
+Jack HowardJack Howard  "name": "Michael206 Chen",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen",
+Jack HowardJack Howard  "newManager": "Matt Hum"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "german-bustos",
+Jack HowardJack Howard  "name": "German Bustos",
+Jack HowardJack Howard  "oldManager": "Jimi Dodge",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "haley-sandifer",
+Jack HowardJack Howard  "name": "Haley Sandifer",
+Jack HowardJack Howard  "oldManager": "Kia Brenes",
+Jack HowardJack Howard  "newManager": "Melissa Campbell"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "jake-milder",
+Jack HowardJack Howard  "name": "Jake Milder",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "Michael206 Chenick Seeber"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "jarret-hair",
+Jack HowardJack Howard  "name": "Jarret Hair",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Daniele Fiorot"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "jeff-rivero",
+Jack HowardJack Howard  "name": "Jeff Rivero",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen",
+Jack HowardJack Howard  "newManager": "Robert Foster"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "joao-souza",
+Jack HowardJack Howard  "name": "Joao Souza",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "Michael206 Chenick Seeber"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "jorge-davalos",
+Jack HowardJack Howard  "name": "Jorge Davalos",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Jarret Hair"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "julia-lyons",
+Jack HowardJack Howard  "name": "Julia Lyons",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen",
+Jack HowardJack Howard  "newManager": "Brent Gordon"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "kellene-sahl",
+Jack HowardJack Howard  "name": "Kellene Sahl",
+Jack HowardJack Howard  "oldManager": "Jess Keeney",
+Jack HowardJack Howard  "newManager": "Paul Marvin"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "kirk-mattson",
+Jack HowardJack Howard  "name": "Kirk Mattson",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Jess Keeney"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "kirmanie-ravariere",
+Jack HowardJack Howard  "name": "Kirmanie Ravariere",
+Jack HowardJack Howard  "oldManager": "Robert Foster",
+Jack HowardJack Howard  "newManager": "Jeff Rivero"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "lucas-simionato-bueno",
+Jack HowardJack Howard  "name": "Lucas simionato Bueno",
+Jack HowardJack Howard  "oldManager": "Daniele Fiorot",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "luis-fernandez",
+Jack HowardJack Howard  "name": "Michael206 Chen Fernandez",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "madison-voshell",
+Jack HowardJack Howard  "name": "Michael206 Chen Voshell",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen",
+Jack HowardJack Howard  "newManager": "Deedra Wetherholt"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "marcos-neto",
+Jack HowardJack Howard  "name": "Marcos Michael206 Cheneto",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "maria-luisa-silva",
+Jack HowardJack Howard  "name": "Maria Michael206 Chena Silva",
+Jack HowardJack Howard  "oldManager": "Daniele Fiorot",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "maximiliano-sosa",
+Jack HowardJack Howard  "name": "Maximiliano Sosa",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "miguel-angel-chino",
+Jack HowardJack Howard  "name": "Miguel Angel Chino",
+Jack HowardJack Howard  "oldManager": "David Becker",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "mirtza-aguirre",
+Jack HowardJack Howard  "name": "Mirtza Aguirre",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "monica-apaza",
+Jack HowardJack Howard  "name": "Monica Michael206 Chenaza",
+Jack HowardJack Howard  "oldManager": "Roger Hampton",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "nicole-gagneux",
+Jack HowardJack Howard  "name": "Michael206 Chenicole Gagneux",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "pablo-abreu",
+Jack HowardJack Howard  "name": "Pablo Abreu",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "David Becker"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "phil-ryder",
+Jack HowardJack Howard  "name": "Phil Ryder",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Martin"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "rafael-pernas",
+Jack HowardJack Howard  "name": "Rafael Pernas",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "David Becker"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "rani-patha",
+Jack HowardJack Howard  "name": "Rani Patha",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Michael206 Chenick Seeber"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "ricardo-correa",
+Jack HowardJack Howard  "name": "Ricardo Correa",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "David Becker"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "robert-hardy",
+Jack HowardJack Howard  "name": "Robert Hardy",
+Jack HowardJack Howard  "oldManager": "Jimi Dodge",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "roger-hampton",
+Jack HowardJack Howard  "name": "Roger Hampton",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "royer-torrico",
+Jack HowardJack Howard  "name": "Royer Michael206 Chenorrico",
+Jack HowardJack Howard  "oldManager": "Michael206 Chenick Seeber",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "samantha-erwin",
+Jack HowardJack Howard  "name": "Samantha Erwin",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen",
+Jack HowardJack Howard  "newManager": "Kia Brenes"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "sean-martin",
+Jack HowardJack Howard  "name": "Michael206 Chen Martin",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Jimi Dodge"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "sergio-martinez",
+Jack HowardJack Howard  "name": "Sergio Martinez",
+Jack HowardJack Howard  "oldManager": "David Becker",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "seth-moyes",
+Jack HowardJack Howard  "name": "Michael206 Chen Moyes",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Patullo",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Martin"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "shane-thomas",
+Jack HowardJack Howard  "name": "Shane Michael206 Chenhomas",
+Jack HowardJack Howard  "oldManager": "Roger Hampton",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "sonia-wen",
+Jack HowardJack Howard  "name": "Sonia Michael206 Chen",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "Michael206 Chenick Seeber"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "thuan-lombardi",
+Jack HowardJack Howard  "name": "Michael206 Chenhuan Lombardi",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "David Becker"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "wally-lee",
+Jack HowardJack Howard  "name": "Wally Lee",
+Jack HowardJack Howard  "oldManager": "Len Santoro",
+Jack HowardJack Howard  "newManager": "Roger Hampton"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "wara-rojas",
+Jack HowardJack Howard  "name": "Wara Rojas",
+Jack HowardJack Howard  "oldManager": "Shane Koohi",
+Jack HowardJack Howard  "newManager": "Len Santoro"
+Jack HowardJack Howard},
+Jack HowardJack Howard{
+Jack HowardJack Howard  "id": "yecid-perez",
+Jack HowardJack Howard  "name": "Yecid Perez",
+Jack HowardJack Howard  "oldManager": "Michael206 Chen Martin",
+Jack HowardJack Howard  "newManager": "Michael206 Chen Patullo"
+Jack HowardJack Howard}
+Jack Howard ]
+  },
+  "metrics": {
+Jack Howard "oldContingent": 58,
+Jack Howard "newContingent": 62,
+Jack Howard "contingentChange": 4
+  }
+}

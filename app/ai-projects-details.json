@@ -1,0 +1,396 @@
+{
+  "OP-000": {
+    "projectId": "OP-000",
+    "projectName": "Claude Enterprise & Code Expansion",
+    "executiveSummary": "**Claude Enterprise deployment:**\r\n- Deployment scale: 94 Standard seats, 19 Premium seats with Claude Code access\r\n- Leading departments: Marketing (14 users, 1,031 messages/user), Product (16 users, 664 messages/user), Engineering (16 users, 451 messages/user)\r\n- Key productivity metrics from Claude Code: 655,677 lines generated, top users gtaborga (153,208 lines), dwagner (31,732 lines), sjohnson (22,897 lines)\r\n- Total investment and ROI: $8,360 monthly investment delivering 36.2x ROI\r\n- Coding productivity multiplier vs GitHub Copilot: 14.5x higher (34,509 vs 2,380 lines per user)\r\n\r\n**AI Tool Ecosystem - cross-platform insights:**\r\n- Overall adoption rates: Claude Enterprise 35%, M365 Copilot 75%\r\n- Productivity multipliers: Claude vs M365 (8.4x), Claude Code vs GitHub Copilot (14.5x",
+    "goal": "Deliver value through AI-powered capabilities and operational improvements",
+    "phases": [
+      {
+        "name": "Phase 1: Early Adopters & Champions ✓ COMPLETE",
+        "description": "Status:** Deployed and operational\r",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 2: All Engineering with Claude Code",
+        "description": "Timeline:** Q1 2026 (Deploy by end of Q1)\r",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 3: Service Teams & GTM Complete",
+        "description": "Timeline:** Q2 2026 (Deploy by end of Q2)\r",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 3 Totals:**",
+        "description": "**Total Employees:** 88 across 7 departments\r",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      }
+    ],
+    "kpis": [
+      {
+        "metric": "Total investment and ROI",
+        "description": "$8,360 monthly investment delivering 36.2x ROI",
+        "baseline": "",
+        "target": "$8,360 monthly investment delivering 36.2x ROI",
+        "targetFormatted": "$8,360 monthly investment delivering 36.2x ROI"
+      },
+      {
+        "metric": "Unrealized monthly value",
+        "description": "$421,517",
+        "baseline": "",
+        "target": "$421,517",
+        "targetFormatted": "$421,517"
+      },
+      {
+        "metric": "Projected annual value",
+        "description": "$5.06M",
+        "baseline": "",
+        "target": "$5.06M",
+        "targetFormatted": "$5.06M"
+      },
+      {
+        "metric": "Overall expansion ROI",
+        "description": "17.3x",
+        "baseline": "",
+        "target": "17.3x",
+        "targetFormatted": "17.3x"
+      },
+      {
+        "metric": "Adoption Rate",
+        "description": " 100% of licensed users actively engaged",
+        "baseline": "",
+        "target": " 100% of licensed users actively engaged",
+        "targetFormatted": " 100% of licensed users actively engaged"
+      },
+      {
+        "metric": "Time Savings",
+        "description": " 3,300 hours monthly valued at $330,000",
+        "baseline": "",
+        "target": " 3,300 hours monthly valued at $330,000",
+        "targetFormatted": " 3,300 hours monthly valued at $330,000"
+      }
+    ],
+    "value": "$5.06M",
+    "roi": "17.3x",
+    "risks": [
+      "Risk 1: Engineering Adoption Complexity",
+      "Risk 2: Service Team Workflow Integration",
+      "Risk 3: March 2026 Microsoft Contract Decision Conflict",
+      "Risk 4: Value Metrics Not Materializing in Lower-ROI Departments",
+      "Risk 5: Premium Seat Over-Allocation"
+    ],
+    "tier": "TIER 0: FOUNDATION",
+    "status": "Proposed"
+  },
+  "OP-001": {
+    "projectId": "OP-001",
+    "projectName": "Sales Deal Agentic Intelligence",
+    "executiveSummary": "Following the October 24, 2025 AI Strategy recommendations, this updated report provides a revised implementation approach for the **Priority 1: Sales Deal Agentic Intelligence** that leverages recently announced capabilities from Gong and Claude Enterprise.\n\n**AI Agents in Scope:**\n1. **AI Deal Monitor** - Detects deal signals, flags risks, provides health scoring\n2. **AI Deal Reviewer** - Evaluates deals by methodology, improves forecasting accuracy\n3. **AI Briefer** - Generates executive summaries and stakeholder updates\n4. **AI Ask Anything** - Natural language query interface to deal data\n\n**Out of Scope:**\n- Custom ML models for deal prediction (use Gong's native models)\n- Non-Gong call recording/transcription (use Gong exclusively)\n- Salesforce workflow automation (use native SFDC f",
+    "goal": "- **AI Deal Monitor:** Detects risks, scores deal health, provides CFO-ready summaries\n- **AI Deal Reviewer:** Enforces methodology, predicts close likelihood, enables coaching\n- **AI Briefer:** Automates knowledge sharing and deal handoffs (**19% win rate increase validated**)\n- **AI Ask Anything:** Natural language queries across all deal data\n- **AI Activity Mapper:** Eliminates data inconsistencies between Gong and Salesforce\n- **AI Call Reviewer:** Coaches AEs based on actual call performan",
+    "phases": [
+      {
+        "name": "Phase 1: Foundation (Weeks 1-2)**",
+        "description": "Week 1: Connect Salesforce to Claude via MCP",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 2: Gong Configuration (Weeks 3-4)**",
+        "description": "Configure all AI Agents in Gong Agent Studio",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 3: Workflows (Weeks 5-8)**",
+        "description": "Build key workflows in Claude Enterprise",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 4: Training (Weeks 9-10)**",
+        "description": "Sales team training on Gong AI Agents",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      }
+    ],
+    "kpis": [
+      {
+        "metric": "Win Rate",
+        "description": "16% → 22-24%",
+        "baseline": "",
+        "target": "16% → 22-24%",
+        "targetFormatted": "16% → 22-24%"
+      },
+      {
+        "metric": "High ROI",
+        "description": "50-100x return on modest investment",
+        "baseline": "",
+        "target": "50-100x return on modest investment",
+        "targetFormatted": "50-100x return on modest investment"
+      },
+      {
+        "metric": "Proven ROI",
+        "description": " 19% win rate improvement validated across 4,800+ Gong customers",
+        "baseline": "",
+        "target": " 19% win rate improvement validated across 4,800+ Gong customers",
+        "targetFormatted": " 19% win rate improvement validated across 4,800+ Gong customers"
+      },
+      {
+        "metric": "AE time savings",
+        "description": "4-6 hours per week per AE",
+        "baseline": "",
+        "target": "4-6 hours per week per AE",
+        "targetFormatted": "4-6 hours per week per AE"
+      },
+      {
+        "metric": "Business Value",
+        "description": "",
+        "baseline": "",
+        "target": "",
+        "targetFormatted": ""
+      },
+      {
+        "metric": "Business Value",
+        "description": "",
+        "baseline": "",
+        "target": "",
+        "targetFormatted": ""
+      }
+    ],
+    "value": "TBD",
+    "roi": "12x",
+    "risks": [
+      "Risk Assessments: Automated flags for inconsistencies and concerns",
+      "Risk Level: LOW-MEDIUM (significantly lower than custom development)",
+      "Risk: Competitors adopt AI and accelerate past you",
+      "Risk: Development execution, unvalidated assumptions, ongoing maintenance burden",
+      "Risk: Low-medium (configuration vs. development)"
+    ],
+    "tier": "TIER 0: FOUNDATION",
+    "status": "Proposed"
+  },
+  "OP-005": {
+    "projectId": "OP-005",
+    "projectName": "Lead Generation Agentic Intelligence",
+    "executiveSummary": "The **Lead Generation Agentic Intelligence (OP-005)** has been corrected using TechCo Inc's actual average deal sizes instead of the inflated $500K assumption. Despite an **85% reduction in projected value**, the project **remains Priority #2** in the active portfolio due to its strong ROI, fast payback, and strategic alignment with the $10M pipeline generation goal.\n\n**AI Agents in Scope:**\n1. **Champion Tracker** - Identifies HR/People champion changes (OP-011)\n2. **Hiring Monitor** - Tracks hiring surges as buying signals (OP-012)\n3. **Compliance Risk Predictor** - Detects compliance triggers (OP-015)\n4. **Tech Stack Mapper** - Maps tech stack for competitive displacement (OP-016)\n5. **Leave Volume Estimator** - Estimates leave volume from public data (OP-017)\n6. **Trigger Event Intell",
+    "goal": "The **Lead Generation Agentic Intelligence (OP-005)** has been corrected using TechCo Inc's actual average deal sizes instead of the inflated $500K assumption. Despite an **85% reduction in projected value**, the project **remains Priority #2** in the active portfolio due to its strong ROI, fast payback, and strategic alignment with the $10M pipeline generation goal.",
+    "phases": [
+      {
+        "name": "Phase 1 (0-30 days)**: OP-016 + OP-011 pilot with Lucas's team (5 BDRs)",
+        "description": "Implementation phase",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 2 (30-90 days)**: OP-018 + OP-017 added, scale to full BDR org (15 BDRs)",
+        "description": "Implementation phase",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 3 (90-180 days)**: OP-012 + OP-015 added, full platform operational",
+        "description": "Implementation phase",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 4 (180-270 days)**: OP-014 added (pending legal review)",
+        "description": "--",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      }
+    ],
+    "kpis": [
+      {
+        "metric": "Total Annual Value",
+        "description": "$17,926K",
+        "baseline": "",
+        "target": "$17,926K",
+        "targetFormatted": "$17,926K"
+      },
+      {
+        "metric": "Portfolio ROI",
+        "description": "517%",
+        "baseline": "",
+        "target": "517%",
+        "targetFormatted": "517%"
+      },
+      {
+        "metric": "Meeting booking rate",
+        "description": "8% (industry standard)",
+        "baseline": "",
+        "target": "8% (industry standard)",
+        "targetFormatted": "8% (industry standard)"
+      },
+      {
+        "metric": "Annual Value",
+        "description": "$206K ARR",
+        "baseline": "",
+        "target": "$206K ARR",
+        "targetFormatted": "$206K ARR"
+      },
+      {
+        "metric": "Annual Value",
+        "description": "$618K ARR",
+        "baseline": "",
+        "target": "$618K ARR",
+        "targetFormatted": "$618K ARR"
+      },
+      {
+        "metric": "Compliance Risk Score",
+        "description": "- Industry enforcement rate (healthcare high, tech low)",
+        "baseline": "",
+        "target": "- Industry enforcement rate (healthcare high, tech low)",
+        "targetFormatted": "- Industry enforcement rate (healthcare high, tech low)"
+      }
+    ],
+    "value": "TBD",
+    "roi": "40%",
+    "risks": [
+      "Risk: LOW",
+      "Risk: LOW-MEDIUM",
+      "Risk: MEDIUM",
+      "Risk (Low): Only tracking business contacts with whom TechCo Inc had relationship",
+      "Risk (Low): LinkedIn job data is reliable"
+    ],
+    "tier": "TIER 0: FOUNDATION",
+    "status": "Proposed"
+  },
+  "OP-011": {
+    "projectId": "OP-011",
+    "projectName": "Claude Code Marketplace",
+    "executiveSummary": "**Project ID:** OP-011 (Claude Code Marketplace Expansion & Adoption)  \n**Analysis Date:** December 29, 2025  \n**Priority Rank:** 3 (moved from potential #12 to critical enabler)  \n**Status:** Active / Expansion Phase  \n**Strategic Classification:** Infrastructure + Productivity Multiplier\n\n**THE BIG PICTURE:** The Claude Code Marketplace is no longer a \"nice-to-have\" developer tool—it's the **critical infrastructure layer** that will accelerate TechCo Inc's transformation into an AI-driven organization. Engineering survey data from December 2025 reveals **substantial organic AI adoption** but with **critical gaps** that the Marketplace is uniquely positioned to fill.\n\n**Current State:**\n- **10 engineering teams** actively using AI tools (Copilot, Claude, Amazon Q)\n- **90+ commits** to Ma",
+    "goal": "**Project ID:** OP-011 (Claude Code Marketplace Expansion & Adoption)  \n**Analysis Date:** December 29, 2025  \n**Priority Rank:** 3 (moved from potential #12 to critical enabler)  \n**Status:** Active / Expansion Phase  \n**Strategic Classification:** Infrastructure + Productivity Multiplier",
+    "phases": [
+      {
+        "name": "Phase 1: Implementation",
+        "description": "Project implementation and deployment",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      }
+    ],
+    "kpis": [
+      {
+        "metric": "Year Value",
+        "description": " $3.2M-$7.9M (Conservative to Optimistic scenarios)",
+        "baseline": "",
+        "target": " $3.2M-$7.9M (Conservative to Optimistic scenarios)",
+        "targetFormatted": " $3.2M-$7.9M (Conservative to Optimistic scenarios)"
+      },
+      {
+        "metric": "Addressable Users",
+        "description": " 225 (mid-range of 150-300 Claude Enterprise seats)",
+        "baseline": "",
+        "target": " 225 (mid-range of 150-300 Claude Enterprise seats)",
+        "targetFormatted": " 225 (mid-range of 150-300 Claude Enterprise seats)"
+      },
+      {
+        "metric": "Current Adoption",
+        "description": " 25 users (11% penetration)",
+        "baseline": "",
+        "target": " 25 users (11% penetration)",
+        "targetFormatted": " 25 users (11% penetration)"
+      },
+      {
+        "metric": "hrs\nValue",
+        "description": "13,500 × $75 = $1,012,500",
+        "baseline": "",
+        "target": "13,500 × $75 = $1,012,500",
+        "targetFormatted": "13,500 × $75 = $1,012,500"
+      },
+      {
+        "metric": "K\nROI",
+        "description": "($1.01M - $285K) / $285K = 255% (1-year)",
+        "baseline": "",
+        "target": "($1.01M - $285K) / $285K = 255% (1-year)",
+        "targetFormatted": "($1.01M - $285K) / $285K = 255% (1-year)"
+      },
+      {
+        "metric": "hrs\nValue",
+        "description": "22,500 × $75 = $1,687,500",
+        "baseline": "",
+        "target": "22,500 × $75 = $1,687,500",
+        "targetFormatted": "22,500 × $75 = $1,687,500"
+      }
+    ],
+    "value": "$322K",
+    "roi": "337%",
+    "risks": [
+      "Risk Level: MEDIUM (down from MEDIUM-HIGH due to Engineering validation)",
+      "Risk Trend: IMPROVING ✅",
+      "Risk: Limited portfolio acceleration (~10 weeks vs 24-31 in B/C)",
+      "Risk: Requires Plugin Champions in 6-7 departments",
+      "Risk: Highest complexity, 8-9 departments simultaneously"
+    ],
+    "tier": "TIER 0: FOUNDATION",
+    "status": "Proposed"
+  },
+  "OP-014": {
+    "projectId": "OP-014",
+    "projectName": "Open Observability Vault",
+    "executiveSummary": "A universal, extensible platform for collecting, storing, and analyzing metrics from **ANY source** - AI tools, infrastructure, applications, cloud billing, business systems, and more - all in one centralized location.\n\nInstead of maintaining separate systems for AI tracking, infrastructure monitoring, application metrics, and business analytics, the Observability Vault provides a single, unified platform where all metrics flow together, enabling:\n\n1. **Universal Metric Collection**: Ingest data from ANY source (AI tools, Kubernetes, AWS, Prometheus, databases, APIs)\n2. **Flexible Schema**: Store diverse metric types with unlimited tagging and context\n3. **Cross-System Analysis**: Correlate metrics across different systems (AI usage → infrastructure costs → customer satisfaction)\n4. **Unif",
+    "goal": "Deliver value through AI-powered capabilities and operational improvements",
+    "phases": [
+      {
+        "name": "Phase 1: Core data model and manual tracking (Weeks 1-2)",
+        "description": "[ ]",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 2: Claude Code integration and API middleware (Weeks 3-4)",
+        "description": "[ ]",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 3: Auto-classification and advanced analytics (Weeks 5-6)",
+        "description": "[ ]",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      },
+      {
+        "name": "Phase 4: CFO dashboards and ROI calculations (Weeks 7-8)",
+        "description": "[ ]",
+        "timeline": "Q1-Q4 2026",
+        "deliverables": []
+      }
+    ],
+    "kpis": [
+      {
+        "metric": "Dev Time",
+        "description": "$6,000",
+        "baseline": "",
+        "target": "$6,000",
+        "targetFormatted": "$6,000"
+      },
+      {
+        "metric": "Dev Time",
+        "description": "$12,000",
+        "baseline": "",
+        "target": "$12,000",
+        "targetFormatted": "$12,000"
+      },
+      {
+        "metric": "months\nCurrent ROI",
+        "description": "228%",
+        "baseline": "",
+        "target": "228%",
+        "targetFormatted": "228%"
+      }
+    ],
+    "value": "TBD",
+    "roi": "10x",
+    "risks": [
+      "Implementation complexity and timeline management",
+      "Resource availability and capacity constraints",
+      "Technical dependencies and integration challenges"
+    ],
+    "tier": "TIER 0: FOUNDATION",
+    "status": "Proposed"
+  }
+}

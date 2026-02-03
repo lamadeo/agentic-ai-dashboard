@@ -1,0 +1,51 @@
+{
+  "programTitle": "AI Enablement Program - $375K Annual Investment",
+  "budgetBreakdown": [
+    {
+      "role": "Enablement Lead",
+      "cost": 150000,
+      "description": "Training, adoption, metrics",
+      "borderColor": "border-purple-300",
+      "textColor": "text-purple-700"
+    },
+    {
+      "role": "Integration Engineer",
+      "cost": 175000,
+      "description": "Connectors, marketplace, projects",
+      "borderColor": "border-blue-300",
+      "textColor": "text-blue-700"
+    },
+    {
+      "role": "Training Budget",
+      "cost": 50000,
+      "description": "External vendor contingency",
+      "borderColor": "border-green-300",
+      "textColor": "text-green-700"
+    }
+  ],
+  "keyDeliverables": [
+    "Train 170+ new users (Phases 2-4)",
+    "Build critical connectors: Salesforce, Gong, Rippling",
+    "Evolve Yassel's plug-in marketplace",
+    "Custom skills library (15-20 skills)",
+    "Enable org self-service MCP development",
+    "Support 2026 transformational projects"
+  ],
+  "expectedImpact": {
+    "dailyActiveRate": {
+      "current": "53%",
+      "target": "75%",
+      "label": "Daily Active Rate"
+    },
+    "annualValue": {
+      "range": "$400-500K",
+      "label": "Annual Value"
+    },
+    "programROI": {
+      "yearOne": "1.1-1.3x",
+      "ongoing": "2.0x+ ongoing",
+      "label": "Program ROI"
+    }
+  },
+  "foundationNote": "Yassel's marketplace + 10 existing connectors (GitHub, Jira, Linear, Asana, M365, Slack, HubSpot, Canva, Figma, Vercel). FTEs use Claude Premium to build everything (connectors, skills, analytics) - no vendor costs."
+}

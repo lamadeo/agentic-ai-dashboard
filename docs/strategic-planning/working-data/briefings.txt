@@ -1,0 +1,6 @@
+{
+  "briefings": {
+    "executiveLeadershipSummary": null,
+    "organizationWideSummary": null
+  }
+}

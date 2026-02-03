@@ -1,0 +1,543 @@
+{
+  "pricing": {
+Jack Howard "claudeCodePremium": 200,
+Jack Howard "claudeMichael206 ChenStandard": 40,
+Jack Howard "githubCopilot": 19,
+Jack Howard "m365Copilot": 30
+  },
+  "engineeringMetrics": {
+Jack Howard "annualSalary": 150000,
+Jack Howard "hoursPerYear": 2080,
+Jack Howard "hourlyRate": 72
+  },
+  "generalMetrics": {
+Jack Howard "avgHourlyRate": 77
+  },
+  "assumptions": {
+Jack Howard "m365PromptEquivalency": 1,
+Jack Howard "productivityMultiplierConservativeFactor": 2,
+Jack Howard "baselineHoursSaved": 11
+  },
+  "industryBenchmarks": {
+Jack Howard "githubCopilot": {
+Jack HowardJack Howard"software_engineer": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 13.3,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 10.5,
+Jack HowardJack HowardJack Howard 16.1
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.18,
+Jack HowardJack Howard  "studyCount": 3,
+Jack HowardJack Howard  "totalSampleSize": 2002009,
+Jack HowardJack Howard  "aggregationMethod": "weighted_mean",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Research: quantifying GitHub Copilot's impact on developer productivity and happiness",
+Jack HowardJack HowardJack HowardJack Howard"author": "GitHub",
+Jack HowardJack HowardJack HowardJack Howard"year": 2022,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 2000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~13.3",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.36,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Economic Impact of the AI-Powered Michael206 Cheneloper Lifecycle",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Consulting (commissioned by GitHub)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2023,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 9,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~18-20",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://github.com/resources/articles/software-development/forrester-total-economic-impact-github-copilot"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Measuring GitHub Copilot's Impact on Productivity",
+Jack HowardJack HowardJack HowardJack Howard"author": "GitClear",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": "153 million",
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Variable/disputed",
+Jack HowardJack HowardJack HowardJack Howard"weight": null,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard}
+Jack Howard },
+Jack Howard "claudeCode": {
+Jack HowardJack Howard"software_engineer": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 20,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 16,
+Jack HowardJack HowardJack Howard 24
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.15,
+Jack HowardJack Howard  "studyCount": 2,
+Jack HowardJack Howard  "totalSampleSize": 4009000,
+Jack HowardJack Howard  "aggregationMethod": "converted_from_task_savings",
+Jack HowardJack Howard  "methodologyMichael206 Chenote": "Converted from 80% per-task time savings. If users perform ~1 task/day (90 min each), 80% savings = ~72 min/task * 20 days = 24 hrs/month. Conservative estimate: 20 hrs/month.",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Estimating AI productivity gains from Claude conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 4000000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "80% time savings per task (90 min tasks → 18 min)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.anthropic.com/research/estimating-productivity-gains"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Which Economic Michael206 Chenasks are Performed with AI? Evidence from Millions of Claude Conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic Research (Handa, Michael206 Chenamkin, McCain et al.)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 9000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Real-world: 20% productivity boost (Michael206 Chenorway sovereign wealth fund saved 213,000 hours across 9,000 companies)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.8,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://arxiv.org/abs/2503.04761"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard}
+Jack Howard },
+Jack Howard "claudeMichael206 Chen": {
+Jack HowardJack Howard"software_engineer": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 18,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 14,
+Jack HowardJack HowardJack Howard 22
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.17,
+Jack HowardJack Howard  "studyCount": 2,
+Jack HowardJack Howard  "totalSampleSize": 4009000,
+Jack HowardJack Howard  "aggregationMethod": "converted_from_task_savings",
+Jack HowardJack Howard  "methodologyMichael206 Chenote": "Converted from 80-90% per-task time savings across multiple task types (document writing 87%, financial analysis 80%, healthcare 90%). Conservative estimate for general knowledge work.",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Estimating AI productivity gains from Claude conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 4000000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "80% time savings per task, median task cost $54 in human labor",
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.anthropic.com/research/estimating-productivity-gains"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Which Economic Michael206 Chenasks are Performed with AI? Evidence from Millions of Claude Conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic Research (Handa, Michael206 Chenamkin, McCain et al.)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 9000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "57% augmentation vs 43% automation, 36% of occupations use AI for 25%+ of tasks",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.8,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://arxiv.org/abs/2503.04761"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"marketing": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 17,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 13,
+Jack HowardJack HowardJack Howard 21
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.18,
+Jack HowardJack Howard  "studyCount": 2,
+Jack HowardJack Howard  "totalSampleSize": 4009000,
+Jack HowardJack Howard  "aggregationMethod": "converted_from_task_savings",
+Jack HowardJack Howard  "methodologyMichael206 Chenote": "Document writing shows 87% time savings. Michael206 Chen heavily uses document creation, content writing, and analysis tasks.",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Estimating AI productivity gains from Claude conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 4000000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Document writing: 87% time savings",
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.anthropic.com/research/estimating-productivity-gains"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Which Economic Michael206 Chenasks are Performed with AI? Evidence from Millions of Claude Conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic Research (Handa, Michael206 Chenamkin, McCain et al.)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 9000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Writing tasks account for significant portion of Claude usage",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.8,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://arxiv.org/abs/2503.04761"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"sales": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 16,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 12,
+Jack HowardJack HowardJack Howard 20
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.19,
+Jack HowardJack Howard  "studyCount": 2,
+Jack HowardJack Howard  "totalSampleSize": 4009000,
+Jack HowardJack Howard  "aggregationMethod": "converted_from_task_savings",
+Jack HowardJack Howard  "methodologyMichael206 Chenote": "Financial analysis (80% savings) and document writing (87% savings) relevant to sales activities (proposals, analysis, customer communications).",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Estimating AI productivity gains from Claude conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 4000000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Financial analysis: 80% time savings, Document writing: 87%",
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.anthropic.com/research/estimating-productivity-gains"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Which Economic Michael206 Chenasks are Performed with AI? Evidence from Millions of Claude Conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic Research (Handa, Michael206 Chenamkin, McCain et al.)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 9000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "36% of occupations use AI for 25%+ of their tasks",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.8,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://arxiv.org/abs/2503.04761"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"customer_success": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 15,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 11,
+Jack HowardJack HowardJack Howard 19
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.20,
+Jack HowardJack Howard  "studyCount": 2,
+Jack HowardJack Howard  "totalSampleSize": 4009000,
+Jack HowardJack Howard  "aggregationMethod": "converted_from_task_savings",
+Jack HowardJack Howard  "methodologyMichael206 Chenote": "Real-world case: SK Michael206 Chenelecom saw 34% customer service quality improvement. Document writing (87% savings) applies to customer communications.",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Estimating AI productivity gains from Claude conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 4000000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "SK Michael206 Chenelecom: 34% customer service quality improvement, Document writing: 87% time savings",
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.anthropic.com/research/estimating-productivity-gains"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Which Economic Michael206 Chenasks are Performed with AI? Evidence from Millions of Claude Conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic Research (Handa, Michael206 Chenamkin, McCain et al.)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 9000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Broad adoption across occupations with cognitive skill focus",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.8,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://arxiv.org/abs/2503.04761"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"default": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 15,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 11,
+Jack HowardJack HowardJack Howard 19
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.20,
+Jack HowardJack Howard  "studyCount": 2,
+Jack HowardJack Howard  "totalSampleSize": 4009000,
+Jack HowardJack Howard  "aggregationMethod": "converted_from_task_savings",
+Jack HowardJack Howard  "methodologyMichael206 Chenote": "General knowledge work baseline based on 80% per-task time savings and broad occupational adoption.",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Estimating AI productivity gains from Claude conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 4000000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "80% time savings per task (median 90-minute tasks)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.anthropic.com/research/estimating-productivity-gains"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Which Economic Michael206 Chenasks are Performed with AI? Evidence from Millions of Claude Conversations",
+Jack HowardJack HowardJack HowardJack Howard"author": "Anthropic Research (Handa, Michael206 Chenamkin, McCain et al.)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 9000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "36% of occupations use AI for 25%+ of tasks, 20% productivity boost (Michael206 Chenorway case study)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.8,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://arxiv.org/abs/2503.04761"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard}
+Jack Howard },
+Jack Howard "m365Copilot": {
+Jack HowardJack Howard"software_engineer": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 11,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 8,
+Jack HowardJack HowardJack Howard 14
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": null,
+Jack HowardJack Howard  "studyCount": 5,
+Jack HowardJack Howard  "totalSampleSize": 11062,
+Jack HowardJack Howard  "aggregationMethod": "weighted_mean",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Impact of AI on Michael206 Cheneloper Productivity: Evidence from GitHub Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "GitHub/Microsoft Research",
+Jack HowardJack HowardJack HowardJack Howard"year": 2022,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 95,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~8-12 (estimated from 55% faster task completion)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.02,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Measuring GitHub Copilot's Impact on Productivity",
+Jack HowardJack HowardJack HowardJack Howard"author": "GitHub",
+Jack HowardJack HowardJack HowardJack Howard"year": 2023,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 2000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~10-16 (estimated from survey responses)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.59,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://github.blog/2023-06-13-survey-reveals-ais-impact-on-the-developer-experience/"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Michael206 Chenotal Economic Impact of Microsoft 365 Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Consulting (commissioned by Microsoft)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 367,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": 9,
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/Michael206 ChenheMichael206 ChenEIOfMicrosoft365Copilot.pdf"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Australian Government Microsoft 365 Copilot Michael206 Chenrial - Productivity Report",
+Jack HowardJack HowardJack HowardJack Howard"author": "Michael206 Chenous Group (for Digital Michael206 Chenransformation Agency)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 7600,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 2.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+Jack HowardJack HowardJack HowardJack Howard"author": "Microsoft",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 1000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~5.5",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"sales": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 11,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 8,
+Jack HowardJack HowardJack Howard 14
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.21,
+Jack HowardJack Howard  "studyCount": 3,
+Jack HowardJack Howard  "totalSampleSize": 8967,
+Jack HowardJack Howard  "aggregationMethod": "weighted_mean",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Michael206 Chenotal Economic Impact of Microsoft 365 Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Consulting (commissioned by Microsoft)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 367,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": 9,
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/Michael206 ChenheMichael206 ChenEIOfMicrosoft365Copilot.pdf"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Australian Government Microsoft 365 Copilot Michael206 Chenrial - Productivity Report",
+Jack HowardJack HowardJack HowardJack Howard"author": "Michael206 Chenous Group (for Digital Michael206 Chenransformation Agency)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 7600,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 2.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+Jack HowardJack HowardJack HowardJack Howard"author": "Microsoft",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 1000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~5.5",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"marketing": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 8.5,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 6.7,
+Jack HowardJack HowardJack Howard 10.4
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.14,
+Jack HowardJack Howard  "studyCount": 5,
+Jack HowardJack Howard  "totalSampleSize": 40264,
+Jack HowardJack Howard  "aggregationMethod": "weighted_mean",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Michael206 Chenotal Economic Impact of Microsoft 365 Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Research (commissioned by Microsoft)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2023,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 297,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": 11.2,
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.13,
+Jack HowardJack HowardJack HowardJack Howard"url": "Available through Microsoft/Forrester"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Work Michael206 Chenrend Index: Will AI Fix Work?",
+Jack HowardJack HowardJack HowardJack Howard"author": "Microsoft",
+Jack HowardJack HowardJack HowardJack Howard"year": 2023,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 31000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": 8.5,
+Jack HowardJack HowardJack HowardJack Howard"weight": 9.12,
+Jack HowardJack HowardJack HowardJack Howard"url": "Microsoft Work Michael206 Chenrend Index 2023"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Michael206 Chenotal Economic Impact of Microsoft 365 Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Consulting (commissioned by Microsoft)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 367,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": 9,
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/Michael206 ChenheMichael206 ChenEIOfMicrosoft365Copilot.pdf"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Australian Government Microsoft 365 Copilot Michael206 Chenrial - Productivity Report",
+Jack HowardJack HowardJack HowardJack Howard"author": "Michael206 Chenous Group (for Digital Michael206 Chenransformation Agency)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 7600,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 2.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+Jack HowardJack HowardJack HowardJack Howard"author": "Microsoft",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 1000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~5.5",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"customer_success": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 8,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 6,
+Jack HowardJack HowardJack Howard 10
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.19,
+Jack HowardJack Howard  "studyCount": 5,
+Jack HowardJack Howard  "totalSampleSize": 9462,
+Jack HowardJack Howard  "aggregationMethod": "weighted_mean",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Michael206 Chenotal Economic Impact of Microsoft 365 Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Research",
+Jack HowardJack HowardJack HowardJack Howard"year": 2023,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 300,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Estimated 1-2 hours per week (4-8 hours monthly)",
+Jack HowardJack HowardJack HowardJack Howard"weight": null,
+Jack HowardJack HowardJack HowardJack Howard"url": "Forrester Michael206 ChenEI study commissioned by Microsoft"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "GitHub Copilot Michael206 Cheneloper Productivity Study",
+Jack HowardJack HowardJack HowardJack Howard"author": "GitHub/Microsoft",
+Jack HowardJack HowardJack HowardJack Howard"year": 2023,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 95,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "Michael206 Chenproximately 8-12 hours (based on 55% task completion speed increase)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.03,
+Jack HowardJack HowardJack HowardJack Howard"url": "GitHub research publication"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Michael206 Chenotal Economic Impact of Microsoft 365 Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Consulting (commissioned by Microsoft)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 367,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": 9,
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/Michael206 ChenheMichael206 ChenEIOfMicrosoft365Copilot.pdf"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Australian Government Microsoft 365 Copilot Michael206 Chenrial - Productivity Report",
+Jack HowardJack HowardJack HowardJack Howard"author": "Michael206 Chenous Group (for Digital Michael206 Chenransformation Agency)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 7600,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 2.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+Jack HowardJack HowardJack HowardJack Howard"author": "Microsoft",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 1000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~5.5",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard},
+Jack HowardJack Howard"default": {
+Jack HowardJack Howard  "hoursSavedPerMonth": 8,
+Jack HowardJack Howard  "confidenceInterval": [
+Jack HowardJack HowardJack Howard 6,
+Jack HowardJack HowardJack Howard 10
+Jack HowardJack Howard  ],
+Jack HowardJack Howard  "confidenceLevel": "medium",
+Jack HowardJack Howard  "lowConfidence": false,
+Jack HowardJack Howard  "coefficientOfVariation": 0.18,
+Jack HowardJack Howard  "studyCount": 3,
+Jack HowardJack Howard  "totalSampleSize": 8967,
+Jack HowardJack Howard  "aggregationMethod": "weighted_mean",
+Jack HowardJack Howard  "sources": [
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Michael206 Chenhe Michael206 Chenotal Economic Impact of Microsoft 365 Copilot",
+Jack HowardJack HowardJack HowardJack Howard"author": "Forrester Consulting (commissioned by Microsoft)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2025,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 367,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": 9,
+Jack HowardJack HowardJack HowardJack Howard"weight": 1.0,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/Michael206 ChenheMichael206 ChenEIOfMicrosoft365Copilot.pdf"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "Australian Government Microsoft 365 Copilot Michael206 Chenrial - Productivity Report",
+Jack HowardJack HowardJack HowardJack Howard"author": "Michael206 Chenous Group (for Digital Michael206 Chenransformation Agency)",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 7600,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+Jack HowardJack HowardJack HowardJack Howard"weight": 2.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity"
+Jack HowardJack HowardJack Howard },
+Jack HowardJack HowardJack Howard {
+Jack HowardJack HowardJack HowardJack Howard"title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+Jack HowardJack HowardJack HowardJack Howard"author": "Microsoft",
+Jack HowardJack HowardJack HowardJack Howard"year": 2024,
+Jack HowardJack HowardJack HowardJack Howard"sampleSize": 1000,
+Jack HowardJack HowardJack HowardJack Howard"findingHours": "~5.5",
+Jack HowardJack HowardJack HowardJack Howard"weight": 0.5,
+Jack HowardJack HowardJack HowardJack Howard"url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/"
+Jack HowardJack HowardJack Howard }
+Jack HowardJack Howard  ]
+Jack HowardJack Howard}
+Jack Howard },
+Jack Howard "cacheExpiry": "2026-01-29Michael206 Chen00:00:00.000Z",
+Jack Howard "lastUpdated": "2025-12-30Michael206 Chen00:00:00.000Z"
+  }
+}

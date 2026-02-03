@@ -1,0 +1,343 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "type": "title",
+      "title": "2026 AI Portfolio Strategy",
+      "subtitle": "Driving $26M in Value Through Strategic AI Initiatives",
+      "purpose": "Set the stage for an ambitious year-long AI transformation",
+      "content": {
+        "presenter": "Agentic AI Team",
+        "date": "2026-01-28",
+        "organization": "TechCo Inc"
+      }
+    },
+    {
+      "id": 2,
+      "type": "executive_summary",
+      "title": "Executive Summary",
+      "subtitle": "BLUF: $26M AI Portfolio Poised for Exceptional Returns",
+      "purpose": "Deliver bottom-line-up-front summary of the year's strategic AI investments",
+      "content": {
+        "bluf": {
+          "headline": "7 AI projects prioritized for 2026 delivery",
+          "impact": "$26.44M",
+          "approach": "Hybrid scoring (Multi-Factor + ROI) with capacity constraints",
+          "confidence": "High"
+        },
+        "keyPoints": [
+          "Q1: 3 committed projects",
+          "Average progress: 52%",
+          "0 projects need attention"
+        ],
+        "recommendations": [
+          "Address OP-008 blockers: ",
+          "Q1 over-allocated (72/72 days). Defer lower-priority projects or add capacity.",
+          "Establish weekly progress reviews for at-risk projects"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "type": "strategic_context",
+      "title": "Why AI Now: Strategic Imperatives",
+      "subtitle": "Market Forces Driving Our AI Investment Strategy",
+      "purpose": "Establish business case and urgency for the AI portfolio investment",
+      "content": {
+        "note": "Strategic context content"
+      }
+    },
+    {
+      "id": 4,
+      "type": "portfolio_overview",
+      "title": "2026 AI Portfolio Architecture",
+      "subtitle": "7 Strategic Projects Across Core Business Functions",
+      "purpose": "Provide comprehensive view of all AI initiatives and their strategic alignment",
+      "content": {
+        "projects": [
+          {
+            "rank": 1,
+            "project": "OP-005: OP-005 Lead Generation Agentic Intelligence - Correction & Portfolio Re-Prioritization",
+            "score": "84.1",
+            "tier": "TIER 0: FOUNDATION",
+            "status": "proposed",
+            "value": "$17.93M",
+            "roi": "3678%",
+            "targetKPIs": "TBD",
+            "dependencies": "None",
+            "qStart": "Q2",
+            "qStartDetail": "Q2 (Implementation)",
+            "priorityReasoning": "High financial impact; No blockers; Exceptional ROI; Foundation for future work; Quick wins"
+          },
+          {
+            "rank": 2,
+            "project": "OP-008: OP-008 Law2Engine AI Project Analysis",
+            "score": "75.0",
+            "tier": "TIER 0: FOUNDATION",
+            "status": "committed",
+            "value": "$1.60M",
+            "roi": "3678%",
+            "targetKPIs": "TBD",
+            "dependencies": "None",
+            "qStart": "Q1",
+            "qStartDetail": "Q1 (Implementation)",
+            "priorityReasoning": "No blockers; Exceptional ROI; Foundation for future work; Quick wins"
+          },
+          {
+            "rank": 3,
+            "project": "OP-014: OP-014: Operational Data Foundation - Strategic Analysis (V5 Product-Driven Framework)",
+            "score": "55.6",
+            "tier": "TIER 0: FOUNDATION",
+            "status": "proposed",
+            "value": "$1.85M",
+            "roi": "156%",
+            "targetKPIs": "TBD",
+            "dependencies": "None",
+            "qStart": "Q2",
+            "qStartDetail": "Q2 (Implementation)",
+            "priorityReasoning": "No blockers; Foundation for future work; Quick wins"
+          },
+          {
+            "rank": 4,
+            "project": "OP-000: OP-000: Claude Enterprise & Code Expansion",
+            "score": "54.1",
+            "tier": "TIER 0: FOUNDATION",
+            "status": "committed",
+            "value": "$5.06M",
+            "roi": "TBD",
+            "targetKPIs": "TBD",
+            "dependencies": "None",
+            "qStart": "Q1",
+            "qStartDetail": "Q1 (Implementation)",
+            "priorityReasoning": "High financial impact; No blockers; Foundation for future work; Quick wins"
+          },
+          {
+            "rank": 5,
+            "project": "OP-011: Claude Code Marketplace - FY2026 Project Analysis & Engineering Integration Strategy",
+            "score": "50.8",
+            "tier": "TIER 0: FOUNDATION",
+            "status": "committed",
+            "value": "$0.00M",
+            "roi": "295%",
+            "targetKPIs": "TBD",
+            "dependencies": "None",
+            "qStart": "Q1",
+            "qStartDetail": "Q1 (Implementation)",
+            "priorityReasoning": "No blockers; Strong ROI; Foundation for future work; Quick wins"
+          },
+          {
+            "rank": 6,
+            "project": "OP-001: Executive Summary: OP-001, Sales Deal Agentic Intelligence Solution",
+            "score": "34.2",
+            "tier": "TIER 0: FOUNDATION",
+            "status": "proposed",
+            "value": "TBD",
+            "roi": "19%",
+            "targetKPIs": "TBD",
+            "dependencies": "None",
+            "qStart": "Q3",
+            "qStartDetail": "Q3 (Implementation)",
+            "priorityReasoning": "No blockers; Foundation for future work; Quick wins"
+          },
+          {
+            "rank": 7,
+            "project": "OP-002: OP-002 TechCo Inc Operations Knowledge Management: Problem Analysis & Solution Framework",
+            "score": "33.1",
+            "tier": "TIER 0: FOUNDATION",
+            "status": "proposed",
+            "value": "TBD",
+            "roi": "TBD",
+            "targetKPIs": "TBD",
+            "dependencies": "None",
+            "qStart": "Q2",
+            "qStartDetail": "Q2 (Implementation)",
+            "priorityReasoning": "No blockers; Foundation for future work; Quick wins"
+          }
+        ],
+        "totalValue": "$26.44M",
+        "avgROI": "1565%",
+        "projectCount": 7
+      }
+    },
+    {
+      "id": 5,
+      "type": "portfolio_detail",
+      "title": "Flagship Initiative: Lead Generation Intelligence",
+      "subtitle": "OP-005: Highest-Value Project with 50% Q1 Progress",
+      "purpose": "Deep dive on the highest-scoring project to demonstrate portfolio quality",
+      "content": {
+        "note": "Portfolio detail content"
+      }
+    },
+    {
+      "id": 6,
+      "type": "quarterly_roadmap",
+      "title": "2026 Execution Roadmap",
+      "subtitle": "Phased Approach to Portfolio Delivery",
+      "purpose": "Show systematic approach to project delivery across the year",
+      "content": {
+        "schedule": {
+          "Q1": {
+            "committed": [
+              "OP-000",
+              "OP-011",
+              "OP-008"
+            ],
+            "capacity": 72,
+            "allocated": 72,
+            "buffer": 0,
+            "projects": [
+              "OP-000: OP-000: Claude Enterprise & Code Expansion",
+              "OP-011: Claude Code Marketplace - FY2026 Project Analysis & Engineering Integration Strategy",
+              "OP-008: OP-008 Law2Engine AI Project Analysis"
+            ]
+          },
+          "Q2": {
+            "potential": [
+              "OP-005",
+              "OP-014",
+              "OP-002"
+            ],
+            "capacity": 144,
+            "allocated": 130,
+            "buffer": 14,
+            "projects": [
+              "OP-005: OP-005 Lead Generation Agentic Intelligence - Correction & Portfolio Re-Prioritization",
+              "OP-014: OP-014: Operational Data Foundation - Strategic Analysis (V5 Product-Driven Framework)",
+              "OP-002: OP-002 TechCo Inc Operations Knowledge Management: Problem Analysis & Solution Framework"
+            ]
+          },
+          "Q3": {
+            "potential": [
+              "OP-001"
+            ],
+            "capacity": 288,
+            "allocated": 180,
+            "buffer": 108,
+            "projects": [
+              "OP-001: Executive Summary: OP-001, Sales Deal Agentic Intelligence Solution"
+            ]
+          },
+          "Q4": {
+            "potential": [],
+            "capacity": 432,
+            "allocated": 0,
+            "buffer": 432,
+            "projects": []
+          }
+        },
+        "currentQuarter": "Q1"
+      }
+    },
+    {
+      "id": 7,
+      "type": "q1_committed",
+      "title": "Q1 2026: Immediate Execution Plan",
+      "subtitle": "3 Committed Projects Ready for Launch",
+      "purpose": "Detail the specific projects starting immediately with clear accountability",
+      "content": {
+        "note": "Q1 committed content"
+      }
+    },
+    {
+      "id": 8,
+      "type": "resource_capacity",
+      "title": "Resource Strategy & Capacity Model",
+      "subtitle": "Addressing Q1 Over-Allocation Challenge",
+      "purpose": "Address the critical resource constraint and present solutions",
+      "content": {
+        "note": "Resource capacity content"
+      }
+    },
+    {
+      "id": 9,
+      "type": "dependencies_risks",
+      "title": "Risk Management & Dependencies",
+      "subtitle": "Proactive Mitigation for OP-008 Execution Gaps",
+      "purpose": "Address known risks transparently with mitigation strategies",
+      "content": {
+        "gaps": {
+          "execution": [
+            {
+              "projectId": "OP-008",
+              "plannedQuarter": "Q1",
+              "currentQuarter": "Q1",
+              "progress": 37,
+              "blockers": [],
+              "impact": 74.975
+            }
+          ],
+          "strategic": [],
+          "dependency": [],
+          "resource": [
+            {
+              "quarter": "Q1",
+              "issue": "over-allocated",
+              "allocated": 72,
+              "capacity": 72,
+              "buffer": 0
+            }
+          ]
+        },
+        "projectsAtRisk": []
+      }
+    },
+    {
+      "id": 10,
+      "type": "next_steps",
+      "title": "Immediate Actions Required",
+      "subtitle": "Critical Decisions Needed in Next 30 Days",
+      "purpose": "Drive specific executive decisions and commitments needed for success",
+      "content": {
+        "recommendations": [
+          {
+            "type": "immediate",
+            "priority": "high",
+            "action": "Address OP-008 blockers: ",
+            "owner": "Engineering Lead",
+            "timeline": "This week",
+            "reason": "High-impact project (score 74.975) significantly behind schedule"
+          },
+          {
+            "type": "immediate",
+            "priority": "high",
+            "action": "Q1 over-allocated (72/72 days). Defer lower-priority projects or add capacity.",
+            "owner": "PMO",
+            "timeline": "This week",
+            "reason": "Zero buffer capacity creates execution risk"
+          },
+          {
+            "type": "near-term",
+            "priority": "medium",
+            "action": "Establish weekly progress reviews for at-risk projects",
+            "owner": "PMO",
+            "timeline": "Next sprint",
+            "reason": "Improve visibility into blocked work"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "type": "appendix",
+      "title": "Supporting Data & Analysis",
+      "subtitle": "Detailed Project Metrics and Financial Models",
+      "purpose": "Provide backup data for questions and deeper analysis",
+      "content": {
+        "note": "Appendix content"
+      }
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-01-28T19:10:24.001Z",
+    "generatedBy": "ai-presentation-generator",
+    "version": "2026-Q1",
+    "narrativeType": "NEW_PLAN",
+    "model": "claude-sonnet-4-20250514",
+    "slideCount": 11,
+    "usedFallback": false,
+    "error": null,
+    "quarter": "Q1",
+    "projectCount": 7
+  }
+}

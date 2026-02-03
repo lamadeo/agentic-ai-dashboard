@@ -1,0 +1,342 @@
+{
+  "productivityMultiplier": null,
+  "engagementMultiplier": null,
+  "incrementalROI": {
+    "githubToClaudeCode": {
+      "scenario": "GitHub Copilot → Claude Code Premium",
+      "type": "gh_to_premium",
+      "baselineHours": 11,
+      "baselineCost": 19,
+      "currentHours": 80,
+      "currentCost": 200,
+      "incrementalHours": 69,
+      "incrementalValue": 4968,
+      "hourlyRate": 72,
+      "replacement": {
+        "incrementalCost": 181,
+        "incrementalROI": 27.4,
+        "industryBenchmark": {
+          "incrementalROI": 26.5,
+          "incrementalHours": 66.7,
+          "incrementalValue": 4802
+        },
+        "roiComparison": {
+          "delta": 0.8999999999999986,
+          "deltaPercent": 3
+        }
+      },
+      "additive": {
+        "incrementalCost": 200,
+        "incrementalROI": 24.8,
+        "industryBenchmark": {
+          "incrementalROI": 24,
+          "incrementalHours": 66.7,
+          "incrementalValue": 4802
+        },
+        "roiComparison": {
+          "delta": 0.8000000000000007,
+          "deltaPercent": 3
+        }
+      },
+      "industryBenchmark": {
+        "baselineHours": 13.3,
+        "baselineCost": 19,
+        "currentHours": 80,
+        "currentCost": 200,
+        "confidenceLevel": "medium",
+        "lowConfidence": false,
+        "studyCount": 3,
+        "sources": [
+          {
+            "title": "Research: quantifying GitHub Copilot's impact on developer productivity and happiness",
+            "author": "GitHub",
+            "year": 2022,
+            "sampleSize": 2000,
+            "findingHours": "~13.3",
+            "weight": 0.36,
+            "url": "https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/"
+          },
+          {
+            "title": "The Economic Impact of the AI-Powered Developer Lifecycle",
+            "author": "Forrester Consulting (commissioned by GitHub)",
+            "year": 2023,
+            "sampleSize": 9,
+            "findingHours": "~18-20",
+            "weight": 0,
+            "url": "https://github.com/resources/articles/software-development/forrester-total-economic-impact-github-copilot"
+          },
+          {
+            "title": "Measuring GitHub Copilot's Impact on Productivity",
+            "author": "GitClear",
+            "year": 2024,
+            "sampleSize": "153 million",
+            "findingHours": "Variable/disputed",
+            "weight": null,
+            "url": "https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality"
+          }
+        ]
+      }
+    },
+    "m365ToClaudeEnterprise": {
+      "scenario": "M365 Copilot → Claude Enterprise Standard",
+      "type": "m365_to_standard",
+      "baselineHours": 11,
+      "baselineCost": 30,
+      "currentHours": 92,
+      "currentCost": 40,
+      "incrementalHours": 81,
+      "incrementalValue": 6237,
+      "productivityRatio": 8.41,
+      "m365PromptsPerUser": 44,
+      "claudeMessagesPerUser": 370,
+      "hourlyRate": 77,
+      "replacement": {
+        "incrementalCost": 10,
+        "incrementalROI": 623.7,
+        "industryBenchmark": {
+          "incrementalROI": 652.2,
+          "incrementalHours": 84.7,
+          "incrementalValue": 6522
+        },
+        "roiComparison": {
+          "delta": -28.5,
+          "deltaPercent": -4
+        }
+      },
+      "additive": {
+        "incrementalCost": 40,
+        "incrementalROI": 155.9,
+        "industryBenchmark": {
+          "incrementalROI": 163.1,
+          "incrementalHours": 84.7,
+          "incrementalValue": 6522
+        },
+        "roiComparison": {
+          "delta": -7.199999999999989,
+          "deltaPercent": -4
+        }
+      },
+      "industryBenchmark": {
+        "baselineHours": 7.3,
+        "baselineCost": 30,
+        "currentHours": 92,
+        "currentCost": 40,
+        "confidenceLevel": "high",
+        "lowConfidence": false,
+        "studyCount": 16,
+        "totalSampleSize": 69260,
+        "hoursSavedPerMonth": 7.3,
+        "confidenceInterval": [
+          6.4,
+          8.2
+        ],
+        "coefficientOfVariation": 0.25,
+        "aggregationMethod": "weighted_mean_across_roles",
+        "sources": [
+          {
+            "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+            "author": "GitHub/Microsoft Research",
+            "year": 2022,
+            "sampleSize": 95,
+            "findingHours": "~8-12 (estimated from 55% faster task completion)",
+            "weight": 0.02,
+            "url": "https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/",
+            "role": "software_engineer"
+          },
+          {
+            "title": "Measuring GitHub Copilot's Impact on Productivity",
+            "author": "GitHub",
+            "year": 2023,
+            "sampleSize": 2000,
+            "findingHours": "~10-16 (estimated from survey responses)",
+            "weight": 0.59,
+            "url": "https://github.blog/2023-06-13-survey-reveals-ais-impact-on-the-developer-experience/",
+            "role": "software_engineer"
+          },
+          {
+            "title": "The Total Economic Impact of Microsoft 365 Copilot",
+            "author": "Forrester Consulting (commissioned by Microsoft)",
+            "year": 2025,
+            "sampleSize": 367,
+            "findingHours": 9,
+            "weight": 1,
+            "url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/TheTEIOfMicrosoft365Copilot.pdf",
+            "role": "software_engineer"
+          },
+          {
+            "title": "Australian Government Microsoft 365 Copilot Trial - Productivity Report",
+            "author": "Nous Group (for Digital Transformation Agency)",
+            "year": 2024,
+            "sampleSize": 7600,
+            "findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+            "weight": 2.5,
+            "url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity",
+            "role": "software_engineer"
+          },
+          {
+            "title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+            "author": "Microsoft",
+            "year": 2024,
+            "sampleSize": 1000,
+            "findingHours": "~5.5",
+            "weight": 0.5,
+            "url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/",
+            "role": "software_engineer"
+          },
+          {
+            "title": "The Total Economic Impact of Microsoft 365 Copilot",
+            "author": "Forrester Consulting (commissioned by Microsoft)",
+            "year": 2025,
+            "sampleSize": 367,
+            "findingHours": 9,
+            "weight": 1,
+            "url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/TheTEIOfMicrosoft365Copilot.pdf",
+            "role": "sales"
+          },
+          {
+            "title": "Australian Government Microsoft 365 Copilot Trial - Productivity Report",
+            "author": "Nous Group (for Digital Transformation Agency)",
+            "year": 2024,
+            "sampleSize": 7600,
+            "findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+            "weight": 2.5,
+            "url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity",
+            "role": "sales"
+          },
+          {
+            "title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+            "author": "Microsoft",
+            "year": 2024,
+            "sampleSize": 1000,
+            "findingHours": "~5.5",
+            "weight": 0.5,
+            "url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/",
+            "role": "sales"
+          },
+          {
+            "title": "The Total Economic Impact of Microsoft 365 Copilot",
+            "author": "Forrester Research (commissioned by Microsoft)",
+            "year": 2023,
+            "sampleSize": 297,
+            "findingHours": 11.2,
+            "weight": 0.13,
+            "url": "Available through Microsoft/Forrester",
+            "role": "marketing"
+          },
+          {
+            "title": "Work Trend Index: Will AI Fix Work?",
+            "author": "Microsoft",
+            "year": 2023,
+            "sampleSize": 31000,
+            "findingHours": 8.5,
+            "weight": 9.12,
+            "url": "Microsoft Work Trend Index 2023",
+            "role": "marketing"
+          },
+          {
+            "title": "The Total Economic Impact of Microsoft 365 Copilot",
+            "author": "Forrester Consulting (commissioned by Microsoft)",
+            "year": 2025,
+            "sampleSize": 367,
+            "findingHours": 9,
+            "weight": 1,
+            "url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/TheTEIOfMicrosoft365Copilot.pdf",
+            "role": "marketing"
+          },
+          {
+            "title": "Australian Government Microsoft 365 Copilot Trial - Productivity Report",
+            "author": "Nous Group (for Digital Transformation Agency)",
+            "year": 2024,
+            "sampleSize": 7600,
+            "findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+            "weight": 2.5,
+            "url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity",
+            "role": "marketing"
+          },
+          {
+            "title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+            "author": "Microsoft",
+            "year": 2024,
+            "sampleSize": 1000,
+            "findingHours": "~5.5",
+            "weight": 0.5,
+            "url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/",
+            "role": "marketing"
+          },
+          {
+            "title": "The Total Economic Impact of Microsoft 365 Copilot",
+            "author": "Forrester Research",
+            "year": 2023,
+            "sampleSize": 300,
+            "findingHours": "Estimated 1-2 hours per week (4-8 hours monthly)",
+            "weight": null,
+            "url": "Forrester TEI study commissioned by Microsoft",
+            "role": "customer_success"
+          },
+          {
+            "title": "GitHub Copilot Developer Productivity Study",
+            "author": "GitHub/Microsoft",
+            "year": 2023,
+            "sampleSize": 95,
+            "findingHours": "Approximately 8-12 hours (based on 55% task completion speed increase)",
+            "weight": 0.03,
+            "url": "GitHub research publication",
+            "role": "customer_success"
+          },
+          {
+            "title": "The Total Economic Impact of Microsoft 365 Copilot",
+            "author": "Forrester Consulting (commissioned by Microsoft)",
+            "year": 2025,
+            "sampleSize": 367,
+            "findingHours": 9,
+            "weight": 1,
+            "url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/TheTEIOfMicrosoft365Copilot.pdf",
+            "role": "customer_success"
+          },
+          {
+            "title": "Australian Government Microsoft 365 Copilot Trial - Productivity Report",
+            "author": "Nous Group (for Digital Transformation Agency)",
+            "year": 2024,
+            "sampleSize": 7600,
+            "findingHours": "~6-7 (1 hour/day for daily users, 33% daily usage)",
+            "weight": 2.5,
+            "url": "https://www.digital.gov.au/initiatives/copilot-trial/microsoft-365-copilot-evaluation-report-full/productivity",
+            "role": "customer_success"
+          },
+          {
+            "title": "11 Minutes a Day: Microsoft 365 Copilot 11-Week Study",
+            "author": "Microsoft",
+            "year": 2024,
+            "sampleSize": 1000,
+            "findingHours": "~5.5",
+            "weight": 0.5,
+            "url": "https://news.microsoft.com/en-cee/2024/04/29/11-minutes-a-day-adds-up-to-10-hours-saved-in-11-weeks-results-of-a-study-on-the-impact-of-ai/",
+            "role": "customer_success"
+          }
+        ]
+      },
+      "claudeEnterpriseSources": [
+        {
+          "title": "Estimating AI productivity gains from Claude conversations",
+          "author": "Anthropic",
+          "year": 2025,
+          "sampleSize": 4000000,
+          "findingHours": "80% time savings per task, median task cost $54 in human labor",
+          "weight": 1,
+          "url": "https://www.anthropic.com/research/estimating-productivity-gains",
+          "role": "software_engineer"
+        },
+        {
+          "title": "Which Economic Tasks are Performed with AI? Evidence from Millions of Claude Conversations",
+          "author": "Anthropic Research (Handa, Tamkin, McCain et al.)",
+          "year": 2025,
+          "sampleSize": 9000,
+          "findingHours": "57% augmentation vs 43% automation, 36% of occupations use AI for 25%+ of tasks",
+          "weight": 0.8,
+          "url": "https://arxiv.org/abs/2503.04761",
+          "role": "software_engineer"
+        }
+      ]
+    }
+  }
+}

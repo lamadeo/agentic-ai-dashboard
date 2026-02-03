@@ -1,0 +1,26 @@
+[
+  {
+    "app": "Teams",
+    "users": 218
+  },
+  {
+    "app": "Copilot Chat",
+    "users": 194
+  },
+  {
+    "app": "Outlook",
+    "users": 179
+  },
+  {
+    "app": "Word",
+    "users": 158
+  },
+  {
+    "app": "Excel",
+    "users": 148
+  },
+  {
+    "app": "PowerPoint",
+    "users": 91
+  }
+]

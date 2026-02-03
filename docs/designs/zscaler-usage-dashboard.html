@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Usage Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+    <div id="app" class="p-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">Application Usage Analytics Dashboard</h1>
+                <p class="text-gray-600 mt-1" id="appTitle">Upload Zscaler CSV to analyze usage patterns</p>
+            </div>
+            <button id="generatePdfBtn" onclick="downloadHTMLReport()" class="hidden bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Download HTML Report
+            </button>
+        </div>
+        
+        <div id="file-upload" class="bg-white p-8 rounded-lg shadow mb-6">
+            <label class="block mb-4 text-lg font-medium">Upload Zscaler Usage CSV</label>
+            <input type="file" id="csvInput" accept=".csv" class="block w-full text-sm text-gray-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-blue-50 file:text-blue-700
+                hover:file:bg-blue-100
+            "/>
+            <p class="mt-2 text-sm text-gray-500">Zscaler Shadow IT Report format supported</p>
+            <p class="mt-1 text-sm text-gray-500">After uploading, click "Download HTML Report" to generate a printable report</p>
+        </div>
+
+        <div id="loading" class="hidden text-center py-8">
+            <div class="text-lg">Processing usage data...</div>
+        </div>
+
+        <div id="error" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+            <h2 class="text-lg font-semibold text-red-800 mb-2">Error Loading Data</h2>
+            <p id="error-message" class="text-red-600"></p>
+        </div>
+
+        <div id="dashboard" class="hidden">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Total Users</h3>
+                    <div id="totalUsers" class="text-2xl font-bold">0</div>
+                    <div class="text-xs text-gray-500 mt-1">Unique users</div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Total Transactions</h3>
+                    <div id="totalTransactions" class="text-2xl font-bold">0</div>
+                    <div class="text-xs text-gray-500 mt-1" id="avgTransactions">0 avg per user</div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Total Data Transfer</h3>
+                    <div id="totalBytes" class="text-2xl font-bold">0 B</div>
+                    <div class="text-xs text-gray-500 mt-1">Upload + Download</div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="text-sm font-medium text-gray-600 mb-2">Departments</h3>
+                    <div id="totalDepartments" class="text-2xl font-bold">0</div>
+                    <div class="text-xs text-gray-500 mt-1">Unique departments</div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-6">
+                <div class="border-b border-gray-200 bg-white rounded-t-lg">
+                    <nav class="flex space-x-4 px-4">
+                        <button onclick="showTab('overview')" id="tab-overview" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600">Overview</button>
+                        <button onclick="showTab('users')" id="tab-users" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500">Users</button>
+                        <button onclick="showTab('departments')" id="tab-departments" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500">Departments</button>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="content-overview" class="tab-content">
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <h3 class="text-lg font-semibold mb-4">Data Transfer by User</h3>
+                    <canvas id="dataTransferChart"></canvas>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-4">Upload vs Download</h3>
+                        <canvas id="uploadDownloadChart"></canvas>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-4">Transactions by User</h3>
+                        <canvas id="transactionsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-users" class="tab-content hidden">
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <h3 class="text-lg font-semibold mb-4">User Leaderboard</h3>
+                    <div class="overflow-x-auto">
+                        <table id="userTable" class="w-full text-sm text-left text-gray-700">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('userTable', 0)">User ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('userTable', 1)">Department ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('userTable', 2)">Transactions ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('userTable', 3)">Upload ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('userTable', 4)">Download ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('userTable', 5)">Total Data ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('userTable', 6)">Last Accessed ↕</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Top 10 Users by Transactions</h3>
+                    <canvas id="topUsersChart"></canvas>
+                </div>
+            </div>
+
+            <div id="content-departments" class="tab-content hidden">
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <h3 class="text-lg font-semibold mb-4">Department Statistics</h3>
+                    <div class="overflow-x-auto">
+                        <table id="departmentTable" class="w-full text-sm text-left text-gray-700">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('departmentTable', 0)">Department ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('departmentTable', 1)">Users ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('departmentTable', 2)">Transactions ↕</th>
+                                    <th class="px-6 py-3 cursor-pointer hover:bg-gray-100" onclick="sortTable('departmentTable', 3)">Total Data ↕</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Transactions by Department</h3>
+                    <canvas id="departmentChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentData = null;
+        let charts = {};
+        let appName = 'Claude';
+
+        function formatBytes(bytesStr) {
+            // Handle "X Bytes" format from CSV - e.g., "11749828 Bytes"
+            if (!bytesStr) return '0 B';
+            // Remove " Bytes" suffix and any commas, keep only digits
+            const bytes = parseInt(bytesStr.toString().replace(/ Bytes/g, '').replace(/,/g, '')) || 0;
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function parseBytes(bytesStr) {
+            if (!bytesStr) return 0;
+            // Remove " Bytes" suffix and any commas, keep only digits
+            return parseInt(bytesStr.toString().replace(/ Bytes/g, '').replace(/,/g, '')) || 0;
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('border-blue-500', 'text-blue-600');
+                btn.classList.add('border-transparent', 'text-gray-500');
+            });
+            document.getElementById('tab-' + tabName).classList.remove('border-transparent', 'text-gray-500');
+            document.getElementById('tab-' + tabName).classList.add('border-blue-500', 'text-blue-600');
+
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+        }
+
+        function sortTable(tableId, columnIndex) {
+            const table = document.getElementById(tableId);
+            const tbody = table.getElementsByTagName('tbody')[0];
+            const rows = Array.from(tbody.getElementsByTagName('tr'));
+            
+            rows.sort((a, b) => {
+                let aVal = a.getElementsByTagName('td')[columnIndex].textContent;
+                let bVal = b.getElementsByTagName('td')[columnIndex].textContent;
+                
+                const aNum = parseFloat(aVal.replace(/[^0-9.-]/g, ''));
+                const bNum = parseFloat(bVal.replace(/[^0-9.-]/g, ''));
+                
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return bNum - aNum;
+                }
+                return aVal.localeCompare(bVal);
+            });
+            
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        function downloadHTMLReport() {
+            if (!currentData) {
+                alert('No data loaded. Please upload a CSV file first.');
+                return;
+            }
+
+            try {
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                const filename = `${appName}_Usage_Report_${now.toISOString().split('T')[0]}.html`;
+
+                const totalUsers = document.getElementById('totalUsers').textContent;
+                const totalTransactions = document.getElementById('totalTransactions').textContent;
+                const totalBytes = document.getElementById('totalBytes').textContent;
+                const totalDepartments = document.getElementById('totalDepartments').textContent;
+
+                const dataTransferImg = document.getElementById('dataTransferChart').toDataURL('image/png', 1.0);
+                const uploadDownloadImg = document.getElementById('uploadDownloadChart').toDataURL('image/png', 1.0);
+                const transactionsImg = document.getElementById('transactionsChart').toDataURL('image/png', 1.0);
+                const topUsersImg = document.getElementById('topUsersChart').toDataURL('image/png', 1.0);
+                const departmentImg = document.getElementById('departmentChart').toDataURL('image/png', 1.0);
+
+                // Get ALL users from table
+                const userTable = document.getElementById('userTable');
+                const userRows = Array.from(userTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr'));
+                let userTableHTML = '';
+                userRows.forEach((row, idx) => {
+                    const cells = Array.from(row.getElementsByTagName('td'));
+                    const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : (idx + 1);
+                    userTableHTML += `
+                        <tr style="border: 1px solid #e5e7eb;">
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${medal}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb; font-size: 11px;">${cells[0].textContent}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb; font-size: 11px;">${cells[1].textContent}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${cells[2].textContent}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${cells[5].textContent}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${cells[6].textContent}</td>
+                        </tr>
+                    `;
+                });
+
+                // Get ALL departments from table
+                const departmentTable = document.getElementById('departmentTable');
+                const departmentRows = Array.from(departmentTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr'));
+                let departmentTableHTML = '';
+                departmentRows.forEach(row => {
+                    const cells = Array.from(row.getElementsByTagName('td'));
+                    departmentTableHTML += `
+                        <tr style="border: 1px solid #e5e7eb;">
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${cells[0].textContent}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${cells[1].textContent}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${cells[2].textContent}</td>
+                            <td style="padding: 10px; border: 1px solid #e5e7eb;">${cells[3].textContent}</td>
+                        </tr>
+                    `;
+                });
+
+                const reportHTML = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${appName} Usage Analytics Report</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            background: white;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 { 
+            text-align: center; 
+            color: #1f2937; 
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .subtitle { 
+            text-align: center; 
+            color: #6b7280; 
+            margin-bottom: 40px;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .metric-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            background: white;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        .metric-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+        img {
+            max-width: 100%;
+            margin-bottom: 30px;
+            border: 1px solid #e5e7eb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .print-btn-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .print-btn {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .print-btn:hover {
+            background: #2563eb;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            @page { margin: 0.5in; }
+            .print-btn-container { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-btn-container no-print">
+        <button onclick="window.print()" class="print-btn">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <h1>${appName} Usage Analytics Report</h1>
+    <p class="subtitle">Generated: ${dateStr}</p>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-label">Total Users</div>
+            <div class="metric-value">${totalUsers}</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Total Transactions</div>
+            <div class="metric-value">${totalTransactions}</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Total Data Transfer</div>
+            <div class="metric-value">${totalBytes}</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Departments</div>
+            <div class="metric-value">${totalDepartments}</div>
+        </div>
+    </div>
+
+    <div class="section" style="page-break-after: always;">
+        <h2>Data Transfer by User</h2>
+        <img src="${dataTransferImg}" alt="Data Transfer Chart" />
+    </div>
+
+    <div class="section">
+        <h2>Complete User Leaderboard (${userRows.length} Users)</h2>
+        <table style="border: 2px solid #e5e7eb; font-size: 11px;">
+            <thead>
+                <tr style="background-color: #f3f4f6;">
+                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Rank</th>
+                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">User</th>
+                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Department</th>
+                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Transactions</th>
+                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Total Data</th>
+                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Last Accessed</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${userTableHTML}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section" style="page-break-before: always;">
+        <h2>Department Statistics (${departmentRows.length} Departments)</h2>
+        <table style="border: 2px solid #e5e7eb;">
+            <thead>
+                <tr style="background-color: #f3f4f6;">
+                    <th style="padding: 12px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Department</th>
+                    <th style="padding: 12px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Users</th>
+                    <th style="padding: 12px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Transactions</th>
+                    <th style="padding: 12px; border: 1px solid #e5e7eb; text-align: left; font-weight: bold;">Total Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${departmentTableHTML}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section" style="page-break-after: always;">
+        <h2>Top Users Visualization</h2>
+        <img src="${topUsersImg}" alt="Top Users Chart" />
+    </div>
+
+    <div class="section" style="page-break-after: always;">
+        <h2>Upload vs Download</h2>
+        <img src="${uploadDownloadImg}" alt="Upload Download Chart" />
+    </div>
+
+    <div class="section" style="page-break-after: always;">
+        <h2>Transactions Distribution</h2>
+        <img src="${transactionsImg}" alt="Transactions Chart" />
+    </div>
+
+    <div class="section">
+        <h2>Transactions by Department</h2>
+        <img src="${departmentImg}" alt="Department Chart" />
+    </div>
+
+    <div class="no-print" style="text-align: center; margin-top: 60px; padding: 30px; background: #f9fafb; border-radius: 12px; border: 2px solid #e5e7eb;">
+        <h3 style="font-size: 18px; margin-bottom: 12px;">Ready to Save as PDF?</h3>
+        <p style="color: #6b7280; margin-bottom: 20px;">Click the button below or use Ctrl+P (Cmd+P on Mac)</p>
+        <button onclick="window.print()" style="background: #3b82f6; color: white; padding: 14px 32px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 6px rgba(59,130,246,0.3);">
+            🖨️ Print / Save as PDF
+        </button>
+    </div>
+</body>
+</html>`;
+
+                const blob = new Blob([reportHTML], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                alert('Report downloaded! Open the HTML file in your browser and use Ctrl+P (Cmd+P on Mac) or click the Print button to save as PDF.');
+
+            } catch (error) {
+                console.error('Error generating report:', error);
+                alert('Error generating report: ' + error.message);
+            }
+        }
+
+        document.getElementById('csvInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('error').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+
+            Papa.parse(file, {
+                header: false,
+                dynamicTyping: false,
+                skipEmptyLines: 'greedy',
+                delimiter: ',',
+                quoteChar: '"',
+                complete: function(results) {
+                    try {
+                        processData(results.data);
+                    } catch (error) {
+                        showError(error.message);
+                    }
+                },
+                error: function(error) {
+                    showError('CSV parsing failed: ' + error.message);
+                }
+            });
+        });
+
+        function showError(message) {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('error').classList.remove('hidden');
+            document.getElementById('error-message').textContent = message;
+        }
+
+        function processData(rawData) {
+            try {
+                console.log('Raw data rows:', rawData.length);
+                console.log('First few rows:', rawData.slice(0, 10));
+                
+                // Find the header row (contains "User Name")
+                let headerIndex = -1;
+                for (let i = 0; i < rawData.length; i++) {
+                    const row = Array.isArray(rawData[i]) ? rawData[i] : [];
+                    if (row.some(cell => cell && cell.includes && cell.includes('User Name'))) {
+                        headerIndex = i;
+                        break;
+                    }
+                }
+
+                if (headerIndex === -1) {
+                    throw new Error('Could not find header row with "User Name". Found columns: ' + (rawData[0] || []).join(', '));
+                }
+
+                console.log('Header found at row:', headerIndex);
+                const headers = rawData[headerIndex];
+                console.log('Headers:', headers);
+                
+                const dataRows = rawData.slice(headerIndex + 1).filter(row => Array.isArray(row) && row.length > 0);
+                console.log('Data rows:', dataRows.length);
+
+                // Find column indices - be more flexible with matching and handle partial names
+                const userNameIdx = headers.findIndex(h => h && h.toString().trim() === 'User Name');
+                const deptIdx = headers.findIndex(h => h && h.toString().trim() === 'Department Name');
+                const uploadIdx = headers.findIndex(h => h && (h.toString().trim() === 'Upload Bytes' || h.toString().trim() === 'Upload'));
+                const downloadIdx = headers.findIndex(h => h && (h.toString().trim() === 'Download Bytes' || h.toString().trim() === 'Download'));
+                const totalIdx = headers.findIndex(h => h && (h.toString().trim() === 'Total Bytes' || h.toString().trim() === 'Total'));
+                const transactionsIdx = headers.findIndex(h => h && h.toString().trim() === 'Transactions');
+                const lastAccessedIdx = headers.findIndex(h => h && h.toString().trim() === 'Last Accessed');
+                const appIdx = headers.findIndex(h => h && h.toString().trim() === 'Application');
+
+                console.log('Column indices:', { 
+                    userNameIdx, 
+                    deptIdx, 
+                    uploadIdx, 
+                    downloadIdx, 
+                    totalIdx, 
+                    transactionsIdx,
+                    lastAccessedIdx,
+                    appIdx
+                });
+                console.log('Headers array:', headers.map((h, i) => `${i}: "${h}"`));
+
+                if (userNameIdx === -1) {
+                    throw new Error('User Name column not found. Headers: ' + headers.join(', '));
+                }
+                
+                if (uploadIdx === -1) {
+                    throw new Error('Upload column not found. Headers: ' + headers.join(', '));
+                }
+
+                // Detect app name
+                if (appIdx !== -1 && dataRows[0] && dataRows[0][appIdx]) {
+                    appName = dataRows[0][appIdx];
+                    document.getElementById('appTitle').textContent = appName + ' Usage Analytics - Zscaler Shadow IT Report';
+                }
+
+                // Process data
+                const processedData = dataRows
+                    .filter(row => row[userNameIdx] && row[userNameIdx].toString().trim() && row[userNameIdx].includes('@'))
+                    .map((row, idx) => {
+                        const uploadBytes = parseBytes(row[uploadIdx]);
+                        const downloadBytes = parseBytes(row[downloadIdx]);
+                        const totalBytes = parseBytes(row[totalIdx]);
+                        
+                        console.log(`Row ${idx}: Upload=${row[uploadIdx]} -> ${uploadBytes}, Download=${row[downloadIdx]} -> ${downloadBytes}`);
+                        
+                        return {
+                            userName: row[userNameIdx] || 'Unknown',
+                            department: row[deptIdx] || 'Unknown',
+                            uploadBytes: uploadBytes,
+                            downloadBytes: downloadBytes,
+                            totalBytes: totalBytes,
+                            transactions: parseInt((row[transactionsIdx] || '0').toString().replace(/,/g, '')) || 0,
+                            lastAccessed: row[lastAccessedIdx] || 'Unknown'
+                        };
+                    });
+
+                console.log('Processed data:', processedData.length, 'users');
+                console.log('Sample processed row:', processedData[0]);
+
+                currentData = processedData;
+                renderDashboard(processedData);
+
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                document.getElementById('generatePdfBtn').classList.remove('hidden');
+            } catch (error) {
+                console.error('Processing error:', error);
+                showError('Data processing failed: ' + error.message);
+            }
+        }
+
+        function renderDashboard(data) {
+            const totalUsers = data.length;
+            const totalTransactions = data.reduce((sum, r) => sum + r.transactions, 0);
+            const totalBytes = data.reduce((sum, r) => sum + r.totalBytes, 0);
+            const departments = new Set(data.map(r => r.department)).size;
+
+            document.getElementById('totalUsers').textContent = totalUsers;
+            document.getElementById('totalTransactions').textContent = totalTransactions.toLocaleString();
+            document.getElementById('avgTransactions').textContent = Math.round(totalTransactions / totalUsers).toLocaleString() + ' avg per user';
+            document.getElementById('totalBytes').textContent = formatBytes(totalBytes);
+            document.getElementById('totalDepartments').textContent = departments;
+
+            // Sort by total bytes for main chart
+            const sortedData = [...data].sort((a, b) => b.totalBytes - a.totalBytes);
+            const top20Users = sortedData.slice(0, 20);
+
+            // Data Transfer Chart
+            if (charts.dataTransfer) charts.dataTransfer.destroy();
+            charts.dataTransfer = new Chart(document.getElementById('dataTransferChart'), {
+                type: 'bar',
+                data: {
+                    labels: top20Users.map(u => u.userName.split('@')[0]),
+                    datasets: [{
+                        label: 'Total Data Transfer',
+                        data: top20Users.map(u => u.totalBytes),
+                        backgroundColor: '#3b82f6'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatBytes(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Upload vs Download
+            const totalUpload = data.reduce((sum, r) => sum + r.uploadBytes, 0);
+            const totalDownload = data.reduce((sum, r) => sum + r.downloadBytes, 0);
+
+            if (charts.uploadDownload) charts.uploadDownload.destroy();
+            charts.uploadDownload = new Chart(document.getElementById('uploadDownloadChart'), {
+                type: 'pie',
+                data: {
+                    labels: ['Upload', 'Download'],
+                    datasets: [{
+                        data: [totalUpload, totalDownload],
+                        backgroundColor: ['#3b82f6', '#10b981']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + formatBytes(context.raw);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Transactions Chart
+            const top10Transactions = [...data].sort((a, b) => b.transactions - a.transactions).slice(0, 10);
+
+            if (charts.transactions) charts.transactions.destroy();
+            charts.transactions = new Chart(document.getElementById('transactionsChart'), {
+                type: 'bar',
+                data: {
+                    labels: top10Transactions.map(u => u.userName.split('@')[0]),
+                    datasets: [{
+                        label: 'Transactions',
+                        data: top10Transactions.map(u => u.transactions),
+                        backgroundColor: '#8b5cf6'
+                    }]
+                },
+                options: { responsive: true }
+            });
+
+            // User Table
+            const tbody = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+            tbody.innerHTML = '';
+            sortedData.forEach(user => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td class="px-6 py-4">${user.userName}</td>
+                    <td class="px-6 py-4">${user.department}</td>
+                    <td class="px-6 py-4">${user.transactions.toLocaleString()}</td>
+                    <td class="px-6 py-4">${formatBytes(user.uploadBytes)}</td>
+                    <td class="px-6 py-4">${formatBytes(user.downloadBytes)}</td>
+                    <td class="px-6 py-4">${formatBytes(user.totalBytes)}</td>
+                    <td class="px-6 py-4">${user.lastAccessed}</td>
+                `;
+                row.className = 'bg-white border-b hover:bg-gray-50';
+            });
+
+            // Top Users Chart
+            if (charts.topUsers) charts.topUsers.destroy();
+            charts.topUsers = new Chart(document.getElementById('topUsersChart'), {
+                type: 'bar',
+                data: {
+                    labels: top10Transactions.map(u => u.userName.split('@')[0]),
+                    datasets: [{
+                        label: 'Transactions',
+                        data: top10Transactions.map(u => u.transactions),
+                        backgroundColor: '#3b82f6'
+                    }]
+                },
+                options: { indexAxis: 'y', responsive: true }
+            });
+
+            // Department Stats
+            const deptStats = {};
+            data.forEach(row => {
+                if (!deptStats[row.department]) {
+                    deptStats[row.department] = { users: new Set(), transactions: 0, totalBytes: 0 };
+                }
+                deptStats[row.department].users.add(row.userName);
+                deptStats[row.department].transactions += row.transactions;
+                deptStats[row.department].totalBytes += row.totalBytes;
+            });
+
+            const deptTbody = document.getElementById('departmentTable').getElementsByTagName('tbody')[0];
+            deptTbody.innerHTML = '';
+            Object.entries(deptStats).sort((a, b) => b[1].transactions - a[1].transactions).forEach(([dept, stats]) => {
+                const row = deptTbody.insertRow();
+                row.innerHTML = `
+                    <td class="px-6 py-4">${dept}</td>
+                    <td class="px-6 py-4">${stats.users.size}</td>
+                    <td class="px-6 py-4">${stats.transactions.toLocaleString()}</td>
+                    <td class="px-6 py-4">${formatBytes(stats.totalBytes)}</td>
+                `;
+                row.className = 'bg-white border-b hover:bg-gray-50';
+            });
+
+            // Department Chart
+            const deptEntries = Object.entries(deptStats).sort((a, b) => b[1].transactions - a[1].transactions);
+            if (charts.department) charts.department.destroy();
+            charts.department = new Chart(document.getElementById('departmentChart'), {
+                type: 'bar',
+                data: {
+                    labels: deptEntries.map(([dept]) => dept),
+                    datasets: [{
+                        label: 'Transactions',
+                        data: deptEntries.map(([, stats]) => stats.transactions),
+                        backgroundColor: '#10b981'
+                    }]
+                },
+                options: { indexAxis: 'y', responsive: true }
+            });
+        }
+    </script>
+</body>
+</html>

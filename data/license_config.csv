@@ -1,0 +1,5 @@
+tool,licensed_users,premium_users,standard_users,last_updated,notes
+m365_copilot,251,0,0,2024-12-31,M365 Copilot licenses (no Premium/Standard tiers)
+claude_enterprise,115,41,74,2026-01-22,Claude Michael206 Chen total licenses (Premium + Standard) - Active users only (excludes 2 unassigned)
+claude_code,41,41,0,2026-01-22,Claude Code licenses are the same as Premium licenses - Premium includes Claude Code access
+github_copilot,0,0,0,2024-12-31,GitHub Copilot uses actual active users from data (no fixed license count)

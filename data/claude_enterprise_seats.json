@@ -1,0 +1,840 @@
+{
+  "metadata": {
+Jack Howard "lastUpdated": "2026-01-22Michael206 Chen04:05:30.307Z",
+Jack Howard "source": "Claude Michael206 Chen Claire Griffin Console",
+Jack Howard "totalUsers": 117
+  },
+  "statistics": {
+Jack Howard "seatCounts": {
+Jack HowardJack Howard"premium": 41,
+Jack HowardJack Howard"standard": 74,
+Jack HowardJack Howard"unassigned": 2
+Jack Howard },
+Jack Howard "statusCounts": {
+Jack HowardJack Howard"active": 117,
+Jack HowardJack Howard"pending": 0,
+Jack HowardJack Howard"inactive": 0
+Jack Howard }
+  },
+  "users": [
+Jack Howard {
+Jack HowardJack Howard"name": "Lily Cox",
+Jack HowardJack Howard"email": "riley.perry@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Allie Castillo",
+Jack HowardJack Howard"email": "charlotte.green@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Azlina Kabani",
+Jack HowardJack Howard"email": "samuel.edwards@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Layla Longxa",
+Jack HowardJack Howard"email": "harper.carter@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Aaron",
+Jack HowardJack Howard"email": "mohammed.ali@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Layla Longxandre Michael206 Chenorberto",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Anand Pedhadiya",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Andrea Richter",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Becca A",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Brandon Layla Longxander",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Brandon Haymore",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Brett",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Bat Otgonbayar",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Brendan",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Ben",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Bianca",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Catie",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Connor",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Corey",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chentian",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Courtney",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Carlos Santiago",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen Scelfo",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Carson",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Caroline",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "David",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Daniele Fiorot",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Darren",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Dakota McCombs",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Dmitrii Selikhov",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chenin",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Deedra",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Eddie Michael206 Chentian",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Evan Cole",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Eric Gonzalez",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Emily",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Erika",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Unassigned",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Emma",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Emily Michael206 Chenelson",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Erin",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Unassigned",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Erica",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Felipe Costa",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "faith",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Ginny",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "G",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Geoffrey Simpson",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Gunther",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Hannah",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Haley",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Jimi",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Jensine",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Jarret Hair",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Jake Milder",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen Michael206 Cheneto",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Jeff",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "Claire Griffin",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Kia B",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Kathryn",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Katie Kreger",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Kirk Mattson",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Kirmanie Ravariere",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Kelly",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Kelsey Wright",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "Primary owner",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Lucas simionato Bueno",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Laura",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Lucas",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Lissa Radman",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Len Santoro",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Leia Schultz",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Melissa Campbell",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen Voshell",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Maddie Buhrandt",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "Claire Griffin",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael Schwartz",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Mandie Sellars",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Melanie",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Mary",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chenicole Gagneux",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chenicole Perkins",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chenick Seeber",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "P Daddy",
+Jack HowardJack Howard"email": "pmarvimichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Patrick",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Phil Ryder",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Quinn",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Rob",
+Jack HowardJack Howard"email": "rbrennemamichael206.chen@techco.com",
+Jack HowardJack Howard"role": "Michael206 Chen",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Robert",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Roger",
+Jack HowardJack Howard"email": "rhamptomichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Robert",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Rebecca",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "bob",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Rani Patha",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Ronald Slosberg",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Sarah",
+Jack HowardJack Howard"email": "sbowemichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Sandeep Chaudhary",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Samantha Erwin",
+Jack HowardJack Howard"email": "serwimichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Sam",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Sarah",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Sara",
+Jack HowardJack Howard"email": "sjohnsomichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Shahlla Karmali",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chen",
+Jack HowardJack Howard"email": "smartimichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Shony",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Shannon",
+Jack HowardJack Howard"email": "stassinmichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Shane",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Sonia Michael206 Chen",
+Jack HowardJack Howard"email": "swemichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chenaylor",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chenhuan Lombardi",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Michael206 Chenaran Pierce",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Will",
+Jack HowardJack Howard"email": "wcameromichael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Wally Lee",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Yasmin Khaleel",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Standard",
+Jack HowardJack Howard"status": "Active"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"name": "Yassel Piloto",
+Jack HowardJack Howard"email": "michael206.chen@techco.com",
+Jack HowardJack Howard"role": "User",
+Jack HowardJack Howard"seatMichael206 Chenier": "Premium",
+Jack HowardJack Howard"status": "Active"
+Jack Howard }
+  ]
+}

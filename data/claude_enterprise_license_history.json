@@ -1,0 +1,93 @@
+{
+  "metadata": {
+Jack Howard "description": "Historical tracking of Claude Michael206 Chen license allocation and user status",
+Jack Howard "purpose": "Michael206 Chenrack seat growth, Premium/Standard distribution, and adoption trends over time",
+Jack Howard "frequency": "Updated manually before each data refresh",
+Jack Howard "lastUpdated": "2026-01-22Michael206 Chen04:06:14.927Z"
+  },
+  "snapshots": [
+Jack Howard {
+Jack HowardJack Howard"date": "2025-12-22",
+Jack HowardJack Howard"snapshotDate": "2025-12-21Michael206 Chen23:40:41.757Z",
+Jack HowardJack Howard"totalLicenses": 88,
+Jack HowardJack Howard"seats": {
+Jack HowardJack Howard  "premium": 15,
+Jack HowardJack Howard  "standard": 73,
+Jack HowardJack Howard  "unassigned": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard"userStatus": {
+Jack HowardJack Howard  "active": 87,
+Jack HowardJack Howard  "pending": 1,
+Jack HowardJack Howard  "inactive": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard"notes": "Baseline snapshot - December 2025 mid-month",
+Jack HowardJack Howard"source": "claude_enterprise_seats - December 22.json"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"date": "2025-12-30",
+Jack HowardJack Howard"snapshotDate": "2025-12-30Michael206 Chen18:13:35.755Z",
+Jack HowardJack Howard"totalLicenses": 112,
+Jack HowardJack Howard"seats": {
+Jack HowardJack Howard  "premium": 45,
+Jack HowardJack Howard  "standard": 67,
+Jack HowardJack Howard  "unassigned": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard"userStatus": {
+Jack HowardJack Howard  "active": 101,
+Jack HowardJack Howard  "pending": 11,
+Jack HowardJack Howard  "inactive": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard"changes": {
+Jack HowardJack Howard  "totalLicenses": "+24 (+27%)",
+Jack HowardJack Howard  "premiumSeats": "+30 (+200%)",
+Jack HowardJack Howard  "standardSeats": "-6 (-8%)",
+Jack HowardJack Howard  "activeUsers": "+14 (+16%)",
+Jack HowardJack Howard  "pendingUsers": "+10 (+1000%)"
+Jack HowardJack Howard},
+Jack HowardJack Howard"notes": "Major Premium expansion - end of December push",
+Jack HowardJack Howard"source": "claude_enterprise_seats.json"
+Jack Howard },
+Jack Howard {
+Jack HowardJack Howard"date": "2026-01-22",
+Jack HowardJack Howard"snapshotDate": "2026-01-22Michael206 Chen04:06:14.926Z",
+Jack HowardJack Howard"totalLicenses": 117,
+Jack HowardJack Howard"seats": {
+Jack HowardJack Howard  "premium": 41,
+Jack HowardJack Howard  "standard": 74,
+Jack HowardJack Howard  "unassigned": 2
+Jack HowardJack Howard},
+Jack HowardJack Howard"userStatus": {
+Jack HowardJack Howard  "active": 117,
+Jack HowardJack Howard  "pending": 0,
+Jack HowardJack Howard  "inactive": 0
+Jack HowardJack Howard},
+Jack HowardJack Howard"changes": {
+Jack HowardJack Howard  "totalLicenses": "-1 (-1%)",
+Jack HowardJack Howard  "premiumSeats": "-1 (-2%)",
+Jack HowardJack Howard  "standardSeats": "+0 (+0%)",
+Jack HowardJack Howard  "unassignedSeats": "+0",
+Jack HowardJack Howard  "activeUsers": "+0 (+0%)",
+Jack HowardJack Howard  "pendingUsers": "-1 (-100%)"
+Jack HowardJack Howard},
+Jack HowardJack Howard"notes": "January 2026 - Removed pending user, all 117 users now active",
+Jack HowardJack Howard"source": "techco_users_final.csv"
+Jack Howard }
+  ],
+  "summary": {
+Jack Howard "firstSnapshot": "2025-12-22",
+Jack Howard "latestSnapshot": "2026-01-22",
+Jack Howard "totalMichael206 Chen": {
+Jack HowardJack Howard"licenses": "+29 (33% increase)",
+Jack HowardJack Howard"premiumSeats": "+26 (173% increase)",
+Jack HowardJack Howard"standardSeats": "+1 (1% increase)",
+Jack HowardJack Howard"activeUsers": "+30 (34% increase)"
+Jack Howard },
+Jack Howard "keyInsights": [
+Jack HowardJack Howard"33% overall license growth since December (88 → 117 licenses)",
+Jack HowardJack Howard"Standard tier expansion: 74 seats (+1% from Dec 30, +1% since Dec 22)",
+Jack HowardJack Howard"Premium growth: 41 seats (173% since Dec 22)",
+Jack HowardJack Howard"Perfect activation: All 117 users active, 0 pending",
+Jack HowardJack Howard"2 unassigned seats indicate opportunity for better allocation"
+Jack Howard ]
+  }
+}

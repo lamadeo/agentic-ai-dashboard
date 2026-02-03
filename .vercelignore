@@ -1,0 +1,4 @@
+# Exclude raw data files - only ai-tools-data.json is needed for deployment
+docs/data/claude-monthly-data
+docs/data/*.zip
+docs/data/*.csv

@@ -1,0 +1,66 @@
+{
+  "productivityMetrics": [
+    {
+      "metric": "Debugging Time Reduction",
+      "before": "3+ hours",
+      "after": "~1 hour",
+      "savings": "67%",
+      "source": "Taran Pierce - Software Engineer"
+    },
+    {
+      "metric": "Daily Communication Catch-up",
+      "before": "30-45 min",
+      "after": "5-10 min",
+      "savings": "70%",
+      "source": "Sara Johnson - Daily workflow"
+    },
+    {
+      "metric": "Multi-system Data Aggregation",
+      "before": "Hours",
+      "after": "Minutes",
+      "savings": "Significant",
+      "source": "Courtney Rogan - Sales Operations"
+    }
+  ],
+  "useCasesByCategory": [
+    {
+      "category": "Code Quality & Development",
+      "count": 4,
+      "impact": "High"
+    },
+    {
+      "category": "Information Synthesis",
+      "count": 3,
+      "impact": "High"
+    },
+    {
+      "category": "Problem Solving",
+      "count": 3,
+      "impact": "Medium-High"
+    },
+    {
+      "category": "Planning & Architecture",
+      "count": 2,
+      "impact": "High"
+    },
+    {
+      "category": "Workflow Automation",
+      "count": 2,
+      "impact": "Medium"
+    }
+  ],
+  "productivityHighlights": [
+    {
+      "text": "<strong>67% reduction</strong> in debugging time using Claude Code for critical environment issues"
+    },
+    {
+      "text": "<strong>Security improvements</strong> with Claude Code automated code reviews identifying vulnerabilities pre-production"
+    },
+    {
+      "text": "<strong>Multi-system integration</strong> with Claude Enterprise connectors enabling \"HUGE wins\" in data aggregation across Slack, SharePoint, Outlook"
+    },
+    {
+      "text": "<strong>Daily workflow automation</strong> with Claude Enterprise saving 70% time on communication catch-up"
+    }
+  ]
+}

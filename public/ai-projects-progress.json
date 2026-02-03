@@ -1,0 +1,322 @@
+{
+  "reports": [
+    {
+      "projectId": "OP-000",
+      "projectName": "OP-000: Claude Enterprise & Code Expansion",
+      "overallProgress": 47,
+      "progressBreakdown": {
+        "phases": {
+          "progress": 20,
+          "completedPhases": 1,
+          "totalPhases": 5,
+          "onTrack": true,
+          "confidence": "low"
+        },
+        "behavioral": {
+          "progress": 63,
+          "signals": {
+            "claudeEnterpriseUsers": 118,
+            "claudeCodeUsers": 28
+          },
+          "confidence": "medium"
+        },
+        "repo": {
+          "progress": 67,
+          "activity": {
+            "commitCount": 71,
+            "prCount": 58,
+            "issueCount": 0,
+            "releaseCount": 0,
+            "lastCommitDate": "2026-01-27T20:18:21Z",
+            "weeklyCommitAvg": 17.9
+          },
+          "roadmapProgress": {
+            "tasksTotal": 0,
+            "tasksCompleted": 0,
+            "tasksInProgress": 0
+          },
+          "velocity": "high",
+          "confidence": "high"
+        }
+      },
+      "status": "proposed",
+      "plannedQuarter": "Q1",
+      "currentQuarter": "Q1",
+      "actualProgress": "on-track",
+      "blockers": [],
+      "velocity": "high",
+      "lastAnalyzed": "2026-01-28T19:09:43.587Z",
+      "metadata": {
+        "tier1Available": true,
+        "tier2Available": true,
+        "tier3Available": true,
+        "confidence": "high"
+      }
+    },
+    {
+      "projectId": "OP-001",
+      "projectName": "Executive Summary: OP-001, Sales Deal Agentic Intelligence Solution",
+      "overallProgress": 50,
+      "progressBreakdown": {
+        "phases": {
+          "progress": 0,
+          "completedPhases": 0,
+          "totalPhases": 10,
+          "onTrack": null,
+          "confidence": "low"
+        },
+        "behavioral": {
+          "progress": 100,
+          "signals": {
+            "salesConversations": 8076,
+            "artifacts": 1190,
+            "projectsCreated": 231
+          },
+          "confidence": "high"
+        },
+        "repo": null
+      },
+      "status": "proposed",
+      "plannedQuarter": "Q3",
+      "currentQuarter": "Q1",
+      "actualProgress": "on-track",
+      "blockers": [],
+      "velocity": "unknown",
+      "lastAnalyzed": "2026-01-28T19:09:43.588Z",
+      "metadata": {
+        "tier1Available": true,
+        "tier2Available": true,
+        "tier3Available": false,
+        "confidence": "medium"
+      }
+    },
+    {
+      "projectId": "OP-002",
+      "projectName": "OP-002 TechCo Inc Operations Knowledge Management: Problem Analysis & Solution Framework",
+      "overallProgress": 50,
+      "progressBreakdown": {
+        "phases": {
+          "progress": 0,
+          "completedPhases": 0,
+          "totalPhases": 2,
+          "onTrack": null,
+          "confidence": "low"
+        },
+        "behavioral": {
+          "progress": 100,
+          "signals": {
+            "conversations": 8076,
+            "artifacts": 1190,
+            "filesUploaded": 17021
+          },
+          "confidence": "high"
+        },
+        "repo": null
+      },
+      "status": "proposed",
+      "plannedQuarter": "Q2",
+      "currentQuarter": "Q1",
+      "actualProgress": "on-track",
+      "blockers": [],
+      "velocity": "unknown",
+      "lastAnalyzed": "2026-01-28T19:09:43.588Z",
+      "metadata": {
+        "tier1Available": true,
+        "tier2Available": true,
+        "tier3Available": false,
+        "confidence": "medium"
+      }
+    },
+    {
+      "projectId": "OP-005",
+      "projectName": "OP-005 Lead Generation Agentic Intelligence - Correction & Portfolio Re-Prioritization",
+      "overallProgress": 50,
+      "progressBreakdown": {
+        "phases": {
+          "progress": 0,
+          "completedPhases": 0,
+          "totalPhases": 12,
+          "onTrack": null,
+          "confidence": "low"
+        },
+        "behavioral": {
+          "progress": 100,
+          "signals": {
+            "conversations": 8076,
+            "messages": 162845,
+            "conversationsPerUser": 68
+          },
+          "confidence": "high"
+        },
+        "repo": null
+      },
+      "status": "proposed",
+      "plannedQuarter": "Q2",
+      "currentQuarter": "Q1",
+      "actualProgress": "on-track",
+      "blockers": [],
+      "velocity": "unknown",
+      "lastAnalyzed": "2026-01-28T19:09:43.589Z",
+      "metadata": {
+        "tier1Available": true,
+        "tier2Available": true,
+        "tier3Available": false,
+        "confidence": "medium"
+      }
+    },
+    {
+      "projectId": "OP-008",
+      "projectName": "OP-008 Law2Engine AI Project Analysis",
+      "overallProgress": 37,
+      "progressBreakdown": {
+        "phases": {
+          "progress": 0,
+          "completedPhases": 0,
+          "totalPhases": 3,
+          "onTrack": false,
+          "confidence": "medium"
+        },
+        "behavioral": {
+          "progress": 100,
+          "signals": {
+            "githubUsers": 53,
+            "claudeCodeUsers": 28,
+            "combinedUsers": 81,
+            "combinedAdoption": 98
+          },
+          "confidence": "high"
+        },
+        "repo": {
+          "progress": 24,
+          "activity": {
+            "commitCount": 28,
+            "prCount": 1,
+            "issueCount": 0,
+            "releaseCount": 0,
+            "lastCommitDate": "2026-01-23T16:31:49Z",
+            "weeklyCommitAvg": 7.1
+          },
+          "roadmapProgress": {
+            "tasksTotal": 0,
+            "tasksCompleted": 0,
+            "tasksInProgress": 0
+          },
+          "velocity": "medium",
+          "confidence": "high"
+        }
+      },
+      "status": "completed",
+      "plannedQuarter": "Q1",
+      "currentQuarter": "Q1",
+      "actualProgress": "behind",
+      "blockers": [],
+      "velocity": "medium",
+      "lastAnalyzed": "2026-01-28T19:09:45.450Z",
+      "metadata": {
+        "tier1Available": true,
+        "tier2Available": true,
+        "tier3Available": true,
+        "confidence": "high"
+      }
+    },
+    {
+      "projectId": "OP-011",
+      "projectName": "Claude Code Marketplace - FY2026 Project Analysis & Engineering Integration Strategy",
+      "overallProgress": 80,
+      "progressBreakdown": {
+        "phases": {
+          "progress": 100,
+          "completedPhases": 10,
+          "totalPhases": 10,
+          "onTrack": true,
+          "confidence": "medium"
+        },
+        "behavioral": {
+          "progress": 63,
+          "signals": {
+            "activeUsers": 28,
+            "totalLines": 1353766,
+            "adoptionRate": 34,
+            "licensedUsers": 41
+          },
+          "confidence": "high"
+        },
+        "repo": {
+          "progress": 69,
+          "activity": {
+            "commitCount": 60,
+            "prCount": 77,
+            "issueCount": 9,
+            "releaseCount": 15,
+            "lastCommitDate": "2026-01-27T17:37:23Z",
+            "weeklyCommitAvg": 15.1
+          },
+          "roadmapProgress": {
+            "tasksTotal": 0,
+            "tasksCompleted": 0,
+            "tasksInProgress": 0
+          },
+          "velocity": "high",
+          "confidence": "high"
+        }
+      },
+      "status": "proposed",
+      "plannedQuarter": "Q1",
+      "currentQuarter": "Q1",
+      "actualProgress": "ahead",
+      "blockers": [],
+      "velocity": "high",
+      "lastAnalyzed": "2026-01-28T19:09:48.654Z",
+      "metadata": {
+        "tier1Available": true,
+        "tier2Available": true,
+        "tier3Available": true,
+        "confidence": "high"
+      }
+    },
+    {
+      "projectId": "OP-014",
+      "projectName": "OP-014: Operational Data Foundation - Strategic Analysis (V5 Product-Driven Framework)",
+      "overallProgress": 50,
+      "progressBreakdown": {
+        "phases": {
+          "progress": 0,
+          "completedPhases": 0,
+          "totalPhases": 5,
+          "onTrack": false,
+          "confidence": "low"
+        },
+        "behavioral": {
+          "progress": 100,
+          "signals": {
+            "totalUsers": 118,
+            "totalMessages": 162845,
+            "filesUploaded": 17021
+          },
+          "confidence": "high"
+        },
+        "repo": null
+      },
+      "status": "proposed",
+      "plannedQuarter": "Q2",
+      "currentQuarter": "Q1",
+      "actualProgress": "on-track",
+      "blockers": [],
+      "velocity": "unknown",
+      "lastAnalyzed": "2026-01-28T19:09:48.655Z",
+      "metadata": {
+        "tier1Available": true,
+        "tier2Available": true,
+        "tier3Available": false,
+        "confidence": "medium"
+      }
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-01-28T19:10:24.001Z",
+    "quarter": "Q1",
+    "projectCount": 7,
+    "version": "2026-Q1",
+    "narrativeType": "NEW_PLAN"
+  }
+}

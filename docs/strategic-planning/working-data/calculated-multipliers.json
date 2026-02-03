@@ -1,0 +1,17 @@
+{
+  "claudeCode_vs_GitHubCopilot": {
+    "claudeCodeHours": 80,
+    "githubCopilotHours": 11,
+    "productivityMultiplier": 7.27,
+    "note": "From incrementalROI data: Claude Code 80 hrs / GitHub Copilot 11 hrs"
+  },
+  "claudeEnterprise_vs_M365Copilot": {
+    "claudeEnterpriseHours": 92,
+    "m365CopilotHours": 11,
+    "productivityMultiplier": 8.36,
+    "claudeMessagesPerUser": 370,
+    "m365PromptsPerUser": 44,
+    "engagementMultiplier": 8.41,
+    "note": "From incrementalROI data"
+  }
+}

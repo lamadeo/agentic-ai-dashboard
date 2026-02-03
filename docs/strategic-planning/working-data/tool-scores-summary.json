@@ -1,0 +1,9 @@
+{
+  "toolScores": {
+    "claudeEnterprise": 85,
+    "claudeCode": 94,
+    "githubCopilot": 33,
+    "m365Copilot": 38,
+    "chatgpt": 50
+  }
+}

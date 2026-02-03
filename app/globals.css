@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode (secondary default) */
+    --background: 0 0% 100%;           /* Pure white */
+    --foreground: 222 47% 11%;         /* Deep blue-gray */
+    --primary: 221 83% 53%;            /* Professional blue */
+    --primary-foreground: 0 0% 100%;   /* White text on blue */
+    --secondary: 210 40% 96%;          /* Light gray */
+    --secondary-foreground: 222 47% 11%;
+    --accent: 210 40% 96%;             /* Light accent */
+    --accent-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;              /* Muted background */
+    --muted-foreground: 215 16% 47%;   /* Muted text */
+    --border: 214 32% 91%;             /* Subtle borders */
+    --card: 0 0% 100%;                 /* White cards */
+    --card-foreground: 222 47% 11%;
+    --chart-1: 221 83% 53%;            /* Blue */
+    --chart-2: 142 76% 36%;            /* Green */
+    --chart-3: 346 84% 61%;            /* Red */
+    --chart-4: 45 93% 47%;             /* Orange */
+    --chart-5: 271 81% 56%;            /* Purple */
+  }
+
+  .dark {
+    /* Dark mode (primary default) */
+    --background: 222 47% 11%;         /* Deep blue-gray */
+    --foreground: 210 40% 98%;         /* Off-white */
+    --primary: 217 91% 60%;            /* Bright blue */
+    --primary-foreground: 222 47% 11%; /* Dark text on blue */
+    --secondary: 217 33% 17%;          /* Dark blue-gray */
+    --secondary-foreground: 210 40% 98%;
+    --accent: 217 33% 17%;             /* Dark accent */
+    --accent-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;              /* Muted dark background */
+    --muted-foreground: 215 20% 65%;   /* Muted light text */
+    --border: 217 33% 17%;             /* Subtle dark borders */
+    --card: 222 47% 11%;               /* Dark cards */
+    --card-foreground: 210 40% 98%;
+    --chart-1: 217 91% 60%;            /* Brighter blue */
+    --chart-2: 142 71% 45%;            /* Adjusted green */
+    --chart-3: 346 84% 61%;            /* Red (same) */
+    --chart-4: 45 93% 47%;             /* Orange (same) */
+    --chart-5: 271 81% 56%;            /* Purple (same) */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Annual Plan Presentation Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #4F46E5;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #6B7280;
+            margin-bottom: 30px;
+        }
+        button {
+            background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #F3F4F6;
+            border-radius: 8px;
+            display: none;
+        }
+        .status.show {
+            display: block;
+        }
+        .info {
+            background: #EEF2FF;
+            border-left: 4px solid #4F46E5;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .info h3 {
+            margin-top: 0;
+            color: #4F46E5;
+        }
+        .info ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 2026 Annual Plan Presentation</h1>
+        <p class="subtitle">TechCo Inc Agentic AI Team • Executive Board Deck</p>
+
+        <div class="info">
+            <h3>📊 Presentation Details</h3>
+            <ul>
+                <li><strong>Slides:</strong> 9 executive slides with presenter notes</li>
+                <li><strong>Audience:</strong> CEO Chris Murphy & Leadership Team</li>
+                <li><strong>Branding:</strong> TechCo Inc blue/indigo theme</li>
+                <li><strong>Format:</strong> 16:9 widescreen, WCAG AAA compliant</li>
+            </ul>
+        </div>
+
+        <button onclick="generatePresentation()" id="downloadBtn">
+            📥 Generate & Download Presentation
+        </button>
+
+        <div id="status" class="status">
+            <strong>Status:</strong> <span id="statusText">Generating presentation...</span>
+        </div>
+    </div>
+
+    <script>
+        // TechCo Inc Brand Colors
+        const BRAND = {
+            primary: '4F46E5',      // Indigo-600
+            primaryLight: '6366F1',  // Indigo-500
+            secondary: '10B981',     // Green-500
+            success: '059669',       // Green-600
+            warning: 'F59E0B',       // Amber-500
+            danger: 'EF4444',        // Red-500
+            gray900: '111827',
+            gray700: '374151',
+            gray600: '4B5563',
+            gray500: '6B7280',
+            gray300: 'D1D5DB',
+            gray100: 'F3F4F6',
+            gray50: 'F9FAFB',
+            blue50: 'EEF2FF',
+            blue100: 'E0E7FF',
+            green50: 'ECFDF5',
+            green100: 'D1FAE5',
+            orange50: 'FFF7ED',
+            orange100: 'FFEDD5',
+            purple50: 'FAF5FF',
+            purple100: 'F3E8FF',
+            red50: 'FEF2F2',
+            white: 'FFFFFF'
+        };
+
+        // Content Fitting Utilities - Ensures content stays within slide boundaries
+        const ContentFitting = {
+            // Safe margins for all slides (in inches)
+            SAFE_MARGINS: {
+                top: 0.5,
+                bottom: 0.5,
+                left: 0.5,
+                right: 0.5
+            },
+
+            // Calculate safe width/height for content
+            getSafeArea: function(slideW = 10, slideH = 5.625) {
+                return {
+                    x: this.SAFE_MARGINS.left,
+                    y: this.SAFE_MARGINS.top,
+                    w: slideW - this.SAFE_MARGINS.left - this.SAFE_MARGINS.right,
+                    h: slideH - this.SAFE_MARGINS.top - this.SAFE_MARGINS.bottom
+                };
+            },
+
+            // Calculate optimal font size based on text length and available space
+            getOptimalFontSize: function(text, maxWidth, maxHeight, baseFontSize = 11) {
+                const charCount = text.length;
+                const estimatedLines = Math.ceil(charCount / (maxWidth * 15)); // Rough estimate
+
+                if (estimatedLines * (baseFontSize * 0.03) > maxHeight) {
+                    // Reduce font size if content is too tall
+                    return Math.max(6, baseFontSize * (maxHeight / (estimatedLines * (baseFontSize * 0.03))));
+                }
+                return baseFontSize;
+            },
+
+            // Truncate text to fit within boundaries
+            truncateText: function(text, maxLength, addEllipsis = true) {
+                if (text.length <= maxLength) return text;
+                return addEllipsis ? text.substring(0, maxLength - 3) + '...' : text.substring(0, maxLength);
+            },
+
+            // Calculate table row height based on content
+            getTableRowHeight: function(rowCount, availableHeight, minRowHeight = 0.35, maxRowHeight = 0.6) {
+                const calculatedHeight = availableHeight / rowCount;
+                return Math.max(minRowHeight, Math.min(maxRowHeight, calculatedHeight));
+            },
+
+            // Wrap text to fit within width
+            wrapText: function(text, maxCharsPerLine = 60) {
+                if (text.length <= maxCharsPerLine) return text;
+
+                const words = text.split(' ');
+                let lines = [];
+                let currentLine = '';
+
+                words.forEach(word => {
+                    if ((currentLine + word).length <= maxCharsPerLine) {
+                        currentLine += (currentLine ? ' ' : '') + word;
+                    } else {
+                        if (currentLine) lines.push(currentLine);
+                        currentLine = word;
+                    }
+                });
+                if (currentLine) lines.push(currentLine);
+
+                return lines.join('\n');
+            },
+
+            // Ensure text options stay within bounds
+            constrainTextBox: function(options, safeArea) {
+                return {
+                    ...options,
+                    x: Math.max(safeArea.x, Math.min(options.x, safeArea.x + safeArea.w - options.w)),
+                    y: Math.max(safeArea.y, Math.min(options.y, safeArea.y + safeArea.h - options.h)),
+                    w: Math.min(options.w, safeArea.w),
+                    h: Math.min(options.h, safeArea.h),
+                    breakLine: true,
+                    fit: 'shrink'  // Auto-shrink text to fit
+                };
+            }
+        };
+
+        function showStatus(message) {
+            const status = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            statusText.textContent = message;
+            status.classList.add('show');
+        }
+
+        async function generatePresentation() {
+            const btn = document.getElementById('downloadBtn');
+            btn.disabled = true;
+
+            // Check if PptxGenJS is loaded
+            if (typeof PptxGenJS === 'undefined') {
+                showStatus('❌ Error: PptxGenJS library failed to load. Please refresh the page.');
+                setTimeout(() => { btn.disabled = false; }, 3000);
+                return;
+            }
+
+            showStatus('Initializing presentation...');
+
+            try {
+                let pptx = new PptxGenJS();
+
+                // Configure presentation
+                pptx.layout = 'LAYOUT_16x9';
+                pptx.author = 'TechCo Inc Agentic AI Team';
+                pptx.company = 'TechCo Inc';
+                pptx.subject = '2026 Annual Plan - Data-Driven, Agile AI Strategy';
+                pptx.title = '2026 Annual Plan Presentation';
+
+                showStatus('Creating Slide 1: Title Slide...');
+                createSlide1(pptx);
+
+                showStatus('Creating Slide 2: Current State Wins...');
+                createSlide2(pptx);
+
+                showStatus('Creating Slide 3: Challenges & Opportunities...');
+                createSlide3(pptx);
+
+                showStatus('Creating Slide 4: Strategic Rationale...');
+                createSlide4(pptx);
+
+                showStatus('Creating Slide 5: Quarterly Roadmap...');
+                createSlide5(pptx);
+
+                showStatus('Creating Slide 6: Resource Requirements...');
+                createSlide6(pptx);
+
+                showStatus('Creating Slide 7: Quarterly Review Process...');
+                createSlide7(pptx);
+
+                showStatus('Creating Slide 8: Risks & Mitigation...');
+                createSlide8(pptx);
+
+                showStatus('Creating Slide 9: AI Projects Portfolio...');
+                createSlide9(pptx);
+
+                showStatus('Generating PowerPoint file...');
+                await pptx.writeFile({ fileName: '2026-Annual-Plan-Presentation.pptx' });
+
+                showStatus('✅ Presentation downloaded successfully!');
+                setTimeout(() => {
+                    btn.disabled = false;
+                }, 2000);
+
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message);
+                console.error(error);
+                btn.disabled = false;
+            }
+        }
+
+        // SLIDE 1: Title Slide
+        function createSlide1(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: 'FFFFFF' };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Blue accent bar at top (no margins needed for decoration)
+            slide.addShape(pptx.ShapeType.rect, {
+                x: 0, y: 0, w: '100%', h: 0.3,
+                fill: { type: 'solid', color: BRAND.primary }
+            });
+
+            // Badge (centered horizontally)
+            const badgeW = 2.6, badgeX = (10 - badgeW) / 2;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: badgeX, y: safeArea.y + 0.3, w: badgeW, h: 0.4,
+                fill: { type: 'solid', color: BRAND.primary },
+                line: { type: 'none' }
+            });
+            slide.addText('2026 Strategic Planning',
+                ContentFitting.constrainTextBox({
+                    x: badgeX, y: safeArea.y + 0.3, w: badgeW, h: 0.4,
+                    fontSize: 12, bold: true, color: BRAND.white,
+                    align: 'center', valign: 'middle'
+                }, safeArea)
+            );
+
+            // Main title (constrained)
+            slide.addText('2026 Annual Plan: Data-Driven, Agile AI Strategy',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 1.0, w: safeArea.w, h: 1.0,
+                    fontSize: 40, bold: true, color: BRAND.gray900,
+                    align: 'center', valign: 'middle'
+                }, safeArea)
+            );
+
+            // Subtitle (constrained)
+            slide.addText('TechCo Inc Agentic AI Team',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 2.1, w: safeArea.w, h: 0.5,
+                    fontSize: 22, color: BRAND.gray600,
+                    align: 'center', valign: 'middle'
+                }, safeArea)
+            );
+
+            // Two-column layout (constrained to safe area)
+            const colW = (safeArea.w - 0.6) / 2;
+            const leftX = safeArea.x, rightX = safeArea.x + colW + 0.3;
+            const topY = safeArea.y + 2.9;
+            const colH = 2.2;
+
+            // Left column - Our Approach
+            slide.addShape(pptx.ShapeType.rect, {
+                x: leftX, y: topY, w: colW, h: colH,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.blue100, width: 2 }
+            });
+            slide.addText('Our Approach',
+                ContentFitting.constrainTextBox({
+                    x: leftX + 0.2, y: topY + 0.15, w: colW - 0.4, h: 0.3,
+                    fontSize: 16, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const approachItems = [
+                'Celebrate Wins: Claude Enterprise 84% adoption (8.4x productivity advantage), Claude Code 17.6x productivity advantage',
+                'Be Strategic: Dependencies first, realistic capacity planning',
+                'Stay Agile: Quarterly re-prioritization based on KPIs and results',
+                'Conserve Resources: Maximize existing investments before expanding'
+            ];
+            let yPos = topY + 0.5;
+            approachItems.forEach(item => {
+                slide.addText('✓ ' + item,
+                    ContentFitting.constrainTextBox({
+                        x: leftX + 0.2, y: yPos, w: colW - 0.4, h: 0.4,
+                        fontSize: 9, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 0.43;
+            });
+
+            // Right column - The Plan
+            slide.addShape(pptx.ShapeType.rect, {
+                x: rightX, y: topY, w: colW, h: colH,
+                fill: { type: 'solid', color: BRAND.green50 },
+                line: { color: BRAND.green100, width: 2 }
+            });
+            slide.addText('The Plan',
+                ContentFitting.constrainTextBox({
+                    x: rightX + 0.2, y: topY + 0.15, w: colW - 0.4, h: 0.3,
+                    fontSize: 16, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const planItems = [
+                '11 AI Projects prioritized across 4 quarters',
+                '$22.4M Annual Value potential from portfolio',
+                '13 Major Deliverables (11 projects + 2 Forever Code Components & Products)',
+                'Quarterly Reviews with CEO to adapt based on results'
+            ];
+            yPos = topY + 0.5;
+            planItems.forEach(item => {
+                slide.addText('✓ ' + item,
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.2, y: yPos, w: colW - 0.4, h: 0.4,
+                        fontSize: 9, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 0.43;
+            });
+
+            // Q1 Commitment box (constrained to safe area bottom)
+            const commitY = safeArea.y + safeArea.h - 0.65;
+            const commitW = safeArea.w - 0.4;
+            const commitX = safeArea.x + 0.2;
+
+            slide.addShape(pptx.ShapeType.rect, {
+                x: commitX, y: commitY, w: commitW, h: 0.6,
+                fill: { type: 'solid', color: BRAND.primary },
+                line: { type: 'none' }
+            });
+            slide.addText('✓ Q1 Commitment',
+                ContentFitting.constrainTextBox({
+                    x: commitX, y: commitY + 0.05, w: commitW, h: 0.18,
+                    fontSize: 16, bold: true, color: BRAND.white, align: 'center'
+                }, safeArea)
+            );
+
+            const q1Items = [
+                'Add 33 new Premium licenses for Engineering/Product • Expand TechCo Inc Claude Marketplace to Windows/.NET engineers',
+                'Launch Business Operational Data Foundation MVP (10-week sprint) • Continue Law2Engine prototype (40% → 60%)',
+                'Deliver Forever Code Components & Products (OP-012/013) - 80% of team capacity'
+            ];
+            yPos = commitY + 0.25;
+            q1Items.forEach(item => {
+                slide.addText('✓ ' + ContentFitting.truncateText(item, 150),
+                    ContentFitting.constrainTextBox({
+                        x: commitX + 0.15, y: yPos, w: commitW - 0.3, h: 0.1,
+                        fontSize: 7, color: BRAND.white
+                    }, safeArea)
+                );
+                yPos += 0.11;
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'EXECUTIVE SUMMARY:\n' +
+                '• This is a data-driven, agile annual plan that celebrates our wins while being strategic about resource allocation\n' +
+                '• Key message: We are proven (84% Claude Enterprise adoption, 17.6x Claude Code productivity), but need strategic investment\n' +
+                '• Q1 is committed with 5 clear deliverables; Q2-Q4 will adapt based on quarterly review gates\n\n' +
+                'TALKING POINTS:\n' +
+                '1. Celebrate wins: Claude Enterprise is massively successful (84% adoption, 8.4x productivity vs M365)\n' +
+                '2. Strategic approach: Dependencies first (licenses, marketplace, data foundation)\n' +
+                '3. Agile execution: Quarterly CEO reviews allow us to adapt based on real results\n' +
+                '4. Conservative spend: Maximize existing licenses before expanding (champion model scaling)\n\n' +
+                'Q1 COMMITMENTS:\n' +
+                '• 33 new Premium licenses: Enable full Engineering/Product coverage for Claude Code\n' +
+                '• Marketplace expansion: Windows/.NET engineers need tooling (currently excluded)\n' +
+                '• Data Foundation: 10-week sprint for operational insights infrastructure\n' +
+                '• Law2Engine: Continue prototype maturation (40% → 60%)\n' +
+                '• Forever Code: Leave Planning + Case Management (80% of team capacity)\n\n' +
+                'KEY METRIC: $22.4M total portfolio value across 11 AI projects'
+            );
+        }
+
+        // SLIDE 2: Current State - Wins & Successes
+        function createSlide2(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained)
+            slide.addText('Current State - Wins & Successes',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 28, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('The Agentic AI Team Has Proven AI Works at TechCo Inc',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 16, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            // Four quadrants (constrained to safe area)
+            const boxW = (safeArea.w - 0.3) / 2, boxH = 2.3;
+
+            // Top-left: Claude Enterprise
+            const tlX = safeArea.x, tlY = safeArea.y + 0.75;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: tlX, y: tlY, w: boxW, h: boxH,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.blue100, width: 2 }
+            });
+            slide.addText('Claude Enterprise Deployment',
+                ContentFitting.constrainTextBox({
+                    x: tlX + 0.15, y: tlY + 0.12, w: boxW - 0.3, h: 0.3,
+                    fontSize: 14, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const ceMetrics = [
+                { label: 'Adoption', value: '84%', sub: '94 of 112 licensed users' },
+                { label: 'Perceived Value', value: '85/100', sub: 'vs M365 Copilot 38/100' },
+                { label: 'Engagement', value: '8.4x', sub: 'more than M365 (370 vs 44 prompts)' },
+                { label: 'Monthly Value', value: '$564K', sub: 'from 5,642 hours saved' }
+            ];
+            const metricW = (boxW - 0.4) / 2;
+            let xPos = tlX + 0.15, yPos = tlY + 0.5;
+            ceMetrics.forEach((m, i) => {
+                if (i === 2) { xPos = tlX + 0.15; yPos = tlY + 1.3; }
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: xPos, y: yPos, w: metricW, h: 0.65,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(m.label,
+                    ContentFitting.constrainTextBox({
+                        x: xPos + 0.08, y: yPos + 0.05, w: metricW - 0.16, h: 0.18,
+                        fontSize: 8, color: BRAND.gray600
+                    }, safeArea)
+                );
+                slide.addText(m.value,
+                    ContentFitting.constrainTextBox({
+                        x: xPos + 0.08, y: yPos + 0.22, w: metricW - 0.16, h: 0.22,
+                        fontSize: 16, bold: true, color: BRAND.primary
+                    }, safeArea)
+                );
+                slide.addText(m.sub,
+                    ContentFitting.constrainTextBox({
+                        x: xPos + 0.08, y: yPos + 0.43, w: metricW - 0.16, h: 0.18,
+                        fontSize: 6, color: BRAND.gray500
+                    }, safeArea)
+                );
+                xPos += metricW + 0.1;
+            });
+
+            // Top-right: Claude Code
+            const trX = safeArea.x + boxW + 0.15, trY = safeArea.y + 0.75;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: trX, y: trY, w: boxW, h: boxH,
+                fill: { type: 'solid', color: BRAND.purple50 },
+                line: { color: BRAND.purple100, width: 2 }
+            });
+            slide.addText('Claude Code Productivity',
+                ContentFitting.constrainTextBox({
+                    x: trX + 0.15, y: trY + 0.12, w: boxW - 0.3, h: 0.3,
+                    fontSize: 14, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const ccMetrics = [
+                { label: 'Productivity', value: '17.6x', sub: 'more than GitHub Copilot (34,509 vs 2,380 lines)' },
+                { label: 'Perceived Value', value: '94/100', sub: 'highest of all tools' },
+                { label: 'Total Lines', value: '655,677', sub: 'generated (gtaborga: 153K, dwagner: 32K)' }
+            ];
+            yPos = trY + 0.5;
+            ccMetrics.forEach((m) => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: trX + 0.15, y: yPos, w: boxW - 0.3, h: 0.6,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(m.label,
+                    ContentFitting.constrainTextBox({
+                        x: trX + 0.23, y: yPos + 0.05, w: boxW - 0.46, h: 0.16,
+                        fontSize: 8, color: BRAND.gray600
+                    }, safeArea)
+                );
+                slide.addText(m.value,
+                    ContentFitting.constrainTextBox({
+                        x: trX + 0.23, y: yPos + 0.2, w: boxW - 0.46, h: 0.2,
+                        fontSize: 16, bold: true, color: '9333EA'
+                    }, safeArea)
+                );
+                slide.addText(ContentFitting.truncateText(m.sub, 60),
+                    ContentFitting.constrainTextBox({
+                        x: trX + 0.23, y: yPos + 0.38, w: boxW - 0.46, h: 0.18,
+                        fontSize: 6, color: BRAND.gray500
+                    }, safeArea)
+                );
+                yPos += 0.68;
+            });
+
+            // Bottom-left: Infrastructure Built
+            const blX = safeArea.x, blY = safeArea.y + boxH + 0.9;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: blX, y: blY, w: boxW, h: boxH,
+                fill: { type: 'solid', color: BRAND.green50 },
+                line: { color: BRAND.green100, width: 2 }
+            });
+            slide.addText('Infrastructure Built',
+                ContentFitting.constrainTextBox({
+                    x: blX + 0.15, y: blY + 0.12, w: boxW - 0.3, h: 0.3,
+                    fontSize: 14, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const infraItems = [
+                'TechCo Inc Claude Marketplace v1.3.0: 14 plugins (growing daily!) enabling agentic coding',
+                'Law2Engine: 40% complete prototype, $1.7-6.4M 3-year value',
+                'AI Insights Dashboard App: This intelligence platform we\'re using today'
+            ];
+            yPos = blY + 0.5;
+            infraItems.forEach(item => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: blX + 0.15, y: yPos, w: boxW - 0.3, h: 0.54,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText('✓ ' + ContentFitting.truncateText(item, 100),
+                    ContentFitting.constrainTextBox({
+                        x: blX + 0.23, y: yPos + 0.08, w: boxW - 0.46, h: 0.4,
+                        fontSize: 8, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 0.62;
+            });
+
+            // Bottom-right: Department Leaders
+            const brX = safeArea.x + boxW + 0.15, brY = safeArea.y + boxH + 0.9;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: brX, y: brY, w: boxW, h: boxH,
+                fill: { type: 'solid', color: BRAND.orange50 },
+                line: { color: BRAND.orange100, width: 2 }
+            });
+            slide.addText('Department Leaders',
+                ContentFitting.constrainTextBox({
+                    x: brX + 0.15, y: brY + 0.12, w: boxW - 0.3, h: 0.3,
+                    fontSize: 14, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const leaders = [
+                { dept: 'Agentic AI', score: '97/100', color: BRAND.success },
+                { dept: 'Product', score: '92/100', color: BRAND.success },
+                { dept: 'Revenue Operations', score: '84/100', color: BRAND.success },
+                { dept: 'Operations', score: '82/100', color: BRAND.success },
+                { dept: 'Engineering', score: '75/100', color: BRAND.warning }
+            ];
+            yPos = brY + 0.5;
+            leaders.forEach(l => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: brX + 0.15, y: yPos, w: boxW - 0.3, h: 0.36,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(l.dept,
+                    ContentFitting.constrainTextBox({
+                        x: brX + 0.23, y: yPos + 0.08, w: boxW - 0.7, h: 0.2,
+                        fontSize: 9, color: BRAND.gray900, bold: true
+                    }, safeArea)
+                );
+                slide.addText(l.score,
+                    ContentFitting.constrainTextBox({
+                        x: brX + boxW - 0.55, y: yPos + 0.08, w: 0.42, h: 0.2,
+                        fontSize: 9, color: BRAND.gray900, bold: true, align: 'right'
+                    }, safeArea)
+                );
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: brX + boxW - 0.25, y: yPos + 0.11, w: 0.12, h: 0.12,
+                    fill: { type: 'solid', color: l.color },
+                    line: { type: 'none' }
+                });
+                yPos += 0.42;
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: We have proven that AI works at TechCo Inc through measurable results\n\n' +
+                'CLAUDE ENTERPRISE SUCCESS:\n' +
+                '• 84% adoption rate (94 of 112 users) - industry-leading\n' +
+                '• 85/100 perceived value vs M365 Copilot at 38/100 (massive gap)\n' +
+                '• 8.4x more engagement than M365 (370 vs 44 prompts per user)\n' +
+                '• $564K monthly value from 5,642 hours saved\n' +
+                '• This is our foundation - it works, people love it\n\n' +
+                'CLAUDE CODE PRODUCTIVITY:\n' +
+                '• 17.6x more productive than GitHub Copilot (34,509 vs 2,380 lines per user)\n' +
+                '• 94/100 perceived value - highest rated tool in our portfolio\n' +
+                '• 655,677 total lines generated (top users: gtaborga 153K, dwagner 32K, sjohnson 23K)\n' +
+                '• Only 42% adoption (19 of 45 engineers) - HUGE opportunity gap\n\n' +
+                'INFRASTRUCTURE ACHIEVEMENTS:\n' +
+                '• TechCo Inc Claude Marketplace v1.3.0: 14 plugins and growing (agentic coding enabler)\n' +
+                '• Law2Engine: 40% complete with $1.7-6.4M 3-year value potential\n' +
+                '• AI Dashboard: The intelligence platform powering today\'s data-driven decisions\n\n' +
+                'DEPARTMENT LEADERS:\n' +
+                '• Agentic AI (97/100), Product (92/100), RevOps (84/100), Ops (82/100) leading adoption\n' +
+                '• Engineering at 75/100 - good but room for improvement with full Claude Code coverage\n\n' +
+                'BOTTOM LINE: Proven ROI, proven adoption, proven value. Now we need strategic expansion.'
+            );
+        }
+
+        // SLIDE 3: Current State - Challenges & Opportunities
+        function createSlide3(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained)
+            slide.addText('Current State - Challenges & Opportunities',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 28, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('We Have More Opportunities Than Capacity - Need Strategic Prioritization',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 14, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            // Left side: Critical Gaps
+            const leftW = (safeArea.w - 0.3) / 2;
+            const rightW = leftW;
+            slide.addText('Critical Coverage Gaps',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.8, w: leftW, h: 0.35,
+                    fontSize: 18, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const gaps = [
+                {
+                    title: 'Engineering Coverage Gap - Productivity Multiplier Loss',
+                    details: 'Only 42% Claude Code adoption (19 of 45 engineers). Losing 17.6x productivity advantage for 26 engineers. Every engineer without Claude Code loses 1,660% productivity gain vs GitHub Copilot. Windows/.NET engineers lack tooling.'
+                },
+                {
+                    title: 'License Expansion Needed',
+                    details: 'Procure 33 new Premium (Claude Code) licenses for full Engineering/Product coverage (72 total needed, 45 current). All engineers must have Claude Code to maximize productivity multiplier.'
+                },
+                {
+                    title: 'Revenue Teams Need Enablement',
+                    details: 'Adoption scores below 60/100 threshold: Customer Success 57/100, Sales-Enterprise 50/100, Professional Services 43/100. Low activity and engagement indicate training/enablement gaps.'
+                }
+            ];
+
+            let yPos = safeArea.y + 1.2;
+            gaps.forEach(gap => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x, y: yPos, w: leftW, h: 1.15,
+                    fill: { type: 'solid', color: BRAND.red50 },
+                    line: { color: 'EF4444', width: 2, pt: 'solid' }
+                });
+                slide.addText('⚠️ ' + ContentFitting.truncateText(gap.title, 60),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.15, y: yPos + 0.08, w: leftW - 0.3, h: 0.3,
+                        fontSize: 10, bold: true, color: BRAND.gray900
+                    }, safeArea)
+                );
+                slide.addText(ContentFitting.truncateText(gap.details, 280),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.15, y: yPos + 0.4, w: leftW - 0.3, h: 0.7,
+                        fontSize: 8, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 1.25;
+            });
+
+            // Portfolio box
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: yPos, w: leftW, h: 0.7,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.blue100, width: 2 }
+            });
+            slide.addText('AI Project Portfolio',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: yPos + 0.08, w: leftW - 0.3, h: 0.22,
+                    fontSize: 10, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('11 AI project opportunities with $22.4M potential annual value\nChallenge: Limited Agentic AI team capacity (6 people, 80% on Forever Code)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: yPos + 0.32, w: leftW - 0.3, h: 0.35,
+                    fontSize: 7, color: BRAND.gray700
+                }, safeArea)
+            );
+
+            // Right side: Strategic Timing
+            const rightX = safeArea.x + leftW + 0.15;
+            slide.addText('Strategic Timing',
+                ContentFitting.constrainTextBox({
+                    x: rightX, y: safeArea.y + 0.8, w: rightW, h: 0.35,
+                    fontSize: 18, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const timing = [
+                'March 2026: GitHub Copilot contract renewal decision - Given Claude Code 17.6x advantage & Claude Enterprise 8.4x advantage, strong case for consolidation',
+                'Q1-Q2 2026: Forever Code deliverables (Leave Planning + Case Management) - Requested by Head of Product, product foundation for competitive differentiation'
+            ];
+
+            yPos = safeArea.y + 1.2;
+            timing.forEach(item => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: rightX, y: yPos, w: rightW, h: 0.95,
+                    fill: { type: 'solid', color: BRAND.green50 },
+                    line: { color: '10B981', width: 2, pt: 'solid' }
+                });
+                slide.addText(ContentFitting.truncateText(item, 250),
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.15, y: yPos + 0.15, w: rightW - 0.3, h: 0.65,
+                        fontSize: 8, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 1.05;
+            });
+
+            // The Opportunity box
+            slide.addShape(pptx.ShapeType.rect, {
+                x: rightX, y: yPos + 0.25, w: rightW, h: 1.9,
+                fill: { type: 'solid', color: BRAND.purple50 },
+                line: { color: BRAND.purple100, width: 2 }
+            });
+            slide.addText('💡 The Opportunity',
+                ContentFitting.constrainTextBox({
+                    x: rightX + 0.15, y: yPos + 0.35, w: rightW - 0.3, h: 0.28,
+                    fontSize: 14, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const opportunities = [
+                'Activate unused licenses through training + Windows/.NET enablement',
+                'Scale through champions (not headcount)',
+                'Use data to prioritize highest-impact projects',
+                'Build foundations first, then scale revenue/retention projects'
+            ];
+            yPos = yPos + 0.7;
+            opportunities.forEach(item => {
+                slide.addText('✓ ' + item,
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.15, y: yPos, w: rightW - 0.3, h: 0.35,
+                        fontSize: 9, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 0.38;
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: We have proven success but face critical gaps that strategic investment can solve\n\n' +
+                'CRITICAL GAPS:\n' +
+                '1. Engineering Coverage Gap:\n' +
+                '   - Only 42% Claude Code adoption (19 of 45 engineers)\n' +
+                '   - Losing 17.6x productivity multiplier for 26 engineers\n' +
+                '   - 1,660% productivity loss per engineer without Claude Code vs GitHub Copilot\n' +
+                '   - Windows/.NET engineers completely lack tooling\n\n' +
+                '2. License Expansion:\n' +
+                '   - Need 33 new Premium licenses (Claude Code)\n' +
+                '   - 72 total needed vs 45 current = 60% coverage gap\n' +
+                '   - Every engineer needs Claude Code to maximize productivity\n\n' +
+                '3. Revenue Teams Need Help:\n' +
+                '   - Customer Success: 57/100, Sales: 50/100, PS: 43/100\n' +
+                '   - All below 60/100 threshold\n' +
+                '   - Root cause: Training and enablement gaps, not tool problems\n\n' +
+                'STRATEGIC TIMING:\n' +
+                '• March 2026: GitHub Copilot renewal decision\n' +
+                '  - Claude Code is 17.6x more productive\n' +
+                '  - Strong consolidation case (save $10.5K/year)\n' +
+                '• Q1-Q2 Forever Code: CEO priority, product differentiation\n' +
+                '  - Leave Planning + Case Management\n' +
+                '  - 80% of team capacity committed\n\n' +
+                'THE OPPORTUNITY:\n' +
+                '• We have 11 AI projects worth $22.4M annual value\n' +
+                '• Limited capacity: 6 people, 80% on Forever Code\n' +
+                '• Solution: Champion model scaling (not headcount)\n' +
+                '• Activate unused licenses via training\n' +
+                '• Windows/.NET enablement through Marketplace plugins\n' +
+                '• Data-driven prioritization (dependencies first)\n\n' +
+                'BOTTOM LINE: Gaps are solvable with strategic investment in licenses + enablement'
+            );
+        }
+
+        // SLIDE 4: Strategic Rationale
+        function createSlide4(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained)
+            slide.addText('Strategic Rationale',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 28, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('Why This Plan, Why Now',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 16, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            // Short-Term (Q1-Q2)
+            const st1Y = safeArea.y + 0.9;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: st1Y, w: safeArea.w, h: 2.0,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.primary, width: 2, pt: 'solid' }
+            });
+            slide.addText('Short-Term (Q1-Q2): Enable Existing, Prove ROI, Build Foundations, Deliver Forever Code Products',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: st1Y + 0.12, w: safeArea.w - 0.3, h: 0.3,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const shortTerm = [
+                '1. Add 33 new Premium licenses → enable all Eng/Product for Claude Code',
+                '2. Expand TechCo Inc Claude Marketplace for Forever Code tech stack + enable Windows/.NET with plugins for agentic SDLC (legacy codebase)',
+                '3. Launch Business Operational Data Foundation → operational insights infrastructure for 7+ AI projects',
+                '4. Law2Engine prototype continuation and maturation',
+                '5. Deliver Forever Code Products: Leave Planning Tool + Downmarket Case Management solution (80% team capacity Q1-Q2)',
+                '6. Champion model test → GTM champions, Engineering champions, Product champions'
+            ];
+            const colW = (safeArea.w - 0.45) / 2;
+            let yPos = st1Y + 0.48;
+            shortTerm.forEach((item, idx) => {
+                const xOffset = idx < 3 ? safeArea.x + 0.15 : safeArea.x + colW + 0.3;
+                const yOffset = idx < 3 ? yPos : yPos - 1.35;
+                slide.addText(ContentFitting.truncateText(item, 150),
+                    ContentFitting.constrainTextBox({
+                        x: xOffset, y: yOffset, w: colW, h: 0.42,
+                        fontSize: 8, color: BRAND.gray700
+                    }, safeArea)
+                );
+                if (idx < 3) yPos += 0.45;
+            });
+
+            // Long-Term (Q3-Q4)
+            const lt1Y = st1Y + 2.1;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: lt1Y, w: safeArea.w, h: 1.3,
+                fill: { type: 'solid', color: BRAND.green50 },
+                line: { color: BRAND.secondary, width: 2, pt: 'solid' }
+            });
+            slide.addText('Long-Term (Q3-Q4): Scale Through Champions, Deliver Value',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: lt1Y + 0.12, w: safeArea.w - 0.3, h: 0.28,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const longTerm = [
+                'Champion community grows from 3 → 10+ by Q3',
+                'Revenue projects launch (Lead Generation, Sales Deal Intelligence, Proposals)',
+                'Product innovations ship (Law2Engine, Case Management enhancements)',
+                'Retention tools deploy (Ops Knowledge, PS Time-to-Value)'
+            ];
+            yPos = lt1Y + 0.48;
+            longTerm.forEach((item, idx) => {
+                const xOffset = idx < 2 ? safeArea.x + 0.15 : safeArea.x + colW + 0.3;
+                const yOffset = idx < 2 ? yPos : yPos - 0.38;
+                slide.addText('→ ' + item,
+                    ContentFitting.constrainTextBox({
+                        x: xOffset, y: yOffset, w: colW, h: 0.35,
+                        fontSize: 8, color: BRAND.gray700
+                    }, safeArea)
+                );
+                if (idx < 2) yPos += 0.38;
+            });
+
+            // Strategic Priorities
+            const sp1Y = lt1Y + 1.4;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: sp1Y, w: safeArea.w, h: 0.95,
+                fill: { type: 'solid', color: BRAND.purple50 },
+                line: { color: BRAND.purple100, width: 2 }
+            });
+            slide.addText('🎯 Strategic Priorities (Dependencies → Quick Wins → Champion Validation)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: sp1Y + 0.1, w: safeArea.w - 0.3, h: 0.28,
+                    fontSize: 10, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const priorities = [
+                '1. Dependencies First: Licenses, TechCo Inc Claude Marketplace, Business Operational Data Foundation',
+                '2. Quick Wins: High ROI, realistic execution (Lead Generation, Proposals)',
+                '3. Champion Validation: Prove scaling model works before expanding'
+            ];
+            const prioW = (safeArea.w - 0.6) / 3;
+            yPos = sp1Y + 0.42;
+            priorities.forEach((p, idx) => {
+                const xOffset = safeArea.x + 0.15 + (idx * (prioW + 0.15));
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: xOffset, y: yPos, w: prioW, h: 0.48,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(ContentFitting.truncateText(p, 80),
+                    ContentFitting.constrainTextBox({
+                        x: xOffset + 0.08, y: yPos + 0.08, w: prioW - 0.16, h: 0.32,
+                        fontSize: 7, color: BRAND.gray700, bold: true
+                    }, safeArea)
+                );
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: Our strategy balances short-term foundation building with long-term scaling through champions\n\n' +
+                'SHORT-TERM RATIONALE (Q1-Q2):\n' +
+                '1. Licenses (33 new Premium):\n' +
+                '   - Enable all Engineering/Product for Claude Code\n' +
+                '   - Close 60% coverage gap (45 → 72 licenses)\n' +
+                '   - Unlock 17.6x productivity multiplier for all engineers\n\n' +
+                '2. Marketplace Expansion:\n' +
+                '   - Forever Code tech stack enablement (new architecture)\n' +
+                '   - Windows/.NET plugins for agentic SDLC (legacy codebase)\n' +
+                '   - Foundation for 8+ downstream projects\n\n' +
+                '3. Business Operational Data Foundation:\n' +
+                '   - 10-week MVP sprint\n' +
+                '   - Operational insights infrastructure\n' +
+                '   - Feeds 7+ AI projects with customer/operational context\n\n' +
+                '4. Law2Engine Maturation:\n' +
+                '   - Continue prototype (40% → 60%)\n' +
+                '   - Test harness, 92%+ accuracy gate\n' +
+                '   - $1.7M annual value potential\n\n' +
+                '5. Forever Code Products (CEO PRIORITY):\n' +
+                '   - Leave Planning Tool (Feb deadline)\n' +
+                '   - Downmarket Case Management solution\n' +
+                '   - 80% of team capacity committed\n\n' +
+                '6. Champion Model Test:\n' +
+                '   - GTM, Engineering, Product champions\n' +
+                '   - Validate scaling approach before Q2-Q4 expansion\n\n' +
+                'LONG-TERM STRATEGY (Q3-Q4):\n' +
+                '• Champion community growth: 3 → 10+ by Q3\n' +
+                '• Revenue projects: Lead Gen, Deal Intelligence, Proposals\n' +
+                '• Product innovations: Law2Engine GA, Case Management\n' +
+                '• Retention tools: Ops Knowledge, PS Accelerator\n\n' +
+                'STRATEGIC PRIORITIES:\n' +
+                '1. Dependencies First: Can\'t build without licenses, marketplace, data\n' +
+                '2. Quick Wins: High ROI, proven execution (Lead Gen 481% ROI, Proposals 612% ROI)\n' +
+                '3. Champion Validation: Prove model works in Q1 before scaling Q2-Q4\n\n' +
+                'BOTTOM LINE: Build foundations in Q1-Q2, scale through champions in Q3-Q4'
+            );
+        }
+
+        // SLIDE 5: Quarterly Roadmap
+        function createSlide5(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained)
+            slide.addText('2026 Annual Plan - Quarterly View',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 28, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('Progressive Scaling from 72 to 612 Engineering-Days (Non-R&D Forever Code)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 14, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            // Four quarters in 2x2 grid
+            const quarters = [
+                {
+                    q: 'Q1 2026',
+                    subtitle: 'Foundation & Forever Code (COMMITTED - 72 eng-days for agentification)',
+                    status: 'COMMITTED',
+                    bgColor: BRAND.green50,
+                    borderColor: '10B981',
+                    projects: [
+                        'OP-000 Phase 1: Add 33 Premium licenses (Eng/Product) - 15 days',
+                        'OP-011: Marketplace expansion (Windows/.NET + Forever Code) - 25 days',
+                        'OP-014: Business Operational Data Foundation MVP - 12 days',
+                        'OP-008: Law2Engine 40% → 60% - 20 days',
+                        'OP-012/013: Forever Code (Leave Planning + Case Mgmt) - 80% capacity'
+                    ],
+                    capacity: '100% allocated',
+                    review: 'March 31, 2026'
+                },
+                {
+                    q: 'Q2 2026',
+                    subtitle: 'Revenue Generation & Data Foundation (PLANNED - 204 eng-days)',
+                    status: 'PLANNED',
+                    bgColor: BRAND.blue50,
+                    borderColor: BRAND.primary,
+                    projects: [
+                        'OP-014: Complete Data Foundation production - 48 days',
+                        'OR OP-001 Phase 1: Sales Deal Intelligence - 60 days (if MCP ready)',
+                        'OP-005 Phase 1: Lead Gen Intelligence quick wins - 60 days',
+                        'OP-011 Phase 2: Plugin library expansion - 40 days',
+                        'OP-000 Phase 2: Sales/Marketing expansion - 20 days',
+                        'OP-002: Ops Knowledge Agent pilot - 22 days'
+                    ],
+                    capacity: '93% allocated, 14-day buffer',
+                    review: 'June 30, 2026'
+                },
+                {
+                    q: 'Q3 2026',
+                    subtitle: 'Scale & Production Launches (PLANNED - 408 eng-days)',
+                    status: 'PLANNED',
+                    bgColor: BRAND.blue50,
+                    borderColor: BRAND.primary,
+                    projects: [
+                        'OP-008: Law2Engine GA launch - 90 days',
+                        'OP-005 Phase 2: Lead Gen full platform (15 BDRs, 6 AI Agents) - 120 days',
+                        'OP-006: PS Time-to-Value Accelerator - 85 days',
+                        'OP-004: AI Proposal Generator start - 50 days',
+                        'Forever Code maintenance - 40 days'
+                    ],
+                    capacity: '94% allocated, 23-day buffer',
+                    review: 'September 30, 2026'
+                },
+                {
+                    q: 'Q4 2026',
+                    subtitle: 'Strategic Bets & 2027 Planning (PLANNED - 612 eng-days)',
+                    status: 'PLANNED',
+                    bgColor: BRAND.blue50,
+                    borderColor: BRAND.primary,
+                    projects: [
+                        'OP-001: Sales Deal Intelligence (if Gong MCP + SF MCP ready) - 180 days',
+                        'OP-002: Ops Knowledge full launch - 90 days',
+                        'OP-004: Proposals complete - 120 days',
+                        'OP-013: Case Management enhancements - 60 days',
+                        '2027 Annual Planning - 60 days'
+                    ],
+                    capacity: '92% allocated, 52-day buffer',
+                    review: 'December 31, 2026'
+                }
+            ];
+
+            const boxW = (safeArea.w - 0.3) / 2;
+            const boxH = 2.2;
+            let row = 0, col = 0;
+            quarters.forEach((q, idx) => {
+                const xPos = safeArea.x + (col * (boxW + 0.15));
+                const yPos = safeArea.y + 0.8 + (row * (boxH + 0.15));
+
+                // Quarter box
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: xPos, y: yPos, w: boxW, h: boxH,
+                    fill: { type: 'solid', color: q.bgColor },
+                    line: { color: q.borderColor, width: 2 }
+                });
+
+                // Quarter header
+                slide.addText(q.q,
+                    ContentFitting.constrainTextBox({
+                        x: xPos + 0.15, y: yPos + 0.08, w: boxW - 1.6, h: 0.25,
+                        fontSize: 12, bold: true, color: BRAND.gray900
+                    }, safeArea)
+                );
+
+                if (q.status === 'COMMITTED') {
+                    slide.addShape(pptx.ShapeType.rect, {
+                        x: xPos + boxW - 1.25, y: yPos + 0.08, w: 1.1, h: 0.25,
+                        fill: { type: 'solid', color: '10B981' },
+                        line: { type: 'none' }
+                    });
+                    slide.addText('COMMITTED',
+                        ContentFitting.constrainTextBox({
+                            x: xPos + boxW - 1.25, y: yPos + 0.08, w: 1.1, h: 0.25,
+                            fontSize: 7, bold: true, color: BRAND.white, align: 'center', valign: 'middle'
+                        }, safeArea)
+                    );
+                }
+
+                // Subtitle
+                slide.addText(ContentFitting.truncateText(q.subtitle, 75),
+                    ContentFitting.constrainTextBox({
+                        x: xPos + 0.15, y: yPos + 0.36, w: boxW - 0.3, h: 0.2,
+                        fontSize: 7, color: BRAND.gray700, bold: true
+                    }, safeArea)
+                );
+
+                // Projects
+                let projY = yPos + 0.6;
+                q.projects.slice(0, 5).forEach(proj => {
+                    const bullet = q.status === 'COMMITTED' ? '✓' : '→';
+                    slide.addText(bullet + ' ' + ContentFitting.truncateText(proj, 80),
+                        ContentFitting.constrainTextBox({
+                            x: xPos + 0.15, y: projY, w: boxW - 0.3, h: 0.22,
+                            fontSize: 6, color: BRAND.gray700
+                        }, safeArea)
+                    );
+                    projY += 0.24;
+                });
+
+                // Footer
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: xPos, y: yPos + boxH - 0.3, w: boxW, h: 0.3,
+                    fill: { type: 'solid', color: BRAND.gray100 },
+                    line: { type: 'none' }
+                });
+                slide.addText('📊 ' + ContentFitting.truncateText(q.capacity, 40),
+                    ContentFitting.constrainTextBox({
+                        x: xPos + 0.08, y: yPos + boxH - 0.26, w: boxW - 0.16, h: 0.11,
+                        fontSize: 6, color: BRAND.gray700, bold: true
+                    }, safeArea)
+                );
+                slide.addText('📅 Review: ' + q.review,
+                    ContentFitting.constrainTextBox({
+                        x: xPos + 0.08, y: yPos + boxH - 0.14, w: boxW - 0.16, h: 0.11,
+                        fontSize: 6, color: BRAND.gray700
+                    }, safeArea)
+                );
+
+                col++;
+                if (col === 2) { col = 0; row++; }
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: Progressive scaling from 72 to 612 eng-days through champion model, with Q1 committed and Q2-Q4 subject to quarterly reviews\n\n' +
+                'Q1 2026 (COMMITTED - 72 eng-days):\n' +
+                '• Foundation & Forever Code focus\n' +
+                '• OP-000: 33 Premium licenses (15 days)\n' +
+                '• OP-011: Marketplace expansion (25 days)\n' +
+                '• OP-014: Data Foundation MVP kickoff (12 days)\n' +
+                '• OP-008: Law2Engine 40% → 60% (20 days)\n' +
+                '• Forever Code: 80% of team capacity (separate from 72 eng-days)\n' +
+                '• 100% capacity allocated\n' +
+                '• Review gate: March 31, 2026\n\n' +
+                'Q2 2026 (PLANNED - 204 eng-days):\n' +
+                '• Revenue generation + Data Foundation completion\n' +
+                '• OP-014 prioritized OR OP-001 if Gong/SF MCP mature early\n' +
+                '• OP-005: Lead Gen quick wins (60 days)\n' +
+                '• OP-011 Phase 2: Plugin expansion (40 days)\n' +
+                '• 93% allocated, 14-day buffer\n' +
+                '• Capacity boost: 7 people + 3-4 champions (~120 eng-days)\n' +
+                '• Review gate: June 30, 2026\n\n' +
+                'Q3 2026 (PLANNED - 408 eng-days):\n' +
+                '• Scale & production launches\n' +
+                '• OP-008: Law2Engine GA (90 days)\n' +
+                '• OP-005 Phase 2: Lead Gen full platform (120 days)\n' +
+                '• OP-006: PS Accelerator (85 days)\n' +
+                '• 94% allocated, 23-day buffer\n' +
+                '• Capacity: 7 people @ 40% + 5-6 champions (240 eng-days)\n' +
+                '• Review gate: September 30, 2026\n\n' +
+                'Q4 2026 (PLANNED - 612 eng-days):\n' +
+                '• Strategic bets + 2027 planning\n' +
+                '• OP-001: Sales Deal Intelligence if MCP ready (180 days)\n' +
+                '• OP-002: Ops Knowledge full launch (90 days)\n' +
+                '• 92% allocated, 52-day buffer\n' +
+                '• Capacity: 7 people @ 60% + 8-10 champions (360 eng-days)\n' +
+                '• Review gate: December 31, 2026\n\n' +
+                'KEY POINTS:\n' +
+                '• Q1 is COMMITTED - we are ready to execute\n' +
+                '• Q2-Q4 are PLANNED - subject to quarterly review gates\n' +
+                '• 8.5x capacity growth (72 → 612) through champions, not headcount\n' +
+                '• Built-in buffers each quarter (14-52 days) for contingencies\n' +
+                '• Forever Code priority maintained throughout (separate capacity)\n\n' +
+                'BOTTOM LINE: Disciplined quarterly planning with review gates ensures agility'
+            );
+        }
+
+        // SLIDE 6: Resource Requirements
+        function createSlide6(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained)
+            slide.addText('Resource Requirements & Capacity Model',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 28, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('8.5x Capacity Growth Through Champion Scaling (Non-R&D Forever Code Work)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 13, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            // Important note
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: safeArea.y + 0.75, w: safeArea.w, h: 0.42,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.primary, width: 2, pt: 'solid' }
+            });
+            slide.addText('ℹ️ Note: Engineering-days shown are for departmental agentification work (non-product R&D). Forever Code product development (80% of team in Q1-Q2) is separate and dedicated.',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: safeArea.y + 0.84, w: safeArea.w - 0.3, h: 0.26,
+                    fontSize: 8, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            // Current Team (left side)
+            const leftW = (safeArea.w - 0.3) / 2;
+            const boxY = safeArea.y + 1.25;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: boxY, w: leftW, h: 2.0,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.primary, width: 2 }
+            });
+            slide.addText('Current Team (Q1-Q2)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: boxY + 0.12, w: leftW - 0.3, h: 0.28,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const teamDetails = [
+                { label: 'Team Size', value: '6 People - Agentic AI team' },
+                { label: 'Commitment', value: '80% on Forever Code R&D (OP-012/013), 20% on departmental agentification' },
+                { label: 'Q1 Capacity', value: '72 eng-days (for agentification projects)' },
+                { label: 'Q2 Capacity', value: '84 eng-days (+ Data Engineer hire mid-Q1)' }
+            ];
+            let yPos = boxY + 0.48;
+            teamDetails.forEach(item => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x + 0.15, y: yPos, w: leftW - 0.3, h: 0.32,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(item.label,
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.04, w: leftW - 0.46, h: 0.1,
+                        fontSize: 7, color: BRAND.gray600, bold: true
+                    }, safeArea)
+                );
+                slide.addText(ContentFitting.truncateText(item.value, 80),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.15, w: leftW - 0.46, h: 0.12,
+                        fontSize: 7, color: BRAND.gray900
+                    }, safeArea)
+                );
+                yPos += 0.38;
+            });
+
+            // Champion Model (right side)
+            const rightX = safeArea.x + leftW + 0.15;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: rightX, y: boxY, w: leftW, h: 2.0,
+                fill: { type: 'solid', color: BRAND.purple50 },
+                line: { color: BRAND.purple100, width: 2 }
+            });
+            slide.addText('Champion Model (Q2+ Scaling)',
+                ContentFitting.constrainTextBox({
+                    x: rightX + 0.15, y: boxY + 0.12, w: leftW - 0.3, h: 0.28,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const championDetails = [
+                'Q1 Test: GTM champions, Engineering champions, Product champions',
+                'Q2 Scale: 3-4 champions contributing ~120 eng-days',
+                '• Plugin/Marketplace: 80% champion-led (+60 days, Engineering)',
+                '• BDR/Domain: 60% champion-led (+45 days, GTM)',
+                '• Product features: 40% champion-led (+15 days, Product)',
+                'Q3 Mature: 5-6 champions, ~240 eng-days',
+                'Q4 Self-Sustaining: 8-10 champions, self-sustaining community (360 eng-days)'
+            ];
+            yPos = boxY + 0.48;
+            championDetails.forEach(item => {
+                slide.addText(ContentFitting.truncateText(item, 90),
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.15, y: yPos, w: leftW - 0.3, h: 0.22,
+                        fontSize: 7, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 0.25;
+            });
+
+            // Capacity Growth Chart (bottom left)
+            const bottomY = boxY + 2.1;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: bottomY, w: leftW, h: 1.95,
+                fill: { type: 'solid', color: BRAND.green50 },
+                line: { color: BRAND.secondary, width: 2 }
+            });
+            slide.addText('Capacity Growth Path (Engineering-Days)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: bottomY + 0.12, w: leftW - 0.3, h: 0.28,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const capacityGrowth = [
+                { q: 'Q1', days: 72, desc: '6 people × 20% = 72 eng-days', pct: 12 },
+                { q: 'Q2', days: 204, desc: '7 people × 20% + 120 champion = 204', pct: 33 },
+                { q: 'Q3', days: 408, desc: '7 people × 40% + 240 champion = 408', pct: 67 },
+                { q: 'Q4', days: 612, desc: '7 people × 60% + 360 champion = 612', pct: 100 }
+            ];
+            yPos = bottomY + 0.46;
+            capacityGrowth.forEach(item => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x + 0.15, y: yPos, w: leftW - 0.3, h: 0.42,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(item.q,
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.04, w: 0.5, h: 0.34,
+                        fontSize: 9, color: BRAND.gray900, bold: true, valign: 'middle'
+                    }, safeArea)
+                );
+                slide.addText(item.days + ' days',
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + leftW - 0.95, y: yPos + 0.04, w: 0.8, h: 0.34,
+                        fontSize: 11, color: BRAND.success, bold: true, align: 'right', valign: 'middle'
+                    }, safeArea)
+                );
+                slide.addText(ContentFitting.truncateText(item.desc, 50),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.26, w: leftW - 0.46, h: 0.12,
+                        fontSize: 5, color: BRAND.gray600
+                    }, safeArea)
+                );
+                // Progress bar
+                const barW = 1.8;
+                const barX = safeArea.x + 0.85;
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: barX, y: yPos + 0.08, w: barW, h: 0.12,
+                    fill: { type: 'solid', color: BRAND.green100 },
+                    line: { type: 'none' }
+                });
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: barX, y: yPos + 0.08, w: barW * (item.pct / 100), h: 0.12,
+                    fill: { type: 'solid', color: BRAND.success },
+                    line: { type: 'none' }
+                });
+                yPos += 0.46;
+            });
+
+            // Scenario A (bottom right)
+            slide.addShape(pptx.ShapeType.rect, {
+                x: rightX, y: bottomY, w: leftW, h: 1.95,
+                fill: { type: 'solid', color: BRAND.orange50 },
+                line: { color: BRAND.warning, width: 2 }
+            });
+            slide.addText('Scenario A: Transfer 2 Engineers in Q2',
+                ContentFitting.constrainTextBox({
+                    x: rightX + 0.15, y: bottomY + 0.12, w: leftW - 0.3, h: 0.28,
+                    fontSize: 11, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const scenarioDetails = [
+                { label: 'Investment', value: '+$300K cost', color: BRAND.warning },
+                { label: 'Unlock', value: '+720 eng-days over 9 months', color: BRAND.gray900 },
+                { label: 'Enable', value: 'Sales Deal Intelligence (OP-001) moves to Q3, Finance Forecasting + HR Recruitment added to Q4', color: BRAND.gray700 },
+                { label: 'Value & ROI', value: '+$7M → 2,233% incremental ROI', color: BRAND.success }
+            ];
+            yPos = bottomY + 0.46;
+            scenarioDetails.forEach(item => {
+                const itemH = item.label === 'Enable' ? 0.52 : 0.36;
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: rightX + 0.15, y: yPos, w: leftW - 0.3, h: itemH,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(item.label,
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.23, y: yPos + 0.04, w: leftW - 0.46, h: 0.1,
+                        fontSize: 6, color: BRAND.gray600
+                    }, safeArea)
+                );
+                slide.addText(ContentFitting.truncateText(item.value, 100),
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.23, y: yPos + 0.15, w: leftW - 0.46, h: itemH - 0.18,
+                        fontSize: 7, color: item.color, bold: item.label === 'Value & ROI'
+                    }, safeArea)
+                );
+                yPos += itemH + 0.06;
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: 8.5x capacity growth through champion model, not headcount expansion\n\n' +
+                'CURRENT TEAM:\n' +
+                '• 6 people on Agentic AI team\n' +
+                '• 80% capacity on Forever Code R&D (OP-012/013 - CEO priority)\n' +
+                '• 20% capacity on departmental agentification = 72 eng-days Q1\n' +
+                '• Data Engineer hire mid-Q1 boosts Q2 to 84 eng-days\n' +
+                '• Forever Code work is SEPARATE from 72 eng-days (protected capacity)\n\n' +
+                'CHAMPION MODEL:\n' +
+                '• Q1 Test: 3 champions (GTM, Engineering, Product)\n' +
+                '• Q2 Scale: 3-4 champions = 120 eng-days\n' +
+                '  - Plugin/Marketplace: 80% champion-led (+60 days)\n' +
+                '  - BDR/Domain: 60% champion-led (+45 days)\n' +
+                '  - Product features: 40% champion-led (+15 days)\n' +
+                '• Q3 Mature: 5-6 champions = 240 eng-days\n' +
+                '• Q4 Self-Sustaining: 8-10 champions = 360 eng-days\n' +
+                '• Champions contribute 30-45% of their time (varies by project type)\n\n' +
+                'CAPACITY GROWTH:\n' +
+                '• Q1: 72 eng-days (6 people × 20%)\n' +
+                '• Q2: 204 eng-days (7 people × 20% + 120 champion)\n' +
+                '• Q3: 408 eng-days (7 people × 40% + 240 champion)\n' +
+                '• Q4: 612 eng-days (7 people × 60% + 360 champion)\n' +
+                '• 8.5x growth (72 → 612) without adding headcount\n\n' +
+                'SCENARIO A (CONTINGENCY):\n' +
+                '• If champion model underperforms in Q1\n' +
+                '• Decision point: Q2 review (June 30)\n' +
+                '• Investment: $300K (2 engineers)\n' +
+                '• Unlock: +720 eng-days over 9 months\n' +
+                '• Enable: OP-001 moves to Q3, OP-007 + OP-010 added to Q4\n' +
+                '• Value: +$7M total\n' +
+                '• ROI: 2,233% (($7M / $300K) - 1)\n' +
+                '• This is our backup plan if champions don\'t work\n\n' +
+                'KEY ASSUMPTIONS:\n' +
+                '• Champion time: 30% Q2, 40% Q3, 45% Q4 average\n' +
+                '• Project type matters: Plugins 80% champion, BDR 60%, Product 40%\n' +
+                '• Marketplace must be self-service ready (reduce hand-holding)\n' +
+                '• Rigorous champion selection criteria\n\n' +
+                'BOTTOM LINE: Conservative plan (champion scaling) with backup (Scenario A) if needed'
+            );
+        }
+
+        // SLIDE 7: Quarterly Review Process & KPIs
+        function createSlide7(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained)
+            slide.addText('Quarterly Review Process & KPIs',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 28, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('How We Stay Agile: Data-Driven Quarterly Reviews',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 16, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            // Review Cadence (left side)
+            const leftW = (safeArea.w - 0.3) / 2;
+            const boxY = safeArea.y + 0.9;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: boxY, w: leftW, h: 2.2,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.primary, width: 2 }
+            });
+            slide.addText('📅 Review Cadence',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: boxY + 0.12, w: leftW - 0.3, h: 0.28,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const cadence = [
+                { date: 'March 31', desc: 'Review Q1 results, finalize Q2 commitments' },
+                { date: 'June 30', desc: 'Review Q2 results, finalize Q3, adjust Q4' },
+                { date: 'September 30', desc: 'Review Q3 results, finalize Q4' },
+                { date: 'December 31', desc: 'Annual retrospective, plan 2027' }
+            ];
+            let yPos = boxY + 0.46;
+            cadence.forEach(item => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x + 0.15, y: yPos, w: leftW - 0.3, h: 0.44,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(item.date,
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.06, w: leftW - 0.46, h: 0.13,
+                        fontSize: 9, color: BRAND.gray900, bold: true
+                    }, safeArea)
+                );
+                slide.addText(ContentFitting.truncateText(item.desc, 60),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.21, w: leftW - 0.46, h: 0.18,
+                        fontSize: 7, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 0.5;
+            });
+
+            // Project-Level KPIs (right side)
+            const rightX = safeArea.x + leftW + 0.15;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: rightX, y: boxY, w: leftW, h: 2.2,
+                fill: { type: 'solid', color: BRAND.purple50 },
+                line: { color: BRAND.purple100, width: 2 }
+            });
+            slide.addText('🎯 Project-Level KPIs',
+                ContentFitting.constrainTextBox({
+                    x: rightX + 0.15, y: boxY + 0.12, w: leftW - 0.3, h: 0.28,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const projectKPIs = [
+                { name: 'Delivery Health', desc: 'Green: On schedule ± 2 weeks | Yellow: 2-4 weeks behind, mitigation in place | Red: >4 weeks behind, needs scope/resource adjustment' },
+                { name: 'Adoption Rate', desc: 'Target: >60% of intended users within 30 days (Example: OP-000 Phase 1 should drive Claude Code 42% → 70%+)' },
+                { name: 'ROI Realization', desc: 'Actual value vs forecast (Example: OP-005 forecast $3.1M, track actual pipeline generated)' },
+                { name: 'User Sentiment', desc: 'Target: >70 perceived value score (from dashboard), Slack sentiment analysis, champion feedback' }
+            ];
+            yPos = boxY + 0.46;
+            projectKPIs.forEach(kpi => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: rightX + 0.15, y: yPos, w: leftW - 0.3, h: 0.48,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText(kpi.name,
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.23, y: yPos + 0.04, w: leftW - 0.46, h: 0.13,
+                        fontSize: 8, color: BRAND.gray900, bold: true
+                    }, safeArea)
+                );
+                slide.addText(ContentFitting.truncateText(kpi.desc, 150),
+                    ContentFitting.constrainTextBox({
+                        x: rightX + 0.23, y: yPos + 0.19, w: leftW - 0.46, h: 0.24,
+                        fontSize: 5, color: BRAND.gray700
+                    }, safeArea)
+                );
+                yPos += 0.52;
+            });
+
+            // Portfolio-Level KPIs (bottom full width)
+            const bottomY = boxY + 2.3;
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: bottomY, w: safeArea.w, h: 1.85,
+                fill: { type: 'solid', color: BRAND.green50 },
+                line: { color: BRAND.secondary, width: 2 }
+            });
+            slide.addText('📈 Portfolio-Level KPIs (From Dashboard)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.15, y: bottomY + 0.12, w: safeArea.w - 0.3, h: 0.28,
+                    fontSize: 12, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            const portfolioKPIs = [
+                'Note: Starting point KPIs based on current adoption metrics. Real KPIs TBD in Q1 as we transition from core adoption to value realization metrics (e.g., actual business outcomes, revenue impact, time savings realized vs forecasted).',
+                'Claude Enterprise: 84% baseline, maintain or improve',
+                'Claude Code: 42% baseline → 70% Q1 target → 80% Q2 target',
+                'Productivity: 34,509 lines/user baseline, maintain or improve',
+                'Portfolio ROI: >300% blended target'
+            ];
+            yPos = bottomY + 0.46;
+            portfolioKPIs.forEach((kpi, idx) => {
+                const isNote = idx === 0;
+                if (isNote) {
+                    slide.addShape(pptx.ShapeType.rect, {
+                        x: safeArea.x + 0.15, y: yPos, w: safeArea.w - 0.3, h: 0.42,
+                        fill: { type: 'solid', color: BRAND.blue50 },
+                        line: { color: BRAND.primary, width: 1 }
+                    });
+                    slide.addText(ContentFitting.truncateText(kpi, 220),
+                        ContentFitting.constrainTextBox({
+                            x: safeArea.x + 0.23, y: yPos + 0.06, w: safeArea.w - 0.46, h: 0.3,
+                            fontSize: 6, color: BRAND.gray700, italic: true
+                        }, safeArea)
+                    );
+                    yPos += 0.5;
+                } else {
+                    const kpiW = (safeArea.w - 0.75) / 4;
+                    const xOffset = safeArea.x + 0.15 + ((idx - 1) * (kpiW + 0.15));
+                    slide.addShape(pptx.ShapeType.rect, {
+                        x: xOffset, y: yPos, w: kpiW, h: 0.48,
+                        fill: { type: 'solid', color: BRAND.white },
+                        line: { type: 'none' }
+                    });
+                    slide.addText('✓',
+                        ContentFitting.constrainTextBox({
+                            x: xOffset + 0.08, y: yPos + 0.04, w: 0.25, h: 0.4,
+                            fontSize: 13, color: BRAND.success, valign: 'middle'
+                        }, safeArea)
+                    );
+                    slide.addText(ContentFitting.truncateText(kpi, 55),
+                        ContentFitting.constrainTextBox({
+                            x: xOffset + 0.36, y: yPos + 0.06, w: kpiW - 0.44, h: 0.36,
+                            fontSize: 6, color: BRAND.gray700
+                        }, safeArea)
+                    );
+                    if ((idx - 1) === 3) yPos += 0.52;
+                }
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: Quarterly review gates with CEO ensure we stay agile and adapt based on results\n\n' +
+                'REVIEW CADENCE:\n' +
+                '1. March 31 (Q1 Review):\n' +
+                '   - Review Q1 execution: Did we deliver licenses, marketplace, data foundation?\n' +
+                '   - Champion validation: Are 3 champions contributing as expected?\n' +
+                '   - Finalize Q2 commitments based on Q1 results\n' +
+                '   - Decision point: Continue champion model or trigger Scenario A?\n\n' +
+                '2. June 30 (Q2 Review):\n' +
+                '   - Review Q2 execution: Data Foundation complete? Lead Gen results?\n' +
+                '   - Champion scaling: Did 3-4 champions contribute 120 eng-days?\n' +
+                '   - Finalize Q3 commitments, adjust Q4 if needed\n' +
+                '   - MCP readiness: Assess Gong + Salesforce MCP for OP-001\n\n' +
+                '3. September 30 (Q3 Review):\n' +
+                '   - Review Q3 execution: Law2Engine GA? Lead Gen full platform?\n' +
+                '   - Champion maturity: Did 5-6 champions contribute 240 eng-days?\n' +
+                '   - Finalize Q4 commitments\n' +
+                '   - Go/no-go decision on OP-001 for Q4\n\n' +
+                '4. December 31 (Annual Retrospective):\n' +
+                '   - Full year results vs plan\n' +
+                '   - Portfolio ROI realized vs forecasted\n' +
+                '   - Plan 2027 based on lessons learned\n\n' +
+                'PROJECT-LEVEL KPIs:\n' +
+                '1. Delivery Health: Green/Yellow/Red status\n' +
+                '   - Green: ± 2 weeks of schedule\n' +
+                '   - Yellow: 2-4 weeks behind with mitigation\n' +
+                '   - Red: >4 weeks behind, needs intervention\n\n' +
+                '2. Adoption Rate: >60% within 30 days\n' +
+                '   - Example: OP-000 Phase 1 should drive Claude Code 42% → 70%+\n' +
+                '   - Track weekly active users, engagement patterns\n\n' +
+                '3. ROI Realization: Actual vs forecast\n' +
+                '   - Example: OP-005 forecasts $3.1M, track actual pipeline\n' +
+                '   - Attribution model for revenue/cost savings\n\n' +
+                '4. User Sentiment: >70 perceived value score\n' +
+                '   - Dashboard perceived value scores\n' +
+                '   - Slack sentiment analysis (6 channels)\n' +
+                '   - Champion qualitative feedback\n\n' +
+                'PORTFOLIO-LEVEL KPIs:\n' +
+                '• Note: Starting with adoption metrics (what we have)\n' +
+                '• Q1 transition: Adoption → value realization metrics\n' +
+                '• Real KPIs: Business outcomes, revenue impact, time savings\n' +
+                '• Claude Enterprise: Maintain 84% baseline\n' +
+                '• Claude Code: 42% → 70% (Q1) → 80% (Q2)\n' +
+                '• Productivity: Maintain 34,509 lines/user\n' +
+                '• Portfolio ROI: >300% blended (conservative)\n\n' +
+                'BOTTOM LINE: Quarterly reviews with CEO ensure plan stays aligned with results'
+            );
+        }
+
+        // SLIDE 8: Risks & Mitigation
+        function createSlide8(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained)
+            slide.addText('Risks & Mitigation',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 28, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('Key Risks & Mitigation Strategies',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 16, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            const risks = [
+                {
+                    title: 'Risk 1: Champion Model Doesn\'t Scale',
+                    impact: 'Q2-Q4 capacity drops 60%, projects defer',
+                    likelihood: 'Medium (unproven model)',
+                    mitigation: [
+                        'Q1 validation with 3 champions (GTM, Engineering, Product)',
+                        'TechCo Inc Claude Marketplace must be self-service ready (reduce hand-holding)',
+                        'Rigorous champion selection criteria',
+                        'Scenario A ready: Hire 2 engineers if needed (Q2 decision point)'
+                    ],
+                    earlyWarning: 'Q1 review (March 31) - if champions contribute <50% expected'
+                },
+                {
+                    title: 'Risk 2: Forever Code Delays Impact Capacity',
+                    impact: 'Q3-Q4 capacity constrained, projects defer',
+                    likelihood: 'Medium (complex products, June deadline)',
+                    mitigation: [
+                        '80% capacity firewall (protected from other work)',
+                        'Q2 review can adjust Q3-Q4 if needed',
+                        'Buffer days in each quarter (14-52 days) absorb minor slips',
+                        'Forever Code takes priority - other projects defer if needed'
+                    ],
+                    earlyWarning: 'Q2 review (June 30) - Forever Code delivery status'
+                },
+                {
+                    title: 'Risk 3: External Dependencies (Gong MCP)',
+                    impact: 'OP-001 (Sales Deal Intelligence) delays or cancels',
+                    likelihood: 'Medium (Gong MCP launched Oct 2025, needs maturity)',
+                    mitigation: [
+                        'Scheduled for Q4 (gives 12 months for Gong to mature)',
+                        'Q3 review has go/no-go decision based on Gong MCP readiness',
+                        'Alternative: Defer to Q1 2027 (only 3-month slip)',
+                        'Value at risk: $5-7M, but other projects still deliver $17M+'
+                    ],
+                    earlyWarning: 'Q3 review (Sept 30) - Gong MCP stability assessment'
+                }
+            ];
+
+            let yPos = safeArea.y + 0.8;
+            risks.forEach(risk => {
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x, y: yPos, w: safeArea.w, h: 1.52,
+                    fill: { type: 'solid', color: BRAND.red50 },
+                    line: { color: 'EF4444', width: 2, pt: 'solid' }
+                });
+
+                // Title
+                slide.addText('⚠️ ' + ContentFitting.truncateText(risk.title, 50),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.15, y: yPos + 0.08, w: safeArea.w - 0.3, h: 0.25,
+                        fontSize: 12, bold: true, color: BRAND.gray900
+                    }, safeArea)
+                );
+
+                // Impact & Likelihood
+                const col1W = (safeArea.w - 0.45) / 2;
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x + 0.15, y: yPos + 0.38, w: col1W, h: 0.3,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText('Impact: ' + ContentFitting.truncateText(risk.impact, 50),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.43, w: col1W - 0.16, h: 0.2,
+                        fontSize: 7, color: 'DC2626', bold: true
+                    }, safeArea)
+                );
+
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x + col1W + 0.3, y: yPos + 0.38, w: col1W, h: 0.3,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText('Likelihood: ' + risk.likelihood,
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + col1W + 0.38, y: yPos + 0.43, w: col1W - 0.16, h: 0.2,
+                        fontSize: 7, color: 'F97316', bold: true
+                    }, safeArea)
+                );
+
+                // Mitigation
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x + 0.15, y: yPos + 0.72, w: safeArea.w - 0.3, h: 0.56,
+                    fill: { type: 'solid', color: BRAND.white },
+                    line: { type: 'none' }
+                });
+                slide.addText('Mitigation Strategies:',
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.77, w: safeArea.w - 0.46, h: 0.13,
+                        fontSize: 7, color: BRAND.gray900, bold: true
+                    }, safeArea)
+                );
+                let mitText = '';
+                risk.mitigation.forEach((m, idx) => {
+                    mitText += '✓ ' + m + (idx < risk.mitigation.length - 1 ? ' | ' : '');
+                });
+                slide.addText(ContentFitting.truncateText(mitText, 300),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 0.91, w: safeArea.w - 0.46, h: 0.34,
+                        fontSize: 5, color: BRAND.gray700
+                    }, safeArea)
+                );
+
+                // Early Warning
+                slide.addShape(pptx.ShapeType.rect, {
+                    x: safeArea.x + 0.15, y: yPos + 1.3, w: safeArea.w - 0.3, h: 0.19,
+                    fill: { type: 'solid', color: 'FEF3C7' },
+                    line: { color: 'F59E0B', width: 1 }
+                });
+                slide.addText('⚠️ Early Warning: ' + ContentFitting.truncateText(risk.earlyWarning, 100),
+                    ContentFitting.constrainTextBox({
+                        x: safeArea.x + 0.23, y: yPos + 1.33, w: safeArea.w - 0.46, h: 0.14,
+                        fontSize: 6, color: '92400E', bold: true
+                    }, safeArea)
+                );
+
+                yPos += 1.62;
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: We have identified 3 key risks with clear mitigation strategies and early warning signals\n\n' +
+                'RISK 1: CHAMPION MODEL DOESN\'T SCALE\n' +
+                'Impact: Severe - Q2-Q4 capacity drops 60% (204 → 84, 408 → 168, 612 → 252)\n' +
+                '• Projects defer: Lead Gen, Proposals, PS Accelerator\n' +
+                '• Value at risk: ~$6M annual\n\n' +
+                'Likelihood: Medium\n' +
+                '• Unproven scaling model (first time implementation)\n' +
+                '• Dependent on champion motivation and time allocation\n' +
+                '• Self-service marketplace readiness critical\n\n' +
+                'Mitigation:\n' +
+                '1. Q1 validation with 3 hand-picked champions (GTM, Engineering, Product)\n' +
+                '2. Marketplace must be self-service by Q2 (reduce hand-holding dependency)\n' +
+                '3. Rigorous selection: Technical depth, communication skills, domain expertise\n' +
+                '4. Scenario A ready: $300K to hire 2 engineers if needed (Q2 decision)\n\n' +
+                'Early Warning: Q1 review (March 31)\n' +
+                '• If champions contribute <50% expected capacity\n' +
+                '• If hand-holding time exceeds self-service threshold\n' +
+                '• Decision: Activate Scenario A or adjust Q2-Q4 scope\n\n' +
+                '---\n\n' +
+                'RISK 2: FOREVER CODE DELAYS IMPACT CAPACITY\n' +
+                'Impact: Moderate - Q3-Q4 capacity constrained\n' +
+                '• Team stuck at 20% agentification allocation vs planned 40-60%\n' +
+                '• Projects defer to 2027\n' +
+                '• Does NOT impact Q1-Q2 (already planned at 20%)\n\n' +
+                'Likelihood: Medium\n' +
+                '• Complex products (Leave Planning + Case Management)\n' +
+                '• June 2026 CEO deadline (aggressive)\n' +
+                '• New tech stack (Forever Code architecture)\n\n' +
+                'Mitigation:\n' +
+                '1. 80% capacity firewall - Forever Code protected from other work\n' +
+                '2. Q2 review (June 30) allows Q3-Q4 adjustment if needed\n' +
+                '3. Buffer days (14-52 per quarter) absorb minor slips\n' +
+                '4. Priority hierarchy: Forever Code > AI projects (explicit)\n\n' +
+                'Early Warning: Q2 review (June 30)\n' +
+                '• Forever Code delivery status vs June deadline\n' +
+                '• If behind, adjust Q3-Q4 capacity assumptions\n' +
+                '• Other projects defer, not Forever Code\n\n' +
+                '---\n\n' +
+                'RISK 3: EXTERNAL DEPENDENCIES (GONG MCP)\n' +
+                'Impact: Moderate - OP-001 (Sales Deal Intelligence) delays/cancels\n' +
+                '• Value at risk: $5-7M annual\n' +
+                '• But other projects still deliver $17M+ (portfolio diversified)\n\n' +
+                'Likelihood: Medium\n' +
+                '• Gong MCP launched Oct 2025 (new product)\n' +
+                '• Needs 12+ months maturity for production use\n' +
+                '• Salesforce MCP projected Feb 2026 (also needs maturity)\n' +
+                '• External vendor timelines out of our control\n\n' +
+                'Mitigation:\n' +
+                '1. OP-001 scheduled Q4 (gives 12 months for Gong MCP maturity)\n' +
+                '2. Q3 review (Sept 30) has go/no-go decision based on MCP stability\n' +
+                '3. Alternative: Defer to Q1 2027 (only 3-month slip, not critical)\n' +
+                '4. Portfolio diversification: $17M+ value from other projects\n\n' +
+                'Early Warning: Q3 review (Sept 30)\n' +
+                '• Gong MCP stability assessment (production-ready?)\n' +
+                '• Salesforce MCP maturity check\n' +
+                '• Decision: Proceed Q4 or defer to 2027\n\n' +
+                'BOTTOM LINE: All risks have clear mitigation strategies and quarterly review gates for early detection'
+            );
+        }
+
+        // SLIDE 9: AI Projects Portfolio
+        function createSlide9(pptx) {
+            let slide = pptx.addSlide();
+            slide.background = { fill: BRAND.white };
+
+            // Get safe area for content
+            const safeArea = ContentFitting.getSafeArea(10, 5.625);
+
+            // Header (constrained to safe area)
+            slide.addText('AI Project Portfolio - Priority & Scoring',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y, w: safeArea.w, h: 0.4,
+                    fontSize: 26, bold: true, color: BRAND.gray900
+                }, safeArea)
+            );
+            slide.addText('11 Projects Ranked by Hybrid Score (70% Multi-Factor + 30% ROI)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x, y: safeArea.y + 0.45, w: safeArea.w, h: 0.25,
+                    fontSize: 13, color: BRAND.gray600
+                }, safeArea)
+            );
+
+            // Methodology note (constrained)
+            slide.addShape(pptx.ShapeType.rect, {
+                x: safeArea.x, y: safeArea.y + 0.75, w: safeArea.w, h: 0.3,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.primary, width: 1, pt: 'solid' }
+            });
+            slide.addText('Formula: Q1-Q2: (0.7 × Multi_Factor) + (0.3 × ROI) | Components: Financial Impact (30%) • Strategic Alignment (25%) • Execution Feasibility (25%) • Time to Value (20%) • ROI Score (30% weight)',
+                ContentFitting.constrainTextBox({
+                    x: safeArea.x + 0.1, y: safeArea.y + 0.82, w: safeArea.w - 0.2, h: 0.18,
+                    fontSize: 6, color: BRAND.gray900
+                }, safeArea)
+            );
+
+            // Portfolio table with content fitting
+            const portfolioProjects = [
+                { rank: 1, project: 'OP-000: Claude Enterprise & Code', score: '95.6', tier: 'FOUNDATION', status: 'Proposed', value: '$4.6M', roi: '1,560%', kpis: 'Adoption: 92→192; WAU: 62→128', deps: 'None', q: 'Q1', reasoning: 'Enables all projects' },
+                { rank: 2, project: 'OP-011: Claude Marketplace', score: '81.7', tier: 'FOUNDATION', status: 'Active', value: '$1.7M', roi: '492%', kpis: 'WAU: 150 (67%); 30 plugins', deps: 'OP-000 P1', q: 'Q1', reasoning: 'Arch foundation' },
+                { rank: 3, project: 'OP-014: Business Data Foundation', score: '85.5', tier: 'FOUNDATION', status: 'Planning', value: '$1.8M', roi: '156%', kpis: 'Velocity: +20%; Quality: 95%+', deps: 'None', q: 'Q1', reasoning: 'Feeds 7+ projects' },
+                { rank: 4, project: 'OP-005: Lead Gen Intelligence', score: '86.2', tier: 'REVENUE', status: 'Planning', value: '$3.1M', roi: '481%', kpis: 'ARR: $3.14M; Prod: +50%', deps: 'OP-000 P2', q: 'Q2', reasoning: 'Highest revenue' },
+                { rank: 5, project: 'OP-008: Law2Engine', score: '68.8', tier: 'FOUNDATION', status: '60% Done', value: '$1.7M', roi: '386%', kpis: 'Accuracy: ≥92%; -85% time', deps: 'OP-011/014', q: 'Q1', reasoning: 'Competitive diff' },
+                { rank: 6, project: 'OP-013: Case Management', score: '67.3', tier: 'FOUNDATION', status: 'In Dev', value: '$2.8M', roi: '312%', kpis: '50+ customers; $500K ARR', deps: 'OP-014', q: 'Q1', reasoning: 'CEO committed' },
+                { rank: 7, project: 'OP-001: Sales Deal Intelligence', score: '76.6', tier: 'REVENUE', status: 'Proposed', value: '$5-7M', roi: '847%', kpis: 'Win Rate: 16%→22-24%', deps: 'Gong/SF MCP', q: 'Q4', reasoning: 'Highest value' },
+                { rank: 8, project: 'OP-012: Leave Planning Tool', score: '55.1', tier: 'FOUNDATION', status: 'In Dev', value: '$450K', roi: '173%', kpis: 'MAU: 1000+; 50+leads/mo', deps: 'None', q: 'Q1', reasoning: 'CEO committed' },
+                { rank: 9, project: 'OP-004: Proposal Generator', score: '77.4', tier: 'REVENUE', status: 'Proposed', value: '$1.6M', roi: '612%', kpis: 'Time: -75%; Win: +3-5pts', deps: 'OP-011', q: 'Q3', reasoning: 'Sales enablement' },
+                { rank: 10, project: 'OP-002: Ops Knowledge Agent', score: '73.1', tier: 'RETENTION', status: 'Planning', value: '$890K', roi: '523%', kpis: 'Search: -60%; CSAT: +5-10', deps: 'OP-000', q: 'Q2', reasoning: 'Replace M365' },
+                { rank: 11, project: 'OP-006: PS Accelerator', score: '69.7', tier: 'RETENTION', status: 'Proposed', value: '$1.2M', roi: '445%', kpis: 'Impl Time: -30-40%', deps: 'OP-011+Prod', q: 'Q3', reasoning: 'Product problem' }
+            ];
+
+            // Calculate table dimensions with safe margins
+            const tableTop = safeArea.y + 1.15;
+            const tableHeight = 3.5;  // Reduced from 4.3 to fit within bounds
+            const tableWidth = safeArea.w;
+            const rowHeight = ContentFitting.getTableRowHeight(portfolioProjects.length, tableHeight, 0.30, 0.35);
+
+            // Table data with truncated text for fitting
+            const rows = [];
+            portfolioProjects.forEach(p => {
+                const tierColor = p.tier === 'FOUNDATION' ? BRAND.blue100 :
+                                 p.tier === 'REVENUE' ? BRAND.green100 : BRAND.orange100;
+                const statusColor = p.status === 'Active' ? BRAND.success :
+                                   p.status.includes('Dev') || p.status.includes('Done') ? BRAND.warning :
+                                   p.status === 'Planning' ? BRAND.primary : BRAND.gray500;
+
+                rows.push([
+                    { text: '#' + p.rank, options: { fontSize: 8, bold: true, color: BRAND.gray900, align: 'center', valign: 'middle' } },
+                    { text: ContentFitting.truncateText(p.project, 35), options: { fontSize: 7, bold: true, color: BRAND.gray900, valign: 'middle' } },
+                    { text: p.score, options: { fontSize: 8, bold: true, color: BRAND.primary, align: 'center', valign: 'middle' } },
+                    { text: p.tier, options: { fontSize: 6, bold: true, color: BRAND.gray900, fill: tierColor, align: 'center', valign: 'middle' } },
+                    { text: p.status, options: { fontSize: 6, color: statusColor, bold: true, align: 'center', valign: 'middle' } },
+                    { text: p.value, options: { fontSize: 7, bold: true, color: BRAND.success, align: 'right', valign: 'middle' } },
+                    { text: p.roi, options: { fontSize: 7, bold: true, color: BRAND.success, align: 'right', valign: 'middle' } },
+                    { text: ContentFitting.truncateText(p.kpis, 40), options: { fontSize: 5, color: BRAND.gray700, valign: 'middle' } },
+                    { text: ContentFitting.truncateText(p.deps, 20), options: { fontSize: 5, color: BRAND.gray700, valign: 'middle' } },
+                    { text: p.q, options: { fontSize: 6, color: BRAND.gray700, align: 'center', valign: 'middle' } },
+                    { text: ContentFitting.truncateText(p.reasoning, 35), options: { fontSize: 5, color: BRAND.gray600, italic: true, valign: 'middle' } }
+                ]);
+            });
+
+            // Add table with constrained dimensions
+            slide.addTable(rows, {
+                x: safeArea.x,
+                y: tableTop,
+                w: tableWidth,
+                h: tableHeight,
+                colW: [0.35, 1.6, 0.35, 0.85, 0.65, 0.45, 0.45, 1.5, 0.85, 0.35, 1.15],
+                border: { pt: 0.5, color: BRAND.gray300 },
+                fontSize: 6,
+                color: BRAND.gray700,
+                fill: BRAND.white,
+                rowH: rowHeight,
+                valign: 'middle'
+            });
+
+            // Legend at bottom (constrained to safe area)
+            const legendY = safeArea.y + safeArea.h - 0.55;
+            const legendW = (safeArea.w - 0.4) / 3;
+
+            slide.addShape(pptx.ShapeType.rect, {
+                x: 0.5, y: legendY, w: legendW, h: 0.5,
+                fill: { type: 'solid', color: BRAND.blue50 },
+                line: { color: BRAND.blue100, width: 1 }
+            });
+            slide.addText('🔷 TIER 0: FOUNDATION (6)', {
+                x: 0.6, y: legendY + 0.05, w: legendW - 0.2, h: 0.18,
+                fontSize: 9, bold: true, color: BRAND.gray900
+            });
+            slide.addText('Must launch first - enables downstream projects', {
+                x: 0.6, y: legendY + 0.25, w: legendW - 0.2, h: 0.2,
+                fontSize: 7, color: BRAND.gray700
+            });
+
+            slide.addShape(pptx.ShapeType.rect, {
+                x: 4.6, y: legendY, w: legendW, h: 0.5,
+                fill: { type: 'solid', color: BRAND.green50 },
+                line: { color: BRAND.green100, width: 1 }
+            });
+            slide.addText('💰 TIER 1: REVENUE (3)', {
+                x: 4.7, y: legendY + 0.05, w: legendW - 0.2, h: 0.18,
+                fontSize: 9, bold: true, color: BRAND.gray900
+            });
+            slide.addText('Revenue generation - after foundation ready', {
+                x: 4.7, y: legendY + 0.25, w: legendW - 0.2, h: 0.2,
+                fontSize: 7, color: BRAND.gray700
+            });
+
+            slide.addShape(pptx.ShapeType.rect, {
+                x: 8.7, y: legendY, w: legendW, h: 0.5,
+                fill: { type: 'solid', color: BRAND.orange50 },
+                line: { color: BRAND.orange100, width: 1 }
+            });
+            slide.addText('🔄 TIER 2: RETENTION (2)', {
+                x: 8.8, y: legendY + 0.05, w: legendW - 0.2, h: 0.18,
+                fontSize: 9, bold: true, color: BRAND.gray900
+            });
+            slide.addText('Customer retention - after product quality', {
+                x: 8.8, y: legendY + 0.25, w: legendW - 0.2, h: 0.2,
+                fontSize: 7, color: BRAND.gray700
+            });
+
+            // Presenter notes
+            slide.addNotes(
+                'KEY MESSAGE: 11 AI projects worth $22.4M prioritized by hybrid scoring algorithm with tier-based sequencing\n\n' +
+                'SCORING METHODOLOGY:\n' +
+                '• Hybrid formula: (0.7 × Multi-Factor) + (0.3 × ROI)\n' +
+                '• Multi-Factor components:\n' +
+                '  - Financial Impact (30%): Annual value, cost savings\n' +
+                '  - Strategic Alignment (25%): Enables other projects, competitive advantage\n' +
+                '  - Execution Feasibility (25%): Team capacity, technical risk\n' +
+                '  - Time to Value (20%): Speed to first ROI\n' +
+                '• Q3-Q4 shift: 60/40 split as ROI data improves\n\n' +
+                'TIER STRATEGY:\n' +
+                '• TIER 0 FOUNDATION (6 projects): Must launch first\n' +
+                '  - OP-000 (95.6): License expansion - enables everything\n' +
+                '  - OP-011 (81.7): Marketplace - architecture foundation\n' +
+                '  - OP-014 (85.5): Data Foundation - feeds 7+ projects\n' +
+                '  - OP-008 (68.8): Law2Engine - competitive differentiation\n' +
+                '  - OP-013 (67.3): Case Management - CEO committed\n' +
+                '  - OP-012 (55.1): Leave Planning - CEO committed\n\n' +
+                '• TIER 1 REVENUE (3 projects): After foundation ready\n' +
+                '  - OP-005 (86.2): Lead Gen - $3.1M annual value, 6 AI agents\n' +
+                '  - OP-001 (76.6): Sales Deal Intelligence - $5-7M (highest value)\n' +
+                '  - OP-004 (77.4): Proposals - $1.6M, 612% ROI\n\n' +
+                '• TIER 2 RETENTION (2 projects): After product quality\n' +
+                '  - OP-002 (73.1): Ops Knowledge - replace failed M365 agent\n' +
+                '  - OP-006 (69.7): PS Accelerator - product speed dependency\n\n' +
+                'TOP PROJECTS DETAIL:\n' +
+                '1. OP-000 (95.6 score): Claude Enterprise & Code Expansion\n' +
+                '   - $4.6M value, 1,560% ROI\n' +
+                '   - Adoption: 92 → 192 seats\n' +
+                '   - FOUNDATIONAL: Enables all 8+ downstream projects\n' +
+                '   - No dependencies - can start immediately\n\n' +
+                '2. OP-011 (81.7 score): TechCo Inc Claude Marketplace\n' +
+                '   - $1.7M value, 492% ROI\n' +
+                '   - Adoption: 150 WAU (67%), 30 plugins by EOY\n' +
+                '   - Architecture foundation - prevents $369K duplicate efforts\n' +
+                '   - Active: v1.3.0 with 14 plugins\n\n' +
+                '3. OP-014 (85.5 score): Business Operational Data Foundation\n' +
+                '   - $1.8M value, 156% ROI\n' +
+                '   - Eng velocity +20%, data quality 95%+\n' +
+                '   - Data layer - feeds 7+ AI projects\n' +
+                '   - 10-week MVP sprint\n\n' +
+                '4. OP-005 (86.2 score): Lead Generation Agentic Intelligence\n' +
+                '   - $3.1M annual value, 481% ROI\n' +
+                '   - 6 AI agents for BDR team (15 people)\n' +
+                '   - Highest TIER 1 REVENUE project\n' +
+                '   - SOFT dependency on OP-000 Phase 2\n\n' +
+                'PORTFOLIO TOTALS:\n' +
+                '• Total projects: 11\n' +
+                '• Total value: $22.4M annual\n' +
+                '• Average ROI: 428% (blended)\n' +
+                '• Q1 committed: 6 projects (TIER 0 foundation)\n' +
+                '• Q2-Q4 planned: 5 projects (subject to quarterly reviews)\n\n' +
+                'BOTTOM LINE: Data-driven prioritization with foundation-first approach ensures dependencies are met before scaling revenue/retention projects'
+            );
+        }
+
+        console.log('All slides created successfully!');
+
+        // Check library on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('downloadBtn');
+            if (typeof PptxGenJS === 'undefined') {
+                btn.disabled = true;
+                btn.textContent = '❌ Library Failed to Load - Please Refresh Page';
+                btn.style.background = '#EF4444';
+                showStatus('❌ PptxGenJS library failed to load from CDN. Please check your internet connection and refresh the page.');
+            } else {
+                console.log('✅ PptxGenJS loaded successfully');
+            }
+        });
+    </script>
+</body>
+</html>

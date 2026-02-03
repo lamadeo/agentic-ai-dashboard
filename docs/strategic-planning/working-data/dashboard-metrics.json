@@ -1,0 +1,21 @@
+{
+  "metrics": {
+    "claudeEnterprise": {
+      "activeUsers": 94,
+      "licensedUsers": 112,
+      "adoptionRate": 84
+    },
+    "claudeCode": {
+      "activeUsers": 19,
+      "licensedUsers": 45,
+      "adoptionRate": 42,
+      "linesPerUser": 34509
+    },
+    "m365Copilot": {
+      "activeUsers": 188,
+      "licensedUsers": 251,
+      "adoptionRate": 75
+    }
+  },
+  "perceivedValue": null
+}

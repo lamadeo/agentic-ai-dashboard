@@ -1,0 +1,169 @@
+{
+  "backupDate": "2024-12-18",
+  "description": "Backup of hardcoded Expansion ROI data from app/page.jsx before migration to data-driven architecture",
+  "sourceLocation": "app/page.jsx lines 177-315",
+  "orgMetrics": {
+    "totalEmployees": 254,
+    "licensedSeats": 85,
+    "activeUsers": 78,
+    "inactiveSeats": 7,
+    "penetrationRate": 31,
+    "unlicensedEmployees": 176
+  },
+  "expansionOpportunities": [
+    {
+      "department": "Enterprise Sales",
+      "totalEmployees": 9,
+      "currentUsers": 3,
+      "powerUsersNeeded": 1,
+      "standardGap": 5,
+      "premiumGap": 1,
+      "totalAdditionalCost": 400,
+      "monthlyOpportunityCost": 9000,
+      "netBenefit": 8600,
+      "roi": 22.5
+    },
+    {
+      "department": "Product",
+      "totalEmployees": 16,
+      "currentUsers": 8,
+      "powerUsersNeeded": 2,
+      "standardGap": 6,
+      "premiumGap": 2,
+      "totalAdditionalCost": 640,
+      "monthlyOpportunityCost": 12360,
+      "netBenefit": 11720,
+      "roi": 19.3
+    },
+    {
+      "department": "Professional Services",
+      "totalEmployees": 34,
+      "currentUsers": 12,
+      "powerUsersNeeded": 4,
+      "standardGap": 18,
+      "premiumGap": 4,
+      "totalAdditionalCost": 1520,
+      "monthlyOpportunityCost": 26350,
+      "netBenefit": 24830,
+      "roi": 17.3
+    },
+    {
+      "department": "Customer Support",
+      "totalEmployees": 19,
+      "currentUsers": 3,
+      "powerUsersNeeded": 2,
+      "standardGap": 14,
+      "premiumGap": 2,
+      "totalAdditionalCost": 960,
+      "monthlyOpportunityCost": 12160,
+      "netBenefit": 11200,
+      "roi": 12.7
+    },
+    {
+      "department": "Large Market Sales",
+      "totalEmployees": 9,
+      "currentUsers": 2,
+      "powerUsersNeeded": 1,
+      "standardGap": 6,
+      "premiumGap": 1,
+      "totalAdditionalCost": 440,
+      "monthlyOpportunityCost": 5400,
+      "netBenefit": 4960,
+      "roi": 12.3
+    },
+    {
+      "department": "Marketing",
+      "totalEmployees": 21,
+      "currentUsers": 12,
+      "powerUsersNeeded": 3,
+      "standardGap": 6,
+      "premiumGap": 3,
+      "totalAdditionalCost": 720,
+      "monthlyOpportunityCost": 6750,
+      "netBenefit": 6030,
+      "roi": 9.4
+    },
+    {
+      "department": "Business Development",
+      "totalEmployees": 8,
+      "currentUsers": 0,
+      "powerUsersNeeded": 1,
+      "standardGap": 7,
+      "premiumGap": 1,
+      "totalAdditionalCost": 480,
+      "monthlyOpportunityCost": 4800,
+      "netBenefit": 4320,
+      "roi": 10.0
+    },
+    {
+      "department": "Other Support Functions",
+      "totalEmployees": 18,
+      "currentUsers": 7,
+      "powerUsersNeeded": 2,
+      "standardGap": 9,
+      "premiumGap": 2,
+      "totalAdditionalCost": 760,
+      "monthlyOpportunityCost": 7200,
+      "netBenefit": 6440,
+      "roi": 9.5
+    },
+    {
+      "department": "Customer Success",
+      "totalEmployees": 19,
+      "currentUsers": 18,
+      "powerUsersNeeded": 2,
+      "standardGap": 1,
+      "premiumGap": 2,
+      "totalAdditionalCost": 360,
+      "monthlyOpportunityCost": 3800,
+      "netBenefit": 3440,
+      "roi": 10.6,
+      "detail": "1 new Std ($40) + 2 Std→Prem upgrades ($320)"
+    },
+    {
+      "department": "Engineering (Ron + Luis)",
+      "totalEmployees": 70,
+      "currentUsers": 28,
+      "currentStandard": 17,
+      "currentPremium": 11,
+      "powerUsersNeeded": 70,
+      "standardGap": 0,
+      "premiumGap": 59,
+      "upgradesNeeded": 17,
+      "newPremiumNeeded": 42,
+      "totalAdditionalCost": 11120,
+      "monthlyOpportunityCost": 55125,
+      "netBenefit": 44005,
+      "roi": 5.0,
+      "detail": "Upgrade 17 Std→Prem ($2,720) + 42 new Premium ($8,400) = $11,120"
+    }
+  ],
+  "businessRules": {
+    "pricing": {
+      "premium": 200,
+      "standard": 40
+    },
+    "valueMetrics": {
+      "hoursPerUserPerMonth": 11,
+      "avgHourlyRate": 77,
+      "hourlyRateRange": {
+        "min": 44,
+        "max": 110
+      }
+    },
+    "licenseAllocation": {
+      "engineering": {
+        "premium": 1.0,
+        "standard": 0
+      },
+      "other": {
+        "premium": 0.1,
+        "standard": 0.9
+      }
+    }
+  },
+  "notes": [
+    "Engineering = 70 (Ron ~65 + Luis 5), includes 10% power users for non-eng depts",
+    "Total calculated: 254 employees total, 85 licensed, 78 active (31% penetration)"
+  ]
+}
