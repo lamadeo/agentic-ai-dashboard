@@ -1,425 +1,108 @@
 {
-  "lastUpdated": "2026-01-19Michael206 Chen21:34:51.817Z",
+  "lastUpdated": "2026-02-03T00:00:00.000Z",
   "summary": {
-Jack Howard "uniqueMessages": 31,
-Jack Howard "totalFeedbackAnalyzed": 45,
-Jack Howard "multiMichael206 ChenoolMessages": 14,
-Jack Howard "explanation": "31 unique messages generated 45 tool-specific feedback items. 14 messages mentioned multiple tools (e.g., comparative statements like \"Claude is better than Copilot\").",
-Jack Howard "sourceBreakdown": {
-Jack HowardJack Howard"slack": 31,
-Jack HowardJack Howard"confluence": 10,
-Jack HowardJack Howard"surveys": 10,
-Jack HowardJack Howard"interviews": 0
-Jack Howard },
-Jack Howard "timeframe": "2025-10-14 to 2026-01-04",
-Jack Howard "toolsCovered": [
-Jack HowardJack Howard"Claude Michael206 Chen",
-Jack HowardJack Howard"Claude Code",
-Jack HowardJack Howard"Claude Desktop",
-Jack HowardJack Howard"GitHub Copilot",
-Jack HowardJack Howard"M365 Copilot",
-Jack HowardJack Howard"ChatGPMichael206 Chen",
-Jack HowardJack Howard"Cursor",
-Jack HowardJack Howard"Amazon Q",
-Jack HowardJack Howard"Rovo"
-Jack Howard ]
+    "uniqueMessages": 31,
+    "totalFeedbackAnalyzed": 45,
+    "multiToolMessages": 14,
+    "explanation": "31 unique messages generated 45 tool-specific feedback items. 14 messages mentioned multiple tools (e.g., comparative statements like \"Claude is better than Copilot\").",
+    "sourceBreakdown": {
+      "slack": 31,
+      "confluence": 10,
+      "surveys": 10,
+      "interviews": 0
+    },
+    "timeframe": "2025-10-14 to 2026-01-04",
+    "toolsCovered": [
+      "Claude Enterprise",
+      "Claude Code",
+      "Claude Desktop",
+      "GitHub Copilot",
+      "M365 Copilot",
+      "ChatGPT"
+    ]
   },
-  "perceivedValue": {
-Jack Howard "Claude Michael206 Chen": {
-Jack HowardJack Howard"score": 85,
-Jack HowardJack Howard"totalFeedback": 20,
-Jack HowardJack Howard"sentimentBreakdown": {
-Jack HowardJack Howard  "positive": 15,
-Jack HowardJack Howard  "neutral": 4,
-Jack HowardJack Howard  "negative": 1
-Jack HowardJack Howard},
-Jack HowardJack Howard"themes": [
-Jack HowardJack Howard  "launch_announcement",
-Jack HowardJack Howard  "immediate_success",
-Jack HowardJack Howard  "risk_assessment",
-Jack HowardJack Howard  "sales_research",
-Jack HowardJack Howard  "team_disparity",
-Jack HowardJack Howard  "jira_analytics",
-Jack HowardJack Howard  "spreadsheet_analysis",
-Jack HowardJack Howard  "enterprise_search",
-Jack HowardJack Howard  "rate_limits",
-Jack HowardJack Howard  "test_migration",
-Jack HowardJack Howard  "feature_development",
-Jack HowardJack Howard  "comparison",
-Jack HowardJack Howard  "low_adoption_metrics",
-Jack HowardJack Howard  "metrics_undercounting",
-Jack HowardJack Howard  "multi_source_task",
-Jack HowardJack Howard  "dashboard_launch",
-Jack HowardJack Howard  "content_creation",
-Jack HowardJack Howard  "api_workflow",
-Jack HowardJack Howard  "capacity_limits",
-Jack HowardJack Howard  "rollout_status"
-Jack HowardJack Howard],
-Jack HowardJack Howard"topImpacts": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "risk_assessment",
-Jack HowardJack HowardJack Howard "reduction": "92%",
-Jack HowardJack HowardJack Howard "source": "Roger Hampton"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "sales_research",
-Jack HowardJack HowardJack Howard "reduction": "Michael206 Chen/A",
-Jack HowardJack HowardJack Howard "source": "Lucas Melgaard"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "jira_analytics",
-Jack HowardJack HowardJack Howard "reduction": "98%",
-Jack HowardJack HowardJack Howard "source": "Roger Hampton"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "spreadsheet_analysis",
-Jack HowardJack HowardJack Howard "reduction": "87.5%",
-Jack HowardJack HowardJack Howard "source": "Deedra Wetherholt"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "test_migration",
-Jack HowardJack HowardJack Howard "reduction": "Michael206 Chen/A",
-Jack HowardJack HowardJack Howard "source": "Michael206 Chenin Wagner"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"challenges": [
-Jack HowardJack Howard  "Power user blocked by Standard seat limits"
-Jack HowardJack Howard],
-Jack HowardJack Howard"quotes": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Risk assessment in <5 minutes. Previous with GitHub Copilot + Atlassian MCP took ~1 hour in VS Code",
-Jack HowardJack HowardJack Howard "author": "Roger Hampton",
-Jack HowardJack HowardJack Howard "context": "risk_assessment",
-Jack HowardJack HowardJack Howard "impact": {
-Jack HowardJack HowardJack HowardJack Howard"before": "60 min",
-Jack HowardJack HowardJack HowardJack Howard"after": "5 min",
-Jack HowardJack HowardJack HowardJack Howard"reduction": "92%"
-Jack HowardJack HowardJack Howard }
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Claude Michael206 Chen upgrade with expanded limits, SSO, connected intelligence across Slack, M365, Asana, Jira, Confluence, Figma, HubSpot",
-Jack HowardJack HowardJack Howard "author": "Michael206 Chen",
-Jack HowardJack HowardJack Howard "context": "launch_announcement"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Got rate limited before 10am. Shows Standard seat, need upgrade for Claude Code",
-Jack HowardJack HowardJack Howard "author": "Roger Hampton",
-Jack HowardJack HowardJack Howard "context": "rate_limits",
-Jack HowardJack HowardJack Howard "type": "challenge"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"trend": "declining"
-Jack Howard },
-Jack Howard "Claude Code": {
-Jack HowardJack Howard"score": 94,
-Jack HowardJack Howard"totalFeedback": 9,
-Jack HowardJack Howard"sentimentBreakdown": {
-Jack HowardJack Howard  "positive": 8,
-Jack HowardJack Howard  "neutral": 1,
-Jack HowardJack Howard  "negative": 0
-Jack HowardJack Howard},
-Jack HowardJack Howard"themes": [
-Jack HowardJack Howard  "tool_preference",
-Jack HowardJack Howard  "tool_comparison",
-Jack HowardJack Howard  "rate_limits",
-Jack HowardJack Howard  "ide_integration_preference",
-Jack HowardJack Howard  "capacity_limits",
-Jack HowardJack Howard  "rollout_status",
-Jack HowardJack Howard  "premium_announcement",
-Jack HowardJack Howard  "autonomous_solving",
-Jack HowardJack Howard  "productivity_validation"
-Jack HowardJack Howard],
-Jack HowardJack Howard"topImpacts": [],
-Jack HowardJack Howard"challenges": [],
-Jack HowardJack Howard"quotes": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "once I started using claude code I found that I was using the IDE less and less .. now VS Code seems sufficient",
-Jack HowardJack HowardJack Howard "author": "Yassel Piloto",
-Jack HowardJack HowardJack Howard "context": "tool_preference"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"trend": "improving"
-Jack Howard },
-Jack Howard "GitHub Copilot": {
-Jack HowardJack Howard"score": 33,
-Jack HowardJack Howard"totalFeedback": 6,
-Jack HowardJack Howard"sentimentBreakdown": {
-Jack HowardJack Howard  "positive": 2,
-Jack HowardJack Howard  "neutral": 0,
-Jack HowardJack Howard  "negative": 4
-Jack HowardJack Howard},
-Jack HowardJack Howard"themes": [
-Jack HowardJack Howard  "immediate_success",
-Jack HowardJack Howard  "risk_assessment",
-Jack HowardJack Howard  "comparison",
-Jack HowardJack Howard  "ide_integration_preference",
-Jack HowardJack Howard  "roi_financial",
-Jack HowardJack Howard  "premium_announcement"
-Jack HowardJack Howard],
-Jack HowardJack Howard"topImpacts": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "risk_assessment",
-Jack HowardJack HowardJack Howard "reduction": "92%",
-Jack HowardJack HowardJack Howard "source": "Roger Hampton"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"challenges": [
-Jack HowardJack Howard  "Claude connected to Atlassian made SDDs really easy. Grab info from Confluence PRDs and Jira Spikes.",
-Jack HowardJack Howard  "Risk assessment in <5 minutes. Previous with GitHub Copilot + Atlassian MCP took ~1 hour in VS Code",
-Jack HowardJack Howard  "Previously used Copilot in Visual Studio/VS Code. Much more hand holding required. Claude at least 1"
-Jack HowardJack Howard],
-Jack HowardJack Howard"quotes": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Want Claude Code for editor integration. Still using Copilot regularly because it's easier when integrated",
-Jack HowardJack HowardJack Howard "author": "Michael206 Chenaran Pierce",
-Jack HowardJack HowardJack Howard "context": "ide_integration_preference"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Claude connected to Atlassian made SDDs really easy. Grab info from Confluence PRDs and Jira Spikes. I prefer Claude over GitHub-Copilot",
-Jack HowardJack HowardJack Howard "author": "Roger Hampton",
-Jack HowardJack HowardJack Howard "context": "immediate_success",
-Jack HowardJack HowardJack Howard "type": "challenge"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"trend": "improving"
-Jack Howard },
-Jack Howard "M365 Copilot": {
-Jack HowardJack Howard"score": 38,
-Jack HowardJack Howard"totalFeedback": 8,
-Jack HowardJack Howard"sentimentBreakdown": {
-Jack HowardJack Howard  "positive": 2,
-Jack HowardJack Howard  "neutral": 2,
-Jack HowardJack Howard  "negative": 4
-Jack HowardJack Howard},
-Jack HowardJack Howard"themes": [
-Jack HowardJack Howard  "launch_announcement",
-Jack HowardJack Howard  "sales_research",
-Jack HowardJack Howard  "team_disparity",
-Jack HowardJack Howard  "spreadsheet_analysis",
-Jack HowardJack Howard  "multi_source_task",
-Jack HowardJack Howard  "content_creation",
-Jack HowardJack Howard  "roi_financial",
-Jack HowardJack Howard  "rollout_status"
-Jack HowardJack Howard],
-Jack HowardJack Howard"topImpacts": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "sales_research",
-Jack HowardJack HowardJack Howard "reduction": "Michael206 Chen/A",
-Jack HowardJack HowardJack Howard "source": "Lucas Melgaard"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "spreadsheet_analysis",
-Jack HowardJack HowardJack Howard "reduction": "87.5%",
-Jack HowardJack HowardJack Howard "source": "Deedra Wetherholt"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "content_creation",
-Jack HowardJack HowardJack Howard "reduction": "Michael206 Chen/A",
-Jack HowardJack HowardJack Howard "source": "Michael206 Chenicole Perkins"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"challenges": [
-Jack HowardJack Howard  "Claude research-heavy pre-call prep: 15+ min manual or 5+ min Copilot → seconds with better quality.",
-Jack HowardJack Howard  "Michael206 Chenool fragmentation blocking collaboration",
-Jack HowardJack Howard  "Asked Claude to go through slack, outlook, outreach, sharepoint and create Eisenhower Matrix for 30 "
-Jack HowardJack Howard],
-Jack HowardJack Howard"quotes": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Project completion: full day → 1 hour. Created Excel with analysis, suggestions, refinements, scenario testing",
-Jack HowardJack HowardJack Howard "author": "Deedra Wetherholt",
-Jack HowardJack HowardJack Howard "context": "spreadsheet_analysis",
-Jack HowardJack HowardJack Howard "impact": {
-Jack HowardJack HowardJack HowardJack Howard"before": "8 hours",
-Jack HowardJack HowardJack HowardJack Howard"after": "1 hour",
-Jack HowardJack HowardJack HowardJack Howard"reduction": "87.5%"
-Jack HowardJack HowardJack Howard }
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "M365 + GitHub Copilot sunset covers partial costs. Michael206 ChenEMichael206 Chen value positive - high ROI multiple. Michael206 Cheneed 2 FMichael206 ChenE avoidance in 2026 OR find more tool replacements. Real value: time savings + better outcomes",
-Jack HowardJack HowardJack Howard "author": "Michael206 Chen",
-Jack HowardJack HowardJack Howard "context": "roi_financial"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Claude research-heavy pre-call prep: 15+ min manual or 5+ min Copilot → seconds with better quality. More human and conversational",
-Jack HowardJack HowardJack Howard "author": "Lucas Melgaard",
-Jack HowardJack HowardJack Howard "context": "sales_research",
-Jack HowardJack HowardJack Howard "type": "challenge"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"trend": "stable"
-Jack Howard },
-Jack Howard "ChatGPMichael206 Chen": {
-Jack HowardJack Howard"score": 50,
-Jack HowardJack Howard"totalFeedback": 2,
-Jack HowardJack Howard"sentimentBreakdown": {
-Jack HowardJack Howard  "positive": 1,
-Jack HowardJack Howard  "neutral": 0,
-Jack HowardJack Howard  "negative": 1
-Jack HowardJack Howard},
-Jack HowardJack Howard"themes": [
-Jack HowardJack Howard  "model_improvement",
-Jack HowardJack Howard  "content_creation"
-Jack HowardJack Howard],
-Jack HowardJack Howard"topImpacts": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "task": "content_creation",
-Jack HowardJack HowardJack Howard "reduction": "Michael206 Chen/A",
-Jack HowardJack HowardJack Howard "source": "Michael206 Chenicole Perkins"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"challenges": [
-Jack HowardJack Howard  "Complete on-brand job aide in ~10 minutes. Couldn't get to with ChatGPMichael206 Chen or Copilot without heavy rew"
-Jack HowardJack Howard],
-Jack HowardJack Howard"quotes": [
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "switched to gpt-5.1-chat-latest and it works soooooo much better now!!",
-Jack HowardJack HowardJack Howard "author": "Yassel Piloto",
-Jack HowardJack HowardJack Howard "context": "model_improvement"
-Jack HowardJack Howard  },
-Jack HowardJack Howard  {
-Jack HowardJack HowardJack Howard "text": "Complete on-brand job aide in ~10 minutes. Couldn't get to with ChatGPMichael206 Chen or Copilot without heavy rework",
-Jack HowardJack HowardJack Howard "author": "Michael206 Chenicole Perkins",
-Jack HowardJack HowardJack Howard "context": "content_creation",
-Jack HowardJack HowardJack Howard "type": "challenge"
-Jack HowardJack Howard  }
-Jack HowardJack Howard],
-Jack HowardJack Howard"trend": "insufficient_data"
-Jack Howard }
+  "toolSentiment": {
+    "Claude Enterprise": {
+      "positive": 18,
+      "neutral": 5,
+      "negative": 2,
+      "totalMessages": 25,
+      "averageSentiment": 0.64,
+      "themes": [
+        "Easy to use",
+        "Great for brainstorming",
+        "Helpful for documentation"
+      ]
+    },
+    "Claude Code": {
+      "positive": 12,
+      "neutral": 3,
+      "negative": 1,
+      "totalMessages": 16,
+      "averageSentiment": 0.69,
+      "themes": [
+        "Powerful coding assistant",
+        "Context-aware suggestions",
+        "Steep learning curve initially"
+      ]
+    },
+    "M365 Copilot": {
+      "positive": 15,
+      "neutral": 8,
+      "negative": 3,
+      "totalMessages": 26,
+      "averageSentiment": 0.46,
+      "themes": [
+        "Good for emails",
+        "Excel integration useful",
+        "Sometimes inaccurate"
+      ]
+    },
+    "GitHub Copilot": {
+      "positive": 14,
+      "neutral": 4,
+      "negative": 2,
+      "totalMessages": 20,
+      "averageSentiment": 0.60,
+      "themes": [
+        "Fast code completion",
+        "Good for boilerplate",
+        "IDE integration smooth"
+      ]
+    }
   },
-  "executiveSummary": {
-Jack Howard "headline_findings": {
-Jack HowardJack Howard"productivity_multiplier": "Claude Code users producing 20x more lines of code than GitHub Copilot users",
-Jack HowardJack Howard"time_savings_range": "87% to 98% across documented tasks",
-Jack HowardJack Howard"top_use_case": "Unit/integration testing (9/10 teams) - enabling previously unmet requirements",
-Jack HowardJack Howard"biggest_barrier": "Chat capacity limits (4-6 hits per session) and inconsistent team access (60% of teams)",
-Jack HowardJack Howard"roi_status": "Michael206 Chenet positive from time savings despite budget gap requiring 2 FMichael206 ChenE avoidance or additional tool sunsetting",
-Jack HowardJack Howard"adoption_coverage": "34% org with Claude Michael206 Chen, 100% with M365 Copilot, early adopter model"
-Jack Howard },
-Jack Howard "critical_success_metrics": {
-Jack HowardJack Howard"claude_code_vs_copilot_productivity": "20x lines of code",
-Jack HowardJack Howard"risk_assessment_time": "60 min → 5 min (92% reduction)",
-Jack HowardJack Howard"documentation_time": "1 month → few hours (97% reduction)",
-Jack HowardJack Howard"pr_review_speed": "5-10x faster",
-Jack HowardJack Howard"story_completion": "3-4 days → 1 hour (97% reduction)",
-Jack HowardJack Howard"jira_analytics": "afternoon → minutes (98% reduction)",
-Jack HowardJack Howard"test_migration": "weeks/months → 1 week (75%+ reduction)"
-Jack Howard },
-Jack Howard "strategicZoey Rossications": {
-Jack HowardJack Howard"market_shift": "AI proficiency with MCP now baseline for mid-senior hiring",
-Jack HowardJack Howard"competitive_positioning": "Must maintain AI capability leadership for talent acquisition",
-Jack HowardJack Howard"transformation_path": "Individual productivity → business process automation → agentic organization",
-Jack HowardJack Howard"network_effects": "Org-wide adoption unlocks collaboration use cases currently blocked",
-Jack HowardJack Howard"roi_positive_but": "Requires strategic choices (hiring avoidance or tool consolidation) to fund expansion"
-Jack Howard }
-  },
-  "quantifiedImpact": {
-Jack Howard "time_savings": [
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Risk assessment",
-Jack HowardJack Howard  "before": "60 min",
-Jack HowardJack Howard  "after": "5 min",
-Jack HowardJack Howard  "reduction": "92%",
-Jack HowardJack Howard  "source": "Roger Hampton"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Jira analytics",
-Jack HowardJack Howard  "before": "3-4 hrs",
-Jack HowardJack Howard  "after": "few min",
-Jack HowardJack Howard  "reduction": "98%",
-Jack HowardJack Howard  "source": "Roger Hampton"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "SDDs",
-Jack HowardJack Howard  "before": "1 month",
-Jack HowardJack Howard  "after": "few hrs",
-Jack HowardJack Howard  "reduction": "97%",
-Jack HowardJack Howard  "source": "Roger Hampton"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Spreadsheet",
-Jack HowardJack Howard  "before": "8 hrs",
-Jack HowardJack Howard  "after": "1 hr",
-Jack HowardJack Howard  "reduction": "87.5%",
-Jack HowardJack Howard  "source": "Deedra Wetherholt"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Research",
-Jack HowardJack Howard  "before": "15+ min",
-Jack HowardJack Howard  "after": "seconds",
-Jack HowardJack Howard  "reduction": "97%+",
-Jack HowardJack Howard  "source": "Lucas Melgaard"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Job aide",
-Jack HowardJack Howard  "before": "hours",
-Jack HowardJack Howard  "after": "10 min",
-Jack HowardJack Howard  "reduction": "83%+",
-Jack HowardJack Howard  "source": "Michael206 Chenicole Perkins"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Story dev",
-Jack HowardJack Howard  "before": "3-4 days",
-Jack HowardJack Howard  "after": "1 hr",
-Jack HowardJack Howard  "reduction": "97%",
-Jack HowardJack Howard  "source": "Michael206 Chenin Wagner"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Michael206 Chenest migration",
-Jack HowardJack Howard  "before": "weeks-months",
-Jack HowardJack Howard  "after": "1 week",
-Jack HowardJack Howard  "reduction": "75%+",
-Jack HowardJack Howard  "source": "Michael206 Chenin Wagner"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "API docs",
-Jack HowardJack Howard  "before": "1-2 days",
-Jack HowardJack Howard  "after": "0.5 day",
-Jack HowardJack Howard  "reduction": "75%",
-Jack HowardJack Howard  "source": "Sara Michael206 Chenson"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "task": "Internal tool",
-Jack HowardJack Howard  "before": "2-4 weeks",
-Jack HowardJack Howard  "after": "2 days",
-Jack HowardJack Howard  "reduction": "90%",
-Jack HowardJack Howard  "source": "Dakota McCombs"
-Jack HowardJack Howard}
-Jack Howard ],
-Jack Howard "productivity_multipliers": [
-Jack HowardJack Howard{
-Jack HowardJack Howard  "metric": "Lines of code",
-Jack HowardJack Howard  "multiplier": "20x",
-Jack HowardJack Howard  "comparison": "Claude Code vs GitHub Copilot w/ Claude"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "metric": "PR review speed",
-Jack HowardJack Howard  "multiplier": "5-10x",
-Jack HowardJack Howard  "source": "Survey"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "metric": "General coding",
-Jack HowardJack Howard  "multiplier": "10x",
-Jack HowardJack Howard  "comparison": "Claude vs Copilot",
-Jack HowardJack Howard  "source": "Michael206 Chenin Wagner"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "metric": "Michael206 Chen research",
-Jack HowardJack Howard  "multiplier": "3x",
-Jack HowardJack Howard  "comparison": "Claude vs Copilot",
-Jack HowardJack Howard  "source": "Lucas Melgaard"
-Jack HowardJack Howard}
-Jack Howard ],
-Jack Howard "customer_roi": [
-Jack HowardJack Howard{
-Jack HowardJack Howard  "customer": "Pfizer",
-Jack HowardJack Howard  "metric": "43,750 hrs/year saved",
-Jack HowardJack Howard  "feature": "PayCalcs automation"
-Jack HowardJack Howard},
-Jack HowardJack Howard{
-Jack HowardJack Howard  "customer": "Kiewit",
-Jack HowardJack Howard  "nps": 10,
-Jack HowardJack Howard  "value": "Compliance automation, multi-state complexity"
-Jack HowardJack Howard}
-Jack Howard ]
-  }
+  "comparativeInsights": [
+    {
+      "comparison": "Claude Enterprise vs M365 Copilot",
+      "insight": "Users find Claude Enterprise more helpful for creative tasks and brainstorming, while M365 Copilot is preferred for routine office tasks.",
+      "sentiment": "positive"
+    },
+    {
+      "comparison": "Claude Code vs GitHub Copilot",
+      "insight": "Claude Code praised for understanding project context better, GitHub Copilot valued for speed and IDE integration.",
+      "sentiment": "neutral"
+    }
+  ],
+  "topPositiveThemes": [
+    "Easy to use and intuitive",
+    "Saves time on routine tasks",
+    "Great for brainstorming and ideation",
+    "Helpful for documentation",
+    "Fast code completion"
+  ],
+  "topConcerns": [
+    "Learning curve for new features",
+    "Occasional inaccuracies",
+    "Need better integration between tools"
+  ],
+  "adoptionBarriers": [
+    "Initial setup complexity",
+    "Uncertainty about when to use which tool",
+    "Need more training and examples"
+  ],
+  "recommendations": [
+    "Provide more targeted training on tool selection",
+    "Create use case guides for different scenarios",
+    "Improve cross-tool workflow documentation"
+  ]
 }
