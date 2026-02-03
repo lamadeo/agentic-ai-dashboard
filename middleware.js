@@ -1,8 +1,5 @@
 import { NextResponse } from 'next/server';
 
-// Explicitly use Edge Runtime
-export const runtime = 'edge';
-
 export function middleware(request) {
   const { pathname } = request.nextUrl;
 
