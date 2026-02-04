@@ -1,4 +1,25 @@
 # Exclude raw data files - only ai-tools-data.json is needed for deployment
-docs/data/claude-monthly-data
-docs/data/*.zip
-docs/data/*.csv
+
+# Large data directories (4+ GB total)
+data/claude-enterprise/
+data/claude-monthly-data/
+data/github-copilot/
+data/m365-copilot/
+
+# Other data folders not needed in production
+data/sentiment/
+data/surveys/
+data/interviews/
+data/confluence/
+data/zscaler/
+
+# Keep these small files (needed for app)
+!data/techco_org_chart.json
+!data/perceived-value.json
+!data/license_config.csv
+!data/claude_enterprise_seats.json
+!data/claude_enterprise_license_history.json
+!data/roi_config.json
+
+# Documentation data
+docs/data/

@@ -19,7 +19,7 @@ export async function POST(request) {
     const isValidHash = envHash && envHash.length === 60 && envHash.startsWith('$2b$');
     const hashedPassword = isValidHash
       ? envHash
-      : '$2b$10$IOhReijo8.NdNHE/sIkb8.FleBKdbP84k4VfvuB.sAN/ugyq0vjFG';
+      : '$2b$10$MJJ76zbXdBiuhrsHzaFMquGfiLJbPWslAK0/P3Bbs0QNCTxvKKR.G';
 
     console.log('Using', isValidHash ? 'env var hash' : 'fallback hash');
     console.log('Hash length:', hashedPassword?.length);
