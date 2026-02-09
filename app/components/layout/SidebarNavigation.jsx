@@ -164,7 +164,7 @@ const SidebarNavigation = ({
           title="About this dashboard"
         >
           <Info className="h-3.5 w-3.5 flex-shrink-0" />
-          {!sidebarCollapsed && <span>v1.0</span>}
+          {!sidebarCollapsed && <span>v1.1.0</span>}
         </button>
       </div>
     </aside>

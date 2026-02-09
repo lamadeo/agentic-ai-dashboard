@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-import { Clock, Github, ChevronRight, LogOut } from 'lucide-react';
+import { Clock, Github, ChevronRight, LogOut, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { ThemeToggle } from '../ThemeToggle';
 
@@ -36,13 +35,9 @@ const DashboardHeader = ({ latestMonthLabel, latestMonthYear, breadcrumbs, setAc
       <div className="mb-8 flex items-center justify-between max-w-7xl">
         <div>
           <h1 className="text-3xl font-bold text-foreground mb-1 flex items-center">
-            <Image
-              src="/assets/ai-icon.png"
-              alt="Agentic AI Dashboard"
-              width={32}
-              height={32}
-              className="mr-3"
-            />
+            <div className="mr-3 p-1.5 bg-gradient-to-br from-blue-600 via-purple-600 to-amber-500 rounded-lg">
+              <Sparkles className="h-6 w-6 text-white" />
+            </div>
             Agentic AI Dashboard
           </h1>
           <p className="text-muted-foreground">Analytics & Optimization Insights</p>
@@ -54,14 +49,14 @@ const DashboardHeader = ({ latestMonthLabel, latestMonthYear, breadcrumbs, setAc
           </div>
           <ThemeToggle />
           <a
-            href="https://github.com/lamadeo/agentic-ai-dashboard/blob/main/CONTRIBUTING.md"
+            href="https://github.com/lamadeo/agentic-ai-dashboard"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-sm text-primary hover:text-primary/80 transition-colors group"
-            title="Contribute to this dashboard"
+            title="View on GitHub"
           >
             <Github className="h-4 w-4 mr-1" />
-            <span className="group-hover:underline">Contribute</span>
+            <span className="group-hover:underline">GitHub</span>
           </a>
           <button
             onClick={handleLogout}

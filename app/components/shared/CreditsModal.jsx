@@ -33,7 +33,7 @@ const CreditsModal = ({ isOpen, onClose, triggeredBy = 'click' }) => {
             </div>
             <div>
               <h2 className="text-xl font-bold">AI Dashboard</h2>
-              <p className="text-white/80 text-sm">v1.0.0</p>
+              <p className="text-white/80 text-sm">v1.1.0</p>
             </div>
           </div>
         </div>
