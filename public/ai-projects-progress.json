@@ -3,7 +3,7 @@
     {
       "projectId": "OP-000",
       "projectName": "OP-000: Claude Enterprise & Code Expansion",
-      "overallProgress": 47,
+      "overallProgress": 41,
       "progressBreakdown": {
         "phases": {
           "progress": 20,
@@ -13,44 +13,27 @@
           "confidence": "low"
         },
         "behavioral": {
-          "progress": 63,
+          "progress": 62,
           "signals": {
-            "claudeEnterpriseUsers": 118,
+            "claudeEnterpriseUsers": 117,
             "claudeCodeUsers": 28
           },
           "confidence": "medium"
         },
-        "repo": {
-          "progress": 67,
-          "activity": {
-            "commitCount": 71,
-            "prCount": 58,
-            "issueCount": 0,
-            "releaseCount": 0,
-            "lastCommitDate": "2026-01-27T20:18:21Z",
-            "weeklyCommitAvg": 17.9
-          },
-          "roadmapProgress": {
-            "tasksTotal": 0,
-            "tasksCompleted": 0,
-            "tasksInProgress": 0
-          },
-          "velocity": "high",
-          "confidence": "high"
-        }
+        "repo": null
       },
       "status": "proposed",
       "plannedQuarter": "Q1",
       "currentQuarter": "Q1",
       "actualProgress": "on-track",
       "blockers": [],
-      "velocity": "high",
-      "lastAnalyzed": "2026-01-28T19:09:43.587Z",
+      "velocity": "unknown",
+      "lastAnalyzed": "2026-02-05T21:22:10.445Z",
       "metadata": {
         "tier1Available": true,
         "tier2Available": true,
-        "tier3Available": true,
-        "confidence": "high"
+        "tier3Available": false,
+        "confidence": "medium"
       }
     },
     {
@@ -68,8 +51,8 @@
         "behavioral": {
           "progress": 100,
           "signals": {
-            "salesConversations": 8076,
-            "artifacts": 1190,
+            "salesConversations": 7138,
+            "artifacts": 690,
             "projectsCreated": 231
           },
           "confidence": "high"
@@ -82,7 +65,7 @@
       "actualProgress": "on-track",
       "blockers": [],
       "velocity": "unknown",
-      "lastAnalyzed": "2026-01-28T19:09:43.588Z",
+      "lastAnalyzed": "2026-02-05T21:22:10.445Z",
       "metadata": {
         "tier1Available": true,
         "tier2Available": true,
@@ -105,9 +88,9 @@
         "behavioral": {
           "progress": 100,
           "signals": {
-            "conversations": 8076,
-            "artifacts": 1190,
-            "filesUploaded": 17021
+            "conversations": 7138,
+            "artifacts": 690,
+            "filesUploaded": 7821
           },
           "confidence": "high"
         },
@@ -119,7 +102,7 @@
       "actualProgress": "on-track",
       "blockers": [],
       "velocity": "unknown",
-      "lastAnalyzed": "2026-01-28T19:09:43.588Z",
+      "lastAnalyzed": "2026-02-05T21:22:10.445Z",
       "metadata": {
         "tier1Available": true,
         "tier2Available": true,
@@ -142,9 +125,9 @@
         "behavioral": {
           "progress": 100,
           "signals": {
-            "conversations": 8076,
-            "messages": 162845,
-            "conversationsPerUser": 68
+            "conversations": 7138,
+            "messages": 76057,
+            "conversationsPerUser": 61
           },
           "confidence": "high"
         },
@@ -156,7 +139,7 @@
       "actualProgress": "on-track",
       "blockers": [],
       "velocity": "unknown",
-      "lastAnalyzed": "2026-01-28T19:09:43.589Z",
+      "lastAnalyzed": "2026-02-05T21:22:10.447Z",
       "metadata": {
         "tier1Available": true,
         "tier2Available": true,
@@ -167,7 +150,7 @@
     {
       "projectId": "OP-008",
       "projectName": "OP-008 Law2Engine AI Project Analysis",
-      "overallProgress": 37,
+      "overallProgress": 50,
       "progressBreakdown": {
         "phases": {
           "progress": 0,
@@ -186,43 +169,26 @@
           },
           "confidence": "high"
         },
-        "repo": {
-          "progress": 24,
-          "activity": {
-            "commitCount": 28,
-            "prCount": 1,
-            "issueCount": 0,
-            "releaseCount": 0,
-            "lastCommitDate": "2026-01-23T16:31:49Z",
-            "weeklyCommitAvg": 7.1
-          },
-          "roadmapProgress": {
-            "tasksTotal": 0,
-            "tasksCompleted": 0,
-            "tasksInProgress": 0
-          },
-          "velocity": "medium",
-          "confidence": "high"
-        }
+        "repo": null
       },
       "status": "completed",
       "plannedQuarter": "Q1",
       "currentQuarter": "Q1",
-      "actualProgress": "behind",
+      "actualProgress": "on-track",
       "blockers": [],
-      "velocity": "medium",
-      "lastAnalyzed": "2026-01-28T19:09:45.450Z",
+      "velocity": "unknown",
+      "lastAnalyzed": "2026-02-05T21:22:10.529Z",
       "metadata": {
         "tier1Available": true,
         "tier2Available": true,
-        "tier3Available": true,
-        "confidence": "high"
+        "tier3Available": false,
+        "confidence": "medium"
       }
     },
     {
       "projectId": "OP-011",
       "projectName": "Claude Code Marketplace - FY2026 Project Analysis & Engineering Integration Strategy",
-      "overallProgress": 80,
+      "overallProgress": 82,
       "progressBreakdown": {
         "phases": {
           "progress": 100,
@@ -241,37 +207,20 @@
           },
           "confidence": "high"
         },
-        "repo": {
-          "progress": 69,
-          "activity": {
-            "commitCount": 60,
-            "prCount": 77,
-            "issueCount": 9,
-            "releaseCount": 15,
-            "lastCommitDate": "2026-01-27T17:37:23Z",
-            "weeklyCommitAvg": 15.1
-          },
-          "roadmapProgress": {
-            "tasksTotal": 0,
-            "tasksCompleted": 0,
-            "tasksInProgress": 0
-          },
-          "velocity": "high",
-          "confidence": "high"
-        }
+        "repo": null
       },
       "status": "proposed",
       "plannedQuarter": "Q1",
       "currentQuarter": "Q1",
       "actualProgress": "ahead",
       "blockers": [],
-      "velocity": "high",
-      "lastAnalyzed": "2026-01-28T19:09:48.654Z",
+      "velocity": "unknown",
+      "lastAnalyzed": "2026-02-05T21:22:10.616Z",
       "metadata": {
         "tier1Available": true,
         "tier2Available": true,
-        "tier3Available": true,
-        "confidence": "high"
+        "tier3Available": false,
+        "confidence": "medium"
       }
     },
     {
@@ -289,9 +238,9 @@
         "behavioral": {
           "progress": 100,
           "signals": {
-            "totalUsers": 118,
-            "totalMessages": 162845,
-            "filesUploaded": 17021
+            "totalUsers": 117,
+            "totalMessages": 76057,
+            "filesUploaded": 7821
           },
           "confidence": "high"
         },
@@ -303,7 +252,7 @@
       "actualProgress": "on-track",
       "blockers": [],
       "velocity": "unknown",
-      "lastAnalyzed": "2026-01-28T19:09:48.655Z",
+      "lastAnalyzed": "2026-02-05T21:22:10.617Z",
       "metadata": {
         "tier1Available": true,
         "tier2Available": true,
@@ -313,10 +262,10 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-01-28T19:10:24.001Z",
+    "generatedAt": "2026-02-05T21:22:37.587Z",
     "quarter": "Q1",
     "projectCount": 7,
     "version": "2026-Q1",
-    "narrativeType": "NEW_PLAN"
+    "narrativeType": "PROGRESS_UPDATE"
   }
 }

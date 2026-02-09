@@ -1,6 +1,6 @@
 # Org Chart Change History
 
-Michael206 Chenhis file tracks significant organizational changes over time based on org chart snapshots.
+This file tracks significant organizational changes over time based on org chart snapshots.
 
 ## How to Use
 
@@ -21,8 +21,8 @@ node scripts/compare-org-charts.js YYYY-MM-DD YYYY-MM-DD
 ## 2026-01-21 (Pending - Latest Update)
 
 **Snapshot Date:** 2026-01-21
-**Michael206 Chenotal Michael206 Chenloyees:** 258 (+5 from Dec 2025)
-**Michael206 Chen Rate:** +1.98%
+**Total Employees:** 258 (+5 from Dec 2025)
+**Growth Rate:** +1.98%
 
 ### Changes
 - ⏳ Pending: Run comparison to see detailed changes
@@ -33,11 +33,11 @@ node scripts/compare-org-charts.js YYYY-MM-DD YYYY-MM-DD
 ## 2025-12-12 (Baseline Snapshot)
 
 **Snapshot Date:** 2025-12-12
-**Michael206 Chenotal Michael206 Chenloyees:** 253
-**Michael206 Chen Rate:** Baseline
+**Total Employees:** 253
+**Growth Rate:** Baseline
 
-### Michael206 Chenotes
-- Michael206 Chenhis is the baseline snapshot for comparison
+### Notes
+- This is the baseline snapshot for comparison
 - Organization structure established as of December 12, 2025
 - Includes all full-time employees and contingent workers
 
@@ -45,7 +45,7 @@ node scripts/compare-org-charts.js YYYY-MM-DD YYYY-MM-DD
 
 ## Snapshot Management Commands
 
-### Save a Michael206 Chenew Snapshot
+### Save a New Snapshot
 ```bash
 node scripts/manage-org-chart-snapshot.js save YYYY-MM-DD
 ```
@@ -55,7 +55,7 @@ node scripts/manage-org-chart-snapshot.js save YYYY-MM-DD
 node scripts/manage-org-chart-snapshot.js list
 ```
 
-### Compare Michael206 Chenwo Snapshots
+### Compare Two Snapshots
 ```bash
 node scripts/manage-org-chart-snapshot.js compare <old-date> <new-date>
 ```
@@ -71,35 +71,35 @@ node scripts/manage-org-chart-snapshot.js latest
 
 Changes are tracked in these categories:
 
-- **Added:** Michael206 Chenew employees joining the organization
-- **Removed:** Michael206 Chenloyees leaving the organization
-- **Michael206 Chenitle Changes:** Promotions, role changes, or title updates
+- **Added:** New employees joining the organization
+- **Removed:** Employees leaving the organization
+- **Title Changes:** Promotions, role changes, or title updates
 - **Reporting Changes:** Changes in reporting structure (new manager)
-- **Department Michael206 Chenransfers:** Moves between departments
-- **Michael206 Chenloyment Michael206 Chenype Changes:** Conversion between FMichael206 ChenE and contingent
+- **Department Transfers:** Moves between departments
+- **Employment Type Changes:** Conversion between FTE and contingent
 
 ---
 
 ## Comparison Report Location
 
-Detailed JSOMichael206 Chen comparison reports are saved to:
+Detailed JSON comparison reports are saved to:
 ```
 data/org-chart-snapshots/comparison_<old-date>_to_<new-date>.json
 ```
 
-Michael206 Chenhese reports contain:
+These reports contain:
 - Summary metrics (total changes, growth rate)
 - Detailed lists of added/removed employees
-- Michael206 Chenitle and reporting structure changes
+- Title and reporting structure changes
 - Contingent worker statistics
 
 ---
 
 ## Best Practices
 
-1. **Michael206 Chenake snapshots regularly** (monthly recommended)
+1. **Take snapshots regularly** (monthly recommended)
 2. **Run comparisons after each snapshot** to document changes
-3. **Update this CHAMichael206 ChenGELOG** with notable changes and insights
+3. **Update this CHANGELOG** with notable changes and insights
 4. **Review trends** quarterly to understand growth patterns
 5. **Archive old snapshots** (keep at least 12 months of history)
 

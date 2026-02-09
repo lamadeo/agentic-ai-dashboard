@@ -1090,17 +1090,17 @@ export default function ClaudeEnterprise({ aiToolsData }) {
                               return (
                                 <tr key={idx} className="bg-white border-b hover:bg-gray-50">
                                   <td className="px-4 py-4 font-medium text-gray-900">{dept.name}</td>
-                                  <td className="px-4 py-4">{dept.users}</td>
+                                  <td className="px-4 py-4 text-gray-900">{dept.users}</td>
                                   <td className="px-4 py-4 bg-blue-50 font-semibold text-green-600">{dept.agenticFTE?.toFixed(2) || '0.00'}</td>
-                                  <td className="px-4 py-4 bg-green-50">{dept.conversations.toLocaleString()}</td>
-                                  <td className="px-4 py-4 bg-green-50">{avgConvPerUser}</td>
+                                  <td className="px-4 py-4 bg-green-50 text-gray-900">{dept.conversations.toLocaleString()}</td>
+                                  <td className="px-4 py-4 bg-green-50 text-gray-900">{avgConvPerUser}</td>
                                   <td className="px-4 py-4 bg-green-50">
                                     <span className={`px-2 py-1 rounded text-xs font-medium ${convEngagementColor}`}>
                                       {convEngagement}
                                     </span>
                                   </td>
-                                  <td className="px-4 py-4 bg-purple-50">{dept.codeLines.toLocaleString()}</td>
-                                  <td className="px-4 py-4 bg-purple-50">{avgLocPerUser.toLocaleString()}</td>
+                                  <td className="px-4 py-4 bg-purple-50 text-gray-900">{dept.codeLines.toLocaleString()}</td>
+                                  <td className="px-4 py-4 bg-purple-50 text-gray-900">{avgLocPerUser.toLocaleString()}</td>
                                   <td className="px-4 py-4 bg-purple-50">
                                     <span className={`px-2 py-1 rounded text-xs font-medium ${locEngagementColor}`}>
                                       {locEngagement}

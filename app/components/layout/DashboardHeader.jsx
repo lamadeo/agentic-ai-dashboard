@@ -1,20 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-import { Clock, Github, ChevronRight, LogOut } from 'lucide-react';
+import { Clock, Github, ChevronRight, LogOut, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { ThemeToggle } from '../ThemeToggle';
 
 /**
  * DashboardHeader - Main header with logo, title, last updated, and breadcrumbs
  * @param {Object} props
- * @param {string} props.latestMonthLabel - Latest month label (e.g., "January")
- * @param {string|number} props.latestMonthYear - Latest month year (e.g., "2026")
+ * @param {string} props.lastRefreshed - Formatted last refresh date (e.g., "February 4, 2026")
  * @param {Array} props.breadcrumbs - Breadcrumb navigation array
  * @param {Function} props.setActiveTab - Function to set active tab
  */
-const DashboardHeader = ({ latestMonthLabel, latestMonthYear, breadcrumbs, setActiveTab }) => {
+const DashboardHeader = ({ lastRefreshed, breadcrumbs, setActiveTab }) => {
   const router = useRouter();
   const [loggingOut, setLoggingOut] = useState(false);
 
@@ -35,33 +32,28 @@ const DashboardHeader = ({ latestMonthLabel, latestMonthYear, breadcrumbs, setAc
       {/* Main Header */}
       <div className="mb-8 flex items-center justify-between max-w-7xl">
         <div>
-          <h1 className="text-3xl font-bold text-foreground mb-1 flex items-center">
-            <Image
-              src="/assets/ai-icon.png"
-              alt="Agentic AI Dashboard"
-              width={32}
-              height={32}
-              className="mr-3"
-            />
+          <h1 className="text-3xl font-bold text-gray-900 mb-1 flex items-center">
+            <div className="mr-3 p-1.5 bg-gradient-to-br from-blue-600 via-purple-600 to-amber-500 rounded-lg">
+              <Sparkles className="h-6 w-6 text-white" />
+            </div>
             Agentic AI Dashboard
           </h1>
-          <p className="text-muted-foreground">Analytics & Optimization Insights</p>
+          <p className="text-gray-600">Analytics & Optimization Insights</p>
         </div>
         <div className="flex items-center space-x-4">
           <div className="flex items-center text-sm text-muted-foreground">
             <Clock className="h-4 w-4 mr-1" />
-            <span>Last updated: {latestMonthLabel} {latestMonthYear}</span>
+            <span>Last updated: {lastRefreshed}</span>
           </div>
-          <ThemeToggle />
           <a
-            href="https://github.com/lamadeo/agentic-ai-dashboard/blob/main/CONTRIBUTING.md"
+            href="https://github.com/lamadeo/agentic-ai-dashboard"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-sm text-primary hover:text-primary/80 transition-colors group"
-            title="Contribute to this dashboard"
+            title="View on GitHub"
           >
             <Github className="h-4 w-4 mr-1" />
-            <span className="group-hover:underline">Contribute</span>
+            <span className="group-hover:underline">GitHub</span>
           </a>
           <button
             onClick={handleLogout}

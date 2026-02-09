@@ -17,6 +17,7 @@ import ProjectDetail from './components/ProjectDetail';
 
 // Layout Components
 import DashboardLayout from './components/layout/DashboardLayout';
+import DashboardHeader from './components/layout/DashboardHeader';
 import SidebarNavigation from './components/layout/SidebarNavigation';
 
 // Shared Components
@@ -451,73 +452,15 @@ const Dashboard = () => {
               sidebarCollapsed ? 'ml-16' : 'ml-64'
             } flex-1 transition-all duration-300 p-6`}
           >
-            {/* Simplified Persistent Header - Phase 1A */}
-            <div className="mb-8 flex items-center justify-between max-w-7xl">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-1 flex items-center">
-                  <Image
-                    src="/assets/techco-logo.svg"
-                    alt="TechCo Inc Logo"
-                    width={32}
-                    height={32}
-                    className="mr-3"
-                  />
-                  <Image
-                    src="/assets/ai-icon.png"
-                    alt="AI Icon"
-                    width={32}
-                    height={32}
-                    className="mr-3"
-                  />
-                  Agentic AI Dashboard
-                </h1>
-                <p className="text-gray-600">Analytics & Optimization Insights</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center text-sm text-gray-500">
-                  <Clock className="h-4 w-4 mr-1" />
-                  <span>Last updated: {lastRefreshedFormatted}</span>
-                </div>
-                <a
-                  href="https://github.com/techco/as-ai-dashboard/blob/main/CONTRIBUTING.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors group"
-                  title="Contribute to this dashboard"
-                >
-                  <Github className="h-4 w-4 mr-1" />
-                  <span className="group-hover:underline">Contribute</span>
-                </a>
-              </div>
-            </div>
+            {/* Dashboard Header with breadcrumbs */}
+            <DashboardHeader
+              lastRefreshed={lastRefreshedFormatted}
+              breadcrumbs={breadcrumbs}
+              setActiveTab={setActiveTab}
+            />
 
+            {/* Tab Content Container */}
             <div className="bg-white rounded-lg shadow-md mb-6 max-w-7xl">
-              {/* Breadcrumb Navigation */}
-              <div className="px-6 py-3 bg-gray-50 border-b border-gray-200">
-                <nav className="flex items-center space-x-2 text-sm">
-                  {breadcrumbs.map((crumb, index) => (
-                    <div key={index} className="flex items-center">
-                      {index > 0 && (
-                        <ChevronRight className="h-4 w-4 text-gray-400 mx-2" />
-                      )}
-                      {crumb.tab || crumb.onClick ? (
-                        <button
-                          onClick={() => crumb.onClick ? crumb.onClick() : setActiveTab(crumb.tab)}
-                          className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
-                        >
-                          {crumb.label}
-                        </button>
-                      ) : (
-                        <span className={index === breadcrumbs.length - 1 ? 'text-gray-900 font-medium' : 'text-gray-500'}>
-                          {crumb.label}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </nav>
-              </div>
-
-              {/* Tab Content */}
               <div className="p-6">
 
             {/* Claude Enterprise Tab - Comprehensive View */}
@@ -638,3 +581,4 @@ const Dashboard = () => {
 
 
 export default Dashboard;
+// Data refresh: Mon Feb  9 13:52:13 EST 2026

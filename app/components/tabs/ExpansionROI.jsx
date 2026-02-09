@@ -82,13 +82,13 @@ export default function ExpansionROI({ aiToolsData }) {
                             <tr key={idx} className="bg-white border-b hover:bg-gray-50">
                               <td className="px-4 py-3 font-medium text-gray-900">{idx + 1}</td>
                               <td className="px-4 py-3 font-medium text-gray-900">{dept.department}</td>
-                              <td className="px-4 py-3">{dept.totalEmployees}</td>
+                              <td className="px-4 py-3 text-gray-900">{dept.totalEmployees}</td>
                               <td className="px-4 py-3 text-blue-600">{dept.currentStandard}</td>
                               <td className="px-4 py-3 text-purple-600">{dept.currentPremium}</td>
                               <td className="px-4 py-3 text-blue-600">{dept.standardGap}</td>
                               <td className="px-4 py-3 text-purple-600">{dept.premiumGap}</td>
                               <td className="px-4 py-3 text-amber-600 font-medium">{dept.upgradesNeeded}</td>
-                              <td className="px-4 py-3 font-semibold">${dept.totalAdditionalCost.toLocaleString()}</td>
+                              <td className="px-4 py-3 font-semibold text-gray-900">${dept.totalAdditionalCost.toLocaleString()}</td>
                               <td className="px-4 py-3 font-semibold text-blue-600">${(dept.totalAdditionalCost * 12).toLocaleString()}</td>
                               <td className="px-4 py-3 text-orange-600 font-medium">${(dept.monthlyOpportunityCost * 12).toLocaleString()}</td>
                               <td className="px-4 py-3 text-green-600 font-semibold">${(dept.netBenefit * 12).toLocaleString()}</td>
