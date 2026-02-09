@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import { Lock } from 'lucide-react';
+import { Lock, Sparkles } from 'lucide-react';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -49,13 +48,9 @@ export default function LoginPage() {
         {/* Logo/Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 mb-4">
-            <Image
-              src="/assets/techco-logo.svg"
-              alt="TechCo Inc Logo"
-              width={80}
-              height={80}
-              priority
-            />
+            <div className="p-3 bg-gradient-to-br from-blue-600 via-purple-600 to-amber-500 rounded-2xl">
+              <Sparkles className="h-10 w-10 text-white" />
+            </div>
           </div>
           <h1 className="text-3xl font-bold text-gray-900">
             Agentic AI Dashboard
@@ -77,7 +72,7 @@ export default function LoginPage() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors bg-white text-gray-900"
                 placeholder="Enter password"
                 required
                 autoFocus
