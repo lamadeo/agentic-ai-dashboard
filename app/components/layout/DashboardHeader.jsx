@@ -32,13 +32,13 @@ const DashboardHeader = ({ lastRefreshed, breadcrumbs, setActiveTab }) => {
       {/* Main Header */}
       <div className="mb-8 flex items-center justify-between max-w-7xl">
         <div>
-          <h1 className="text-3xl font-bold text-foreground mb-1 flex items-center">
+          <h1 className="text-3xl font-bold text-gray-900 mb-1 flex items-center">
             <div className="mr-3 p-1.5 bg-gradient-to-br from-blue-600 via-purple-600 to-amber-500 rounded-lg">
               <Sparkles className="h-6 w-6 text-white" />
             </div>
             Agentic AI Dashboard
           </h1>
-          <p className="text-muted-foreground">Analytics & Optimization Insights</p>
+          <p className="text-gray-600">Analytics & Optimization Insights</p>
         </div>
         <div className="flex items-center space-x-4">
           <div className="flex items-center text-sm text-muted-foreground">
