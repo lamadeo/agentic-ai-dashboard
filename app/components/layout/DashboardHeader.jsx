@@ -3,17 +3,15 @@
 import React, { useState } from 'react';
 import { Clock, Github, ChevronRight, LogOut, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { ThemeToggle } from '../ThemeToggle';
 
 /**
  * DashboardHeader - Main header with logo, title, last updated, and breadcrumbs
  * @param {Object} props
- * @param {string} props.latestMonthLabel - Latest month label (e.g., "January")
- * @param {string|number} props.latestMonthYear - Latest month year (e.g., "2026")
+ * @param {string} props.lastRefreshed - Formatted last refresh date (e.g., "February 4, 2026")
  * @param {Array} props.breadcrumbs - Breadcrumb navigation array
  * @param {Function} props.setActiveTab - Function to set active tab
  */
-const DashboardHeader = ({ latestMonthLabel, latestMonthYear, breadcrumbs, setActiveTab }) => {
+const DashboardHeader = ({ lastRefreshed, breadcrumbs, setActiveTab }) => {
   const router = useRouter();
   const [loggingOut, setLoggingOut] = useState(false);
 
@@ -45,9 +43,8 @@ const DashboardHeader = ({ latestMonthLabel, latestMonthYear, breadcrumbs, setAc
         <div className="flex items-center space-x-4">
           <div className="flex items-center text-sm text-muted-foreground">
             <Clock className="h-4 w-4 mr-1" />
-            <span>Last updated: {latestMonthLabel} {latestMonthYear}</span>
+            <span>Last updated: {lastRefreshed}</span>
           </div>
-          <ThemeToggle />
           <a
             href="https://github.com/lamadeo/agentic-ai-dashboard"
             target="_blank"

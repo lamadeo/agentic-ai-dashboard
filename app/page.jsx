@@ -454,8 +454,7 @@ const Dashboard = () => {
           >
             {/* Dashboard Header with breadcrumbs */}
             <DashboardHeader
-              latestMonthLabel={latestMonthLabel}
-              latestMonthYear={latestMonthYear}
+              lastRefreshed={lastRefreshedFormatted}
               breadcrumbs={breadcrumbs}
               setActiveTab={setActiveTab}
             />
