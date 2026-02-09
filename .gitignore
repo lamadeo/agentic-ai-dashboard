@@ -68,3 +68,15 @@ data/ai-projects/Absencesoft*Financial*.csv
 
 # Anonymization scripts - Contains real email mappings
 scripts/employee-mapping.json
+
+# Anonymization backups and working directories
+backups/
+data-original/
+data-anonymized/
+data-test-anonymized/
+*_original
+*.zip_original
+
+# Files with original company name that were replaced
+*absencesoft*
+*AbsenceSoft*

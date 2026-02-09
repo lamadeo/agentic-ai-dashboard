@@ -3,12 +3,12 @@
     {
       "id": 1,
       "type": "title",
-      "title": "2026 AI Portfolio Strategy",
-      "subtitle": "Driving $26M in Value Through Strategic AI Initiatives",
-      "purpose": "Set the stage for an ambitious year-long AI transformation",
+      "title": "AI Portfolio Progress Update",
+      "subtitle": "Q1 2026 Status & Forward Plan",
+      "purpose": "Set context for early-year progress review",
       "content": {
         "presenter": "Agentic AI Team",
-        "date": "2026-01-28",
+        "date": "2026-02-05",
         "organization": "TechCo Inc"
       }
     },
@@ -16,8 +16,8 @@
       "id": 2,
       "type": "executive_summary",
       "title": "Executive Summary",
-      "subtitle": "BLUF: $26M AI Portfolio Poised for Exceptional Returns",
-      "purpose": "Deliver bottom-line-up-front summary of the year's strategic AI investments",
+      "subtitle": "Strong momentum with resource optimization needed",
+      "purpose": "BLUF - deliver key messages upfront for executive audience",
       "content": {
         "bluf": {
           "headline": "7 AI projects prioritized for 2026 delivery",
@@ -27,32 +27,40 @@
         },
         "keyPoints": [
           "Q1: 3 committed projects",
-          "Average progress: 52%",
+          "Average progress: 53%",
           "0 projects need attention"
         ],
         "recommendations": [
-          "Address OP-008 blockers: ",
-          "Q1 over-allocated (72/72 days). Defer lower-priority projects or add capacity.",
-          "Establish weekly progress reviews for at-risk projects"
+          "Q1 over-allocated (72/72 days). Defer lower-priority projects or add capacity."
         ]
       }
     },
     {
       "id": 3,
-      "type": "strategic_context",
-      "title": "Why AI Now: Strategic Imperatives",
-      "subtitle": "Market Forces Driving Our AI Investment Strategy",
-      "purpose": "Establish business case and urgency for the AI portfolio investment",
+      "type": "current_state",
+      "title": "Portfolio Health Check",
+      "subtitle": "7 projects delivering strong value with execution focus",
+      "purpose": "Provide balanced view of where we stand today",
       "content": {
-        "note": "Strategic context content"
+        "note": "Current state content"
       }
     },
     {
       "id": 4,
+      "type": "achievements",
+      "title": "Q1 Wins & Progress",
+      "subtitle": "Solid execution across committed initiatives",
+      "purpose": "Highlight early successes to build confidence",
+      "content": {
+        "note": "Achievements content"
+      }
+    },
+    {
+      "id": 5,
       "type": "portfolio_overview",
-      "title": "2026 AI Portfolio Architecture",
-      "subtitle": "7 Strategic Projects Across Core Business Functions",
-      "purpose": "Provide comprehensive view of all AI initiatives and their strategic alignment",
+      "title": "Top 5 Project Deep Dive",
+      "subtitle": "Focus areas driving $26.44M in portfolio value",
+      "purpose": "Detail the highest-impact initiatives for executive awareness",
       "content": {
         "projects": [
           {
@@ -160,21 +168,21 @@
       }
     },
     {
-      "id": 5,
-      "type": "portfolio_detail",
-      "title": "Flagship Initiative: Lead Generation Intelligence",
-      "subtitle": "OP-005: Highest-Value Project with 50% Q1 Progress",
-      "purpose": "Deep dive on the highest-scoring project to demonstrate portfolio quality",
+      "id": 6,
+      "type": "resource_capacity",
+      "title": "Q1 Resource Challenge",
+      "subtitle": "Over-allocation requires immediate action",
+      "purpose": "Address the critical resource constraint identified",
       "content": {
-        "note": "Portfolio detail content"
+        "note": "Resource capacity content"
       }
     },
     {
-      "id": 6,
+      "id": 7,
       "type": "quarterly_roadmap",
-      "title": "2026 Execution Roadmap",
-      "subtitle": "Phased Approach to Portfolio Delivery",
-      "purpose": "Show systematic approach to project delivery across the year",
+      "title": "2026 Execution Timeline",
+      "subtitle": "Balanced approach across four quarters",
+      "purpose": "Show forward-looking plan for remainder of year",
       "content": {
         "schedule": {
           "Q1": {
@@ -230,74 +238,23 @@
       }
     },
     {
-      "id": 7,
-      "type": "q1_committed",
-      "title": "Q1 2026: Immediate Execution Plan",
-      "subtitle": "3 Committed Projects Ready for Launch",
-      "purpose": "Detail the specific projects starting immediately with clear accountability",
-      "content": {
-        "note": "Q1 committed content"
-      }
-    },
-    {
       "id": 8,
-      "type": "resource_capacity",
-      "title": "Resource Strategy & Capacity Model",
-      "subtitle": "Addressing Q1 Over-Allocation Challenge",
-      "purpose": "Address the critical resource constraint and present solutions",
+      "type": "strategic_context",
+      "title": "Why This Matters",
+      "subtitle": "AI investments driving competitive advantage",
+      "purpose": "Connect tactical execution to strategic business value",
       "content": {
-        "note": "Resource capacity content"
+        "note": "Strategic context content"
       }
     },
     {
       "id": 9,
-      "type": "dependencies_risks",
-      "title": "Risk Management & Dependencies",
-      "subtitle": "Proactive Mitigation for OP-008 Execution Gaps",
-      "purpose": "Address known risks transparently with mitigation strategies",
-      "content": {
-        "gaps": {
-          "execution": [
-            {
-              "projectId": "OP-008",
-              "plannedQuarter": "Q1",
-              "currentQuarter": "Q1",
-              "progress": 37,
-              "blockers": [],
-              "impact": 74.975
-            }
-          ],
-          "strategic": [],
-          "dependency": [],
-          "resource": [
-            {
-              "quarter": "Q1",
-              "issue": "over-allocated",
-              "allocated": 72,
-              "capacity": 72,
-              "buffer": 0
-            }
-          ]
-        },
-        "projectsAtRisk": []
-      }
-    },
-    {
-      "id": 10,
       "type": "next_steps",
       "title": "Immediate Actions Required",
-      "subtitle": "Critical Decisions Needed in Next 30 Days",
-      "purpose": "Drive specific executive decisions and commitments needed for success",
+      "subtitle": "Resource optimization and execution focus",
+      "purpose": "Drive specific decisions and actions from leadership",
       "content": {
         "recommendations": [
-          {
-            "type": "immediate",
-            "priority": "high",
-            "action": "Address OP-008 blockers: ",
-            "owner": "Engineering Lead",
-            "timeline": "This week",
-            "reason": "High-impact project (score 74.975) significantly behind schedule"
-          },
           {
             "type": "immediate",
             "priority": "high",
@@ -305,36 +262,18 @@
             "owner": "PMO",
             "timeline": "This week",
             "reason": "Zero buffer capacity creates execution risk"
-          },
-          {
-            "type": "near-term",
-            "priority": "medium",
-            "action": "Establish weekly progress reviews for at-risk projects",
-            "owner": "PMO",
-            "timeline": "Next sprint",
-            "reason": "Improve visibility into blocked work"
           }
         ]
-      }
-    },
-    {
-      "id": 11,
-      "type": "appendix",
-      "title": "Supporting Data & Analysis",
-      "subtitle": "Detailed Project Metrics and Financial Models",
-      "purpose": "Provide backup data for questions and deeper analysis",
-      "content": {
-        "note": "Appendix content"
       }
     }
   ],
   "metadata": {
-    "generatedAt": "2026-01-28T19:10:24.001Z",
+    "generatedAt": "2026-02-05T21:22:37.587Z",
     "generatedBy": "ai-presentation-generator",
     "version": "2026-Q1",
-    "narrativeType": "NEW_PLAN",
+    "narrativeType": "PROGRESS_UPDATE",
     "model": "claude-sonnet-4-20250514",
-    "slideCount": 11,
+    "slideCount": 9,
     "usedFallback": false,
     "error": null,
     "quarter": "Q1",

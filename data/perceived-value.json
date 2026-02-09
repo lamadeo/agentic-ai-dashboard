@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-03T00:00:00.000Z",
+  "lastUpdated": "2026-01-19T21:34:51.817Z",
   "summary": {
     "uniqueMessages": 31,
     "totalFeedbackAnalyzed": 45,
@@ -18,91 +18,408 @@
       "Claude Desktop",
       "GitHub Copilot",
       "M365 Copilot",
-      "ChatGPT"
+      "ChatGPT",
+      "Cursor",
+      "Amazon Q",
+      "Rovo"
     ]
   },
-  "toolSentiment": {
+  "perceivedValue": {
     "Claude Enterprise": {
-      "positive": 18,
-      "neutral": 5,
-      "negative": 2,
-      "totalMessages": 25,
-      "averageSentiment": 0.64,
+      "score": 85,
+      "totalFeedback": 20,
+      "sentimentBreakdown": {
+        "positive": 15,
+        "neutral": 4,
+        "negative": 1
+      },
       "themes": [
-        "Easy to use",
-        "Great for brainstorming",
-        "Helpful for documentation"
-      ]
+        "launch_announcement",
+        "immediate_success",
+        "risk_assessment",
+        "sales_research",
+        "team_disparity",
+        "jira_analytics",
+        "spreadsheet_analysis",
+        "enterprise_search",
+        "rate_limits",
+        "test_migration",
+        "feature_development",
+        "comparison",
+        "low_adoption_metrics",
+        "metrics_undercounting",
+        "multi_source_task",
+        "dashboard_launch",
+        "content_creation",
+        "api_workflow",
+        "capacity_limits",
+        "rollout_status"
+      ],
+      "topImpacts": [
+        {
+          "task": "risk_assessment",
+          "reduction": "92%",
+          "source": "Roger Hampton"
+        },
+        {
+          "task": "sales_research",
+          "reduction": "N/A",
+          "source": "Lucas Melgaard"
+        },
+        {
+          "task": "jira_analytics",
+          "reduction": "98%",
+          "source": "Roger Hampton"
+        },
+        {
+          "task": "spreadsheet_analysis",
+          "reduction": "87.5%",
+          "source": "Deedra Wetherholt"
+        },
+        {
+          "task": "test_migration",
+          "reduction": "N/A",
+          "source": "Devin Wagner"
+        }
+      ],
+      "challenges": [
+        "Power user blocked by Standard seat limits"
+      ],
+      "quotes": [
+        {
+          "text": "Risk assessment in <5 minutes. Previous with GitHub Copilot + Atlassian MCP took ~1 hour in VS Code",
+          "author": "Roger Hampton",
+          "context": "risk_assessment",
+          "impact": {
+            "before": "60 min",
+            "after": "5 min",
+            "reduction": "92%"
+          }
+        },
+        {
+          "text": "Claude Enterprise upgrade with expanded limits, SSO, connected intelligence across Slack, M365, Asana, Jira, Confluence, Figma, HubSpot",
+          "author": "Luis Amadeo",
+          "context": "launch_announcement"
+        },
+        {
+          "text": "Got rate limited before 10am. Shows Standard seat, need upgrade for Claude Code",
+          "author": "Roger Hampton",
+          "context": "rate_limits",
+          "type": "challenge"
+        }
+      ],
+      "trend": "declining"
     },
     "Claude Code": {
-      "positive": 12,
-      "neutral": 3,
-      "negative": 1,
-      "totalMessages": 16,
-      "averageSentiment": 0.69,
+      "score": 94,
+      "totalFeedback": 9,
+      "sentimentBreakdown": {
+        "positive": 8,
+        "neutral": 1,
+        "negative": 0
+      },
       "themes": [
-        "Powerful coding assistant",
-        "Context-aware suggestions",
-        "Steep learning curve initially"
-      ]
-    },
-    "M365 Copilot": {
-      "positive": 15,
-      "neutral": 8,
-      "negative": 3,
-      "totalMessages": 26,
-      "averageSentiment": 0.46,
-      "themes": [
-        "Good for emails",
-        "Excel integration useful",
-        "Sometimes inaccurate"
-      ]
+        "tool_preference",
+        "tool_comparison",
+        "rate_limits",
+        "ide_integration_preference",
+        "capacity_limits",
+        "rollout_status",
+        "premium_announcement",
+        "autonomous_solving",
+        "productivity_validation"
+      ],
+      "topImpacts": [],
+      "challenges": [],
+      "quotes": [
+        {
+          "text": "once I started using claude code I found that I was using the IDE less and less .. now VS Code seems sufficient",
+          "author": "Yassel Piloto",
+          "context": "tool_preference"
+        }
+      ],
+      "trend": "improving"
     },
     "GitHub Copilot": {
-      "positive": 14,
-      "neutral": 4,
-      "negative": 2,
-      "totalMessages": 20,
-      "averageSentiment": 0.60,
+      "score": 33,
+      "totalFeedback": 6,
+      "sentimentBreakdown": {
+        "positive": 2,
+        "neutral": 0,
+        "negative": 4
+      },
       "themes": [
-        "Fast code completion",
-        "Good for boilerplate",
-        "IDE integration smooth"
-      ]
+        "immediate_success",
+        "risk_assessment",
+        "comparison",
+        "ide_integration_preference",
+        "roi_financial",
+        "premium_announcement"
+      ],
+      "topImpacts": [
+        {
+          "task": "risk_assessment",
+          "reduction": "92%",
+          "source": "Roger Hampton"
+        }
+      ],
+      "challenges": [
+        "Claude connected to Atlassian made SDDs really easy. Grab info from Confluence PRDs and Jira Spikes.",
+        "Risk assessment in <5 minutes. Previous with GitHub Copilot + Atlassian MCP took ~1 hour in VS Code",
+        "Previously used Copilot in Visual Studio/VS Code. Much more hand holding required. Claude at least 1"
+      ],
+      "quotes": [
+        {
+          "text": "Want Claude Code for editor integration. Still using Copilot regularly because it's easier when integrated",
+          "author": "Taran Pierce",
+          "context": "ide_integration_preference"
+        },
+        {
+          "text": "Claude connected to Atlassian made SDDs really easy. Grab info from Confluence PRDs and Jira Spikes. I prefer Claude over GitHub-Copilot",
+          "author": "Roger Hampton",
+          "context": "immediate_success",
+          "type": "challenge"
+        }
+      ],
+      "trend": "improving"
+    },
+    "M365 Copilot": {
+      "score": 38,
+      "totalFeedback": 8,
+      "sentimentBreakdown": {
+        "positive": 2,
+        "neutral": 2,
+        "negative": 4
+      },
+      "themes": [
+        "launch_announcement",
+        "sales_research",
+        "team_disparity",
+        "spreadsheet_analysis",
+        "multi_source_task",
+        "content_creation",
+        "roi_financial",
+        "rollout_status"
+      ],
+      "topImpacts": [
+        {
+          "task": "sales_research",
+          "reduction": "N/A",
+          "source": "Lucas Melgaard"
+        },
+        {
+          "task": "spreadsheet_analysis",
+          "reduction": "87.5%",
+          "source": "Deedra Wetherholt"
+        },
+        {
+          "task": "content_creation",
+          "reduction": "N/A",
+          "source": "Nicole Perkins"
+        }
+      ],
+      "challenges": [
+        "Claude research-heavy pre-call prep: 15+ min manual or 5+ min Copilot → seconds with better quality.",
+        "Tool fragmentation blocking collaboration",
+        "Asked Claude to go through slack, outlook, outreach, sharepoint and create Eisenhower Matrix for 30 "
+      ],
+      "quotes": [
+        {
+          "text": "Project completion: full day → 1 hour. Created Excel with analysis, suggestions, refinements, scenario testing",
+          "author": "Deedra Wetherholt",
+          "context": "spreadsheet_analysis",
+          "impact": {
+            "before": "8 hours",
+            "after": "1 hour",
+            "reduction": "87.5%"
+          }
+        },
+        {
+          "text": "M365 + GitHub Copilot sunset covers partial costs. NET value positive - high ROI multiple. Need 2 FTE avoidance in 2026 OR find more tool replacements. Real value: time savings + better outcomes",
+          "author": "Luis Amadeo",
+          "context": "roi_financial"
+        },
+        {
+          "text": "Claude research-heavy pre-call prep: 15+ min manual or 5+ min Copilot → seconds with better quality. More human and conversational",
+          "author": "Lucas Melgaard",
+          "context": "sales_research",
+          "type": "challenge"
+        }
+      ],
+      "trend": "stable"
+    },
+    "ChatGPT": {
+      "score": 50,
+      "totalFeedback": 2,
+      "sentimentBreakdown": {
+        "positive": 1,
+        "neutral": 0,
+        "negative": 1
+      },
+      "themes": [
+        "model_improvement",
+        "content_creation"
+      ],
+      "topImpacts": [
+        {
+          "task": "content_creation",
+          "reduction": "N/A",
+          "source": "Nicole Perkins"
+        }
+      ],
+      "challenges": [
+        "Complete on-brand job aide in ~10 minutes. Couldn't get to with ChatGPT or Copilot without heavy rew"
+      ],
+      "quotes": [
+        {
+          "text": "switched to gpt-5.1-chat-latest and it works soooooo much better now!!",
+          "author": "Yassel Piloto",
+          "context": "model_improvement"
+        },
+        {
+          "text": "Complete on-brand job aide in ~10 minutes. Couldn't get to with ChatGPT or Copilot without heavy rework",
+          "author": "Nicole Perkins",
+          "context": "content_creation",
+          "type": "challenge"
+        }
+      ],
+      "trend": "insufficient_data"
     }
   },
-  "comparativeInsights": [
-    {
-      "comparison": "Claude Enterprise vs M365 Copilot",
-      "insight": "Users find Claude Enterprise more helpful for creative tasks and brainstorming, while M365 Copilot is preferred for routine office tasks.",
-      "sentiment": "positive"
+  "executiveSummary": {
+    "headline_findings": {
+      "productivity_multiplier": "Claude Code users producing 20x more lines of code than GitHub Copilot users",
+      "time_savings_range": "87% to 98% across documented tasks",
+      "top_use_case": "Unit/integration testing (9/10 teams) - enabling previously unmet requirements",
+      "biggest_barrier": "Chat capacity limits (4-6 hits per session) and inconsistent team access (60% of teams)",
+      "roi_status": "Net positive from time savings despite budget gap requiring 2 FTE avoidance or additional tool sunsetting",
+      "adoption_coverage": "34% org with Claude Enterprise, 100% with M365 Copilot, early adopter model"
     },
-    {
-      "comparison": "Claude Code vs GitHub Copilot",
-      "insight": "Claude Code praised for understanding project context better, GitHub Copilot valued for speed and IDE integration.",
-      "sentiment": "neutral"
+    "critical_success_metrics": {
+      "claude_code_vs_copilot_productivity": "20x lines of code",
+      "risk_assessment_time": "60 min → 5 min (92% reduction)",
+      "documentation_time": "1 month → few hours (97% reduction)",
+      "pr_review_speed": "5-10x faster",
+      "story_completion": "3-4 days → 1 hour (97% reduction)",
+      "jira_analytics": "afternoon → minutes (98% reduction)",
+      "test_migration": "weeks/months → 1 week (75%+ reduction)"
+    },
+    "strategic_implications": {
+      "market_shift": "AI proficiency with MCP now baseline for mid-senior hiring",
+      "competitive_positioning": "Must maintain AI capability leadership for talent acquisition",
+      "transformation_path": "Individual productivity → business process automation → agentic organization",
+      "network_effects": "Org-wide adoption unlocks collaboration use cases currently blocked",
+      "roi_positive_but": "Requires strategic choices (hiring avoidance or tool consolidation) to fund expansion"
     }
-  ],
-  "topPositiveThemes": [
-    "Easy to use and intuitive",
-    "Saves time on routine tasks",
-    "Great for brainstorming and ideation",
-    "Helpful for documentation",
-    "Fast code completion"
-  ],
-  "topConcerns": [
-    "Learning curve for new features",
-    "Occasional inaccuracies",
-    "Need better integration between tools"
-  ],
-  "adoptionBarriers": [
-    "Initial setup complexity",
-    "Uncertainty about when to use which tool",
-    "Need more training and examples"
-  ],
-  "recommendations": [
-    "Provide more targeted training on tool selection",
-    "Create use case guides for different scenarios",
-    "Improve cross-tool workflow documentation"
-  ]
+  },
+  "quantifiedImpact": {
+    "time_savings": [
+      {
+        "task": "Risk assessment",
+        "before": "60 min",
+        "after": "5 min",
+        "reduction": "92%",
+        "source": "Roger Hampton"
+      },
+      {
+        "task": "Jira analytics",
+        "before": "3-4 hrs",
+        "after": "few min",
+        "reduction": "98%",
+        "source": "Roger Hampton"
+      },
+      {
+        "task": "SDDs",
+        "before": "1 month",
+        "after": "few hrs",
+        "reduction": "97%",
+        "source": "Roger Hampton"
+      },
+      {
+        "task": "Spreadsheet",
+        "before": "8 hrs",
+        "after": "1 hr",
+        "reduction": "87.5%",
+        "source": "Deedra Wetherholt"
+      },
+      {
+        "task": "Research",
+        "before": "15+ min",
+        "after": "seconds",
+        "reduction": "97%+",
+        "source": "Lucas Melgaard"
+      },
+      {
+        "task": "Job aide",
+        "before": "hours",
+        "after": "10 min",
+        "reduction": "83%+",
+        "source": "Nicole Perkins"
+      },
+      {
+        "task": "Story dev",
+        "before": "3-4 days",
+        "after": "1 hr",
+        "reduction": "97%",
+        "source": "Devin Wagner"
+      },
+      {
+        "task": "Test migration",
+        "before": "weeks-months",
+        "after": "1 week",
+        "reduction": "75%+",
+        "source": "Devin Wagner"
+      },
+      {
+        "task": "API docs",
+        "before": "1-2 days",
+        "after": "0.5 day",
+        "reduction": "75%",
+        "source": "Sara Johnson"
+      },
+      {
+        "task": "Internal tool",
+        "before": "2-4 weeks",
+        "after": "2 days",
+        "reduction": "90%",
+        "source": "Dakota McCombs"
+      }
+    ],
+    "productivity_multipliers": [
+      {
+        "metric": "Lines of code",
+        "multiplier": "20x",
+        "comparison": "Claude Code vs GitHub Copilot w/ Claude"
+      },
+      {
+        "metric": "PR review speed",
+        "multiplier": "5-10x",
+        "source": "Survey"
+      },
+      {
+        "metric": "General coding",
+        "multiplier": "10x",
+        "comparison": "Claude vs Copilot",
+        "source": "Devin Wagner"
+      },
+      {
+        "metric": "Sales research",
+        "multiplier": "3x",
+        "comparison": "Claude vs Copilot",
+        "source": "Lucas Melgaard"
+      }
+    ],
+    "customer_roi": [
+      {
+        "customer": "Pfizer",
+        "metric": "43,750 hrs/year saved",
+        "feature": "PayCalcs automation"
+      },
+      {
+        "customer": "Kiewit",
+        "nps": 10,
+        "value": "Compliance automation, multi-state complexity"
+      }
+    ]
+  }
 }
